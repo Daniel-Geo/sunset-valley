@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dv3f67gswgd8p"]
 
-[ext_resource type="Script" uid="uid://bki7li77er651" path="res://scripts/tree.gd" id="1_wjqkr"]
-[ext_resource type="Shader" uid="uid://bi2mqqyn6rdak" path="res://shaders/tree_shake.gdshader" id="2_6vpey"]
+[ext_resource type="Script" uid="uid://cqqou5rd845p7" path="res://scripts/collectable.gd" id="1_6vpey"]
+[ext_resource type="PackedScene" uid="uid://ulnwtnwdii5v" path="res://scenes/objects/trees/log.tscn" id="2_0ia52"]
+[ext_resource type="Shader" uid="uid://bi2mqqyn6rdak" path="res://shaders/shake.gdshader" id="2_6vpey"]
 [ext_resource type="Texture2D" uid="uid://bxec2kvccilef" path="res://assets/game/objects/basic_grass_biome_things.png" id="2_f4wgc"]
 [ext_resource type="PackedScene" uid="uid://ccglef78vm6ut" path="res://scenes/components/hurt_component.tscn" id="3_wjqkr"]
 [ext_resource type="PackedScene" uid="uid://bykb7mpejbduc" path="res://scenes/components/damage_component.tscn" id="4_0ia52"]
@@ -23,7 +24,10 @@ radius = 5.0
 size = Vector2(8, 17)
 
 [node name="LargeTree" type="StaticBody2D" unique_id=6755374]
-script = ExtResource("1_wjqkr")
+script = ExtResource("1_6vpey")
+collictable_scene = ExtResource("2_0ia52")
+shake_intensity = 0.5
+timer = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1227464659]
 material = SubResource("ShaderMaterial_0ia52")
