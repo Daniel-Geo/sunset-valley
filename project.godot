@@ -34,7 +34,8 @@ folder_colors={
 "res://Tilesets/": "yellow",
 "res://assets/": "teal",
 "res://scenes/": "blue",
-"res://scripts/": "red"
+"res://scripts/": "red",
+"res://shaders/": "purple"
 }
 
 [input]
