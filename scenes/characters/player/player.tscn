@@ -4,11 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dy83u7t0axvdp" path="res://assets/game/characters/character_actions_spritesheet.png" id="1_t61fv"]
 [ext_resource type="Texture2D" uid="uid://jvvvw2dr61vo" path="res://assets/game/characters/character_spritesheet.png" id="2_686vu"]
 [ext_resource type="Script" uid="uid://dxxauacri3vts" path="res://scripts/state_machine/node_state_machine.gd" id="3_hss88"]
-[ext_resource type="Script" uid="uid://c1y046h74pkia" path="res://scripts/state_machine/idle_state.gd" id="4_qd3e3"]
-[ext_resource type="Script" uid="uid://ciovy0plw7nrk" path="res://scripts/state_machine/walk_state.gd" id="5_qd3e3"]
-[ext_resource type="Script" uid="uid://bukoenar2xqlv" path="res://scripts/state_machine/chopping_state.gd" id="7_mk55u"]
-[ext_resource type="Script" uid="uid://2kqla0gme1lu" path="res://scripts/state_machine/tilling_state.gd" id="8_42irl"]
-[ext_resource type="Script" uid="uid://buanht8ju12co" path="res://scripts/state_machine/watering_state.gd" id="9_3xnwo"]
+[ext_resource type="Script" uid="uid://c1y046h74pkia" path="res://scripts/state_machine/player/idle_state.gd" id="4_qd3e3"]
+[ext_resource type="Script" uid="uid://ciovy0plw7nrk" path="res://scripts/state_machine/player/walk_state.gd" id="5_qd3e3"]
+[ext_resource type="Script" uid="uid://bukoenar2xqlv" path="res://scripts/state_machine/player/chopping_state.gd" id="7_mk55u"]
+[ext_resource type="Script" uid="uid://2kqla0gme1lu" path="res://scripts/state_machine/player/tilling_state.gd" id="8_42irl"]
+[ext_resource type="Script" uid="uid://buanht8ju12co" path="res://scripts/state_machine/player/watering_state.gd" id="9_3xnwo"]
 [ext_resource type="PackedScene" uid="uid://b7euejj1rtn6i" path="res://scenes/components/hit_component.tscn" id="10_3xnwo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hss88"]
@@ -401,6 +401,7 @@ radius = 4.0
 radius = 2.828427
 
 [node name="Player" type="CharacterBody2D" unique_id=908330864]
+y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_6avc5")
 current_tool = 1
