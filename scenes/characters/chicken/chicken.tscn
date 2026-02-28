@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://di0g8grlv2ka"]
 
 [ext_resource type="Texture2D" uid="uid://bocvy34ex5wm" path="res://assets/game/characters/chicken_sprites.png" id="1_awcwn"]
-[ext_resource type="Script" uid="uid://b7rnrhurdrl1d" path="res://scripts/chicken.gd" id="1_r6a33"]
+[ext_resource type="Script" uid="uid://b7rnrhurdrl1d" path="res://scripts/state_machine/npc/npc_walk_cycles.gd" id="1_r6a33"]
 [ext_resource type="Script" uid="uid://dxxauacri3vts" path="res://scripts/state_machine/node_state_machine.gd" id="2_31inw"]
-[ext_resource type="Script" uid="uid://q3cspm725rkc" path="res://scripts/state_machine/chicken/idle_state.gd" id="3_r6a33"]
-[ext_resource type="Script" uid="uid://d03opv8hd6uqt" path="res://scripts/state_machine/chicken/walk_state.gd" id="4_31inw"]
+[ext_resource type="Script" uid="uid://q3cspm725rkc" path="res://scripts/state_machine/npc/idle_state.gd" id="3_r6a33"]
+[ext_resource type="Script" uid="uid://d03opv8hd6uqt" path="res://scripts/state_machine/npc/walk_state.gd" id="4_31inw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_asyyu"]
 atlas = ExtResource("1_awcwn")
