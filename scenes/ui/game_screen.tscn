@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://c2rdcj6j4pf3a" path="res://scenes/ui/game_ui_theme.tres" id="1_e2vrk"]
 [ext_resource type="PackedScene" uid="uid://btipei7cxjwb3" path="res://scenes/ui/tools_panel.tscn" id="2_gusqm"]
+[ext_resource type="PackedScene" uid="uid://bic8krev277eo" path="res://scenes/ui/inventory_panel.tscn" id="3_gusqm"]
 
 [node name="GameScreen" type="CanvasLayer" unique_id=495133500]
 
@@ -17,3 +18,8 @@ theme = ExtResource("1_e2vrk")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+
+[node name="InventoryPanel" parent="MarginContainer" unique_id=1754825695 instance=ExtResource("3_gusqm")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
