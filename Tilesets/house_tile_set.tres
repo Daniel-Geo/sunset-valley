@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dgi8ioyoq65hj" path="res://assets/game/tilesets/wooden_house_walls_tilset.png" id="1_juxxr"]
 [ext_resource type="Texture2D" uid="uid://dj3er1au6wgsv" path="res://assets/game/objects/basic_furniture.png" id="2_s4u7f"]
 [ext_resource type="PackedScene" uid="uid://p6anyfv3h2ih" path="res://scenes/houses/door.tscn" id="3_s4u7f"]
+[ext_resource type="PackedScene" uid="uid://b27n5fskqnla0" path="res://scenes/objects/interactable furniture/Sink.tscn" id="4_7tasb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7tasb"]
 texture = ExtResource("1_juxxr")
@@ -98,6 +99,7 @@ texture = ExtResource("2_s4u7f")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_7tasb"]
 scenes/1/scene = ExtResource("3_s4u7f")
+scenes/2/scene = ExtResource("4_7tasb")
 
 [resource]
 physics_layer_0/collision_layer = 1

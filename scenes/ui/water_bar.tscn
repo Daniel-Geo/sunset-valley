@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bn7ief7im031a"]
+
+[ext_resource type="Texture2D" uid="uid://c77nud8ltlxk5" path="res://assets/ui/bar_round_gloss_large.png" id="1_0j5u7"]
+[ext_resource type="Script" uid="uid://b6mxhdp0mdsw5" path="res://scripts/ui/water_bar.gd" id="2_pawtp"]
+[ext_resource type="Texture2D" uid="uid://i2gdts0wsgfc" path="res://assets/ui/water_droplet.png" id="2_pocts"]
+
+[node name="WaterBar" type="TextureProgressBar" unique_id=1951462898]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = 48.0
+offset_right = 59.0
+offset_bottom = 72.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -1.5707964
+value = 100.0
+fill_mode = 3
+texture_progress = ExtResource("1_0j5u7")
+script = ExtResource("2_pawtp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=960795814]
+position = Vector2(-10, 11)
+rotation = 1.5707964
+texture = ExtResource("2_pocts")

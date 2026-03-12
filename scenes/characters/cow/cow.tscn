@@ -75,7 +75,6 @@ path_desired_distance = 10.0
 navigation_layers = 2
 path_postprocessing = 1
 avoidance_enabled = true
-debug_enabled = true
 
 [node name="StateMachine" type="Node" parent="." unique_id=567042393 node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("2_j7g5r")

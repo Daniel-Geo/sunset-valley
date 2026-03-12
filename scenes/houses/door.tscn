@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bhfpl8o1trri3" path="res://scripts/door.gd" id="1_act2a"]
 [ext_resource type="Texture2D" uid="uid://bohkkbb0ovhei" path="res://assets/game/tilesets/doors.png" id="1_bxi54"]
-[ext_resource type="PackedScene" uid="uid://b5i36hs0mw6nj" path="res://scenes/components/interactable_component.tscn" id="3_1ugum"]
+[ext_resource type="PackedScene" uid="uid://b5i36hs0mw6nj" path="res://scenes/components/auto_interactable_component.tscn" id="3_1ugum"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dpp7"]
 atlas = ExtResource("1_bxi54")
@@ -101,9 +101,9 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1278996110]
 shape = SubResource("RectangleShape2D_bxi54")
 
-[node name="InteractableComponent" parent="." unique_id=1201297642 instance=ExtResource("3_1ugum")]
+[node name="AutoInteractableComponent" parent="." unique_id=1201297642 instance=ExtResource("3_1ugum")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent" unique_id=1958377247]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoInteractableComponent" unique_id=1958377247]
 scale = Vector2(1, 3)
 shape = SubResource("RectangleShape2D_nno8d")
 debug_color = Color(1, 0.6, 0.69803923, 0.41960785)
