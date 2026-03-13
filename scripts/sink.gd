@@ -32,7 +32,7 @@ func on_timer_timeout() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if manual_interactable_component.is_player_nearby and Input.is_action_just_pressed("repair") and need_repair:
-		if InventoryManager.inventory.get("log", 0) >= 2 and InventoryManager.inventory.get("log", 0) >= 1:
+		if InventoryManager.inventory.get("log", 0) >= 2 and InventoryManager.inventory.get("stone", 0) >= 1:
 			need_repair = false
 			label.visible = false
 			WaterManager.water_consumer_nums -= 1

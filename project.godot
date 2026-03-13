@@ -22,6 +22,7 @@ InventoryManager="*uid://ci8squ07mj3k6"
 WaterManager="*uid://b48sjrwefwxnt"
 GameManager="*uid://bp70y6cineqjl"
 SceneManager="*uid://glydwcgfw7ea"
+DayAndNightCycleManager="*uid://cyexhhua6ptnp"
 
 [display]
 
