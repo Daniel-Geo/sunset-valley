@@ -12,6 +12,10 @@ func _ready() -> void:
 	timer.timeout.connect(on_timer_timeout)
 	timer.start()
 
+func _process(delta: float) -> void:
+	if water_value <= 0:
+		get_tree().change_scene_to_file("res://assets/ui/game_over_screen.tscn")
+
 func on_timer_timeout() -> void:
 	if water_consumer_nums > 0:
 		water_value -= water_leakage * water_consumer_nums

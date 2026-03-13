@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://h8p05qdn6pp0"]
+
+[ext_resource type="Theme" uid="uid://c2rdcj6j4pf3a" path="res://scenes/ui/game_ui_theme.tres" id="1_5slcd"]
+[ext_resource type="Script" uid="uid://bp35s14jtaya2" path="res://scripts/ui/game_menu_screen.gd" id="1_jk4o3"]
+[ext_resource type="PackedScene" uid="uid://s6ghtvay8m5a" path="res://scenes/ui/game_menu_screen_background.tscn" id="2_arotu"]
+[ext_resource type="PackedScene" uid="uid://ksjj8dw4g3m8" path="res://scenes/components/mouse_cursor_component.tscn" id="4_vrg0q"]
+
+[node name="GameMenuScreen" type="CanvasLayer" unique_id=1999529442]
+script = ExtResource("1_jk4o3")
+
+[node name="GameMenuScreenBackground" parent="." unique_id=13460925 instance=ExtResource("2_arotu")]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2001799786]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5slcd")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=873732687]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer" unique_id=1907581715]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0.54901963, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 54
+text = "WATER
+QUEST"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1713681484]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1209803626]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "START"
+
+[node name="MouseCursorComputer" parent="." unique_id=1489407991 instance=ExtResource("4_vrg0q")]
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
