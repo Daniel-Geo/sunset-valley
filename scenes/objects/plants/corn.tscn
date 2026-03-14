@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://b1l1b2bxt223"]
+
+[ext_resource type="Script" uid="uid://dmcsi0fvj1poe" path="res://scripts/corn.gd" id="1_hgaca"]
+[ext_resource type="Texture2D" uid="uid://bhsinav664dw4" path="res://assets/game/objects/basic_plants.png" id="1_hm4is"]
+[ext_resource type="PackedScene" uid="uid://ccglef78vm6ut" path="res://scenes/components/hurt_component.tscn" id="2_aphyd"]
+[ext_resource type="PackedScene" uid="uid://b2rfmw17s2uwb" path="res://scenes/objects/plants/watering_particles.tscn" id="2_ofjf8"]
+[ext_resource type="PackedScene" uid="uid://bv52ru4p8nxya" path="res://scenes/objects/plants/flowering_particles.tscn" id="3_5ucl7"]
+[ext_resource type="PackedScene" uid="uid://du725wtyruwck" path="res://scenes/objects/plants/growth_cycle_component.tscn" id="5_q3ekf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ucl7"]
+size = Vector2(13, 8)
+
+[node name="Corn" type="Node2D" unique_id=1658446365]
+script = ExtResource("1_hgaca")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1223209375]
+y_sort_enabled = true
+position = Vector2(0, -4)
+texture = ExtResource("1_hm4is")
+hframes = 6
+vframes = 2
+frame = 1
+
+[node name="WateringParticles" parent="." unique_id=724602551 instance=ExtResource("2_ofjf8")]
+
+[node name="FloweringParticles" parent="." unique_id=1263707454 instance=ExtResource("3_5ucl7")]
+
+[node name="GrowthCycleComponent" parent="." unique_id=2053148180 instance=ExtResource("5_q3ekf")]
+
+[node name="HurtComponent" parent="." unique_id=157326084 instance=ExtResource("2_aphyd")]
+position = Vector2(0, -4)
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent" unique_id=748204150]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_5ucl7")

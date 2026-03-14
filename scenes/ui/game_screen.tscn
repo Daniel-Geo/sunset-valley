@@ -17,16 +17,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_e2vrk")
 
-[node name="ToolsPanel" parent="MarginContainer" unique_id=2058770080 instance=ExtResource("2_gusqm")]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-
-[node name="InventoryPanel" parent="MarginContainer" unique_id=1754825695 instance=ExtResource("3_gusqm")]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-
 [node name="NonContainer" type="Control" parent="MarginContainer" unique_id=1033951178]
 layout_mode = 2
 
@@ -43,6 +33,16 @@ grow_vertical = 0
 size_flags_horizontal = 8
 size_flags_vertical = 4
 fill_mode = 0
+
+[node name="ToolsPanel" parent="MarginContainer" unique_id=2058770080 instance=ExtResource("2_gusqm")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="InventoryPanel" parent="MarginContainer" unique_id=1754825695 instance=ExtResource("3_gusqm")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
 
 [node name="ElapsedTime" type="Label" parent="MarginContainer" unique_id=2084201769]
 layout_mode = 2
