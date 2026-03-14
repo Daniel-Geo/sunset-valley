@@ -1,17 +1,19 @@
 [gd_scene format=3 uid="uid://b1l1b2bxt223"]
 
-[ext_resource type="Script" uid="uid://dmcsi0fvj1poe" path="res://scripts/corn.gd" id="1_hgaca"]
 [ext_resource type="Texture2D" uid="uid://bhsinav664dw4" path="res://assets/game/objects/basic_plants.png" id="1_hm4is"]
+[ext_resource type="Script" uid="uid://cdft3asn18mb3" path="res://scripts/plant.gd" id="1_q3ekf"]
+[ext_resource type="PackedScene" uid="uid://c062sojw486sp" path="res://scenes/objects/plants/corn_harvest.tscn" id="2_310os"]
 [ext_resource type="PackedScene" uid="uid://ccglef78vm6ut" path="res://scenes/components/hurt_component.tscn" id="2_aphyd"]
-[ext_resource type="PackedScene" uid="uid://b2rfmw17s2uwb" path="res://scenes/objects/plants/watering_particles.tscn" id="2_ofjf8"]
-[ext_resource type="PackedScene" uid="uid://bv52ru4p8nxya" path="res://scenes/objects/plants/flowering_particles.tscn" id="3_5ucl7"]
+[ext_resource type="PackedScene" uid="uid://b2rfmw17s2uwb" path="res://scenes/objects/plants/particles/watering_particles.tscn" id="2_ofjf8"]
+[ext_resource type="PackedScene" uid="uid://bv52ru4p8nxya" path="res://scenes/objects/plants/particles/flowering_particles.tscn" id="3_5ucl7"]
 [ext_resource type="PackedScene" uid="uid://du725wtyruwck" path="res://scenes/objects/plants/growth_cycle_component.tscn" id="5_q3ekf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ucl7"]
 size = Vector2(13, 8)
 
 [node name="Corn" type="Node2D" unique_id=1658446365]
-script = ExtResource("1_hgaca")
+script = ExtResource("1_q3ekf")
+harvest_scene = ExtResource("2_310os")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1223209375]
 y_sort_enabled = true

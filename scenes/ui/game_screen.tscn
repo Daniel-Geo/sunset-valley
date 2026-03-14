@@ -19,6 +19,8 @@ theme = ExtResource("1_e2vrk")
 
 [node name="NonContainer" type="Control" parent="MarginContainer" unique_id=1033951178]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
 
 [node name="WaterBar" parent="MarginContainer/NonContainer" unique_id=1951462898 instance=ExtResource("4_gkbp4")]
 layout_mode = 1

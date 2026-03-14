@@ -400,7 +400,7 @@ radius = 4.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_djydg"]
 radius = 2.828427
 
-[node name="Player" type="CharacterBody2D" unique_id=908330864]
+[node name="Player" type="CharacterBody2D" unique_id=908330864 groups=["player"]]
 y_sort_enabled = true
 collision_layer = 2
 script = ExtResource("1_6avc5")
