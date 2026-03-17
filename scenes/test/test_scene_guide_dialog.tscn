@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c2nx8e8r5utbd" path="res://scenes/ui/game_screen.tscn" id="3_6e6rn"]
 
 [node name="TestSceneGuideDialogue" type="Node2D" unique_id=13460925]
+y_sort_enabled = true
 
 [node name="GameTilemap" type="Node2D" parent="." unique_id=368024729]
 

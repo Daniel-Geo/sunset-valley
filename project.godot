@@ -24,6 +24,8 @@ GameManager="*uid://bp70y6cineqjl"
 SceneManager="*uid://glydwcgfw7ea"
 DayAndNightCycleManager="*uid://cyexhhua6ptnp"
 SaveGameManager="*uid://c2fhlxj00u4r5"
+DialogueManager="*uid://c3rodes2l3gxb"
+GameDialogueManager="*uid://c1civ8bs608ob"
 
 [display]
 
@@ -36,13 +38,14 @@ window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://addons/godot_super-wakatime/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
 "res://Tilesets/": "yellow",
 "res://assets/": "teal",
+"res://dialogue/": "orange",
 "res://resources/": "gray",
 "res://scenes/": "blue",
 "res://scripts/": "red",
@@ -115,6 +118,10 @@ save_game={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"location":0,"echo":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogue/conversations/guide.dialogue")
 
 [layer_names]
 

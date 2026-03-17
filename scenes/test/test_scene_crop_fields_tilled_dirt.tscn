@@ -5,6 +5,7 @@
 [ext_resource type="TileSet" uid="uid://bbwqf10w2yb7g" path="res://Tilesets/game_tile_set.tres" id="2_ff0kp"]
 [ext_resource type="PackedScene" uid="uid://e5o0soygsbwg" path="res://scenes/components/save_level_data_component.tscn" id="2_nk4dp"]
 [ext_resource type="PackedScene" uid="uid://dyt4tw8garygn" path="res://scenes/characters/player/player.tscn" id="3_aolun"]
+[ext_resource type="PackedScene" uid="uid://nvmhg0a413sk" path="res://scenes/components/test_scene_enable_tool_buttons_component.tscn" id="3_dxoer"]
 [ext_resource type="PackedScene" uid="uid://twr1jnb00dji" path="res://scenes/components/field_cursor_component.tscn" id="3_mapoa"]
 [ext_resource type="PackedScene" uid="uid://c2nx8e8r5utbd" path="res://scenes/ui/game_screen.tscn" id="4_bb1mf"]
 [ext_resource type="Script" uid="uid://bj7u6qimnoxxp" path="res://scripts/components/field_cursor_component.gd" id="4_ff0kp"]
@@ -18,6 +19,8 @@
 [node name="TestSceneSaveDataManagerComponent" parent="." unique_id=534294791 instance=ExtResource("1_w2jyg")]
 
 [node name="SaveLevelDataComponent" parent="." unique_id=357140339 instance=ExtResource("2_nk4dp")]
+
+[node name="TestSceneEnableToolButtonsComponent" parent="." unique_id=1520573506 instance=ExtResource("3_dxoer")]
 
 [node name="DayNightCycleComponent" parent="." unique_id=228609925 instance=ExtResource("1_mapoa")]
 visible = false

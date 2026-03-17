@@ -9,6 +9,17 @@ collision_mask = 2
 script = ExtResource("1_pyw20")
 
 [node name="InteractableLabelComponent" parent="." unique_id=1177734875 instance=ExtResource("2_kocpj")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

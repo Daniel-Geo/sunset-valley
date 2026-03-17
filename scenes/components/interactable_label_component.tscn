@@ -8,6 +8,7 @@ atlas = ExtResource("1_am6vt")
 region = Rect2(375, 104, 18, 17)
 
 [node name="InteractableLabelComponent" type="Control" unique_id=1177734875]
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 18.0
