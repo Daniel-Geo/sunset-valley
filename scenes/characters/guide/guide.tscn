@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bnmpb183bwx54"]
+
+[ext_resource type="Script" uid="uid://dhme51nspmc62" path="res://scripts/guide.gd" id="1_pdv8u"]
+[ext_resource type="Shader" uid="uid://dw132o0kfkl3d" path="res://shaders/replace_color.gdshader" id="2_qnx84"]
+[ext_resource type="Texture2D" uid="uid://jvvvw2dr61vo" path="res://assets/game/characters/character_spritesheet.png" id="3_xo3ut"]
+[ext_resource type="PackedScene" uid="uid://d35l3nsembuxm" path="res://scenes/components/manual_interactable_component.tscn" id="4_d7sry"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rdkl4"]
+shader = ExtResource("2_qnx84")
+shader_parameter/original_0 = Color(0.36078432, 0.30588236, 0.57254905, 1)
+shader_parameter/original_1 = Color(0.4627451, 0.42745098, 0.6666667, 1)
+shader_parameter/replace_0 = Color(0.75686276, 0.02745098, 0.41960785, 1)
+shader_parameter/replace_1 = Color(0.83137256, 0.41568628, 0.22745098, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq85q"]
+atlas = ExtResource("3_xo3ut")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3cl1"]
+atlas = ExtResource("3_xo3ut")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_temh0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq85q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3cl1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6tcs3"]
+radius = 16.03122
+
+[node name="Guide" type="Node2D" unique_id=1070874471]
+y_sort_enabled = true
+script = ExtResource("1_pdv8u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=545667710]
+material = SubResource("ShaderMaterial_rdkl4")
+position = Vector2(0, -8)
+sprite_frames = SubResource("SpriteFrames_temh0")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.5084378
+
+[node name="ManualInteractableComponent" parent="." unique_id=685583961 instance=ExtResource("4_d7sry")]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ManualInteractableComponent" unique_id=1592145189]
+shape = SubResource("CircleShape2D_6tcs3")

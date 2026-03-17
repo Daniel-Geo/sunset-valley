@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://d35l3nsembuxm"]
 
 [ext_resource type="Script" uid="uid://cmds8mbha4e88" path="res://scripts/components/manual_interactable_component.gd" id="1_pyw20"]
+[ext_resource type="PackedScene" uid="uid://dv8ayl7gwr3tu" path="res://scenes/components/interactable_label_component.tscn" id="2_kocpj"]
 
 [node name="ManualInteractableComponent" type="Area2D" unique_id=685583961]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_pyw20")
+
+[node name="InteractableLabelComponent" parent="." unique_id=1177734875 instance=ExtResource("2_kocpj")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
