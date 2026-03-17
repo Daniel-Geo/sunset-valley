@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="TilemapLayerDataResource" format=3 uid="uid://da3w7hh7v8l1g"]
+
+[ext_resource type="Script" uid="uid://b7xth3p2ehiqi" path="res://scripts/resources/tilemap_layer_data_resource.gd" id="1_gxcba"]
+
+[resource]
+script = ExtResource("1_gxcba")
+tilemap_layer_used_cells = null
+terrain_set = null
+terrain = null
+global_position = null
+node_path = null
+parent_node_path = null
