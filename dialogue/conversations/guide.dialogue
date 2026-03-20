@@ -1,11 +1,11 @@
 ~ start
-Daniel: [[Hi|Hello|Howdy]], nice to meet you.
-Daniel: I am Daniel, your helper guide.
+Daniel: [[Hi|Hello|Howdy]], I am Daniel, your helper guide.
+Daniel: It is nice to meet you.
 Daniel: Welcome to your new farm.
 Daniel: As you can see the cows and chickens are hungry.
 Daniel: You need to grow some crops to feed them.
 Daniel: Here are some seeds to grow some crops.
-- OK thanks for the seeds
+- OK, thanks for the seeds
 	do GameDialogueManager.action_give_crop_seeds()
 	Daniel: You are welcome, now you are ready to grow your own farm.
 - No, I don't want them

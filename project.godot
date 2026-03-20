@@ -121,7 +121,7 @@ save_game={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/conversations/guide.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/conversations/guide.dialogue", "res://dialogue/conversations/chest.dialogue")
 
 [layer_names]
 
@@ -134,6 +134,7 @@ locale/translations_pot_files=PackedStringArray("res://dialogue/conversations/gu
 2d_physics/layer_5="Object"
 2d_physics/layer_6="Collectable"
 2d_physics/layer_7="NPC"
+2d_physics/layer_8="Food"
 
 [physics]
 
