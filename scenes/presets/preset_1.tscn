@@ -3,12 +3,15 @@
 [ext_resource type="TileSet" uid="uid://bbwqf10w2yb7g" path="res://tilesets/game_tile_set.tres" id="1_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://twr1jnb00dji" path="res://scenes/components/field_cursor_component.tscn" id="2_hwk05"]
 [ext_resource type="PackedScene" uid="uid://di0g8grlv2ka" path="res://scenes/characters/chicken/chicken.tscn" id="2_iywne"]
+[ext_resource type="PackedScene" uid="uid://f23hdkea44w4" path="res://scenes/components/save_data_component.tscn" id="2_q7coc"]
 [ext_resource type="Script" uid="uid://bj7u6qimnoxxp" path="res://scripts/components/field_cursor_component.gd" id="3_6sbld"]
+[ext_resource type="Resource" uid="uid://da3w7hh7v8l1g" path="res://resources/tilemap_layer_data_resource.tres" id="3_x1tsa"]
 [ext_resource type="PackedScene" uid="uid://c0feu10jo7mu3" path="res://scenes/components/crops_cursor_component.tscn" id="4_xwbr2"]
 [ext_resource type="PackedScene" uid="uid://bnmpb183bwx54" path="res://scenes/characters/guide/guide.tscn" id="5_bhkia"]
 [ext_resource type="Script" uid="uid://dfw22x01vetku" path="res://scripts/components/crops_cursor_component.gd" id="5_mv77o"]
 [ext_resource type="PackedScene" uid="uid://dk61ru5dw5sjx" path="res://scenes/objects/chest/chest.tscn" id="8_xwbr2"]
 [ext_resource type="PackedScene" uid="uid://cal6io7ws1qa4" path="res://scenes/objects/egg.tscn" id="9_mv77o"]
+[ext_resource type="PackedScene" uid="uid://e5o0soygsbwg" path="res://scenes/components/save_preset_data_component.tscn" id="10_6wi7b"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p57ef"]
 vertices = PackedVector2Array(425.8828, 30.703125, 504.64063, 26.5625, 502.29688, 95.89844, 448.0625, 101.25, 440.2422, 76.796875, 412.21094, 53.851563, 386.4297, 78.25, 382.3203, 49.570313, 384.9922, 110.10156, 386.4922, 133.49219, 384.64063, 134)
@@ -18,6 +21,8 @@ source_geometry_mode = 2
 
 [node name="Preset1" type="Node2D" unique_id=378852687]
 y_sort_enabled = true
+
+[node name="SavePresetDataComponent" parent="." unique_id=357140339 instance=ExtResource("10_6wi7b")]
 
 [node name="GameTilemap" type="Node2D" parent="." unique_id=321666535]
 y_sort_enabled = true
@@ -32,6 +37,9 @@ tile_set = ExtResource("1_lnu2h")
 
 [node name="TilledSoil" type="TileMapLayer" parent="GameTilemap" unique_id=2066117579]
 tile_set = ExtResource("1_lnu2h")
+
+[node name="SaveDataComponent" parent="GameTilemap/TilledSoil" unique_id=664960314 instance=ExtResource("2_q7coc")]
+save_data_resource = ExtResource("3_x1tsa")
 
 [node name="Undergrowth" type="TileMapLayer" parent="GameTilemap" unique_id=1801979142]
 tile_map_data = PackedByteArray("AAAGAAYAAwAHAAAAAAAEAAcAAwAIAAAAAAAJAAoAAwAFAAEAAAAKAAwAAwAGAAEAAAAEAAkAAwAFAAMAAAAIAA0AAwAHAAIAAAACAAgAAwAGAAIAAAA=")

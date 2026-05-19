@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if water_value <= 0:
-		get_tree().change_scene_to_file("res://scenes/ui/game_over_screen.tscn")
+		get_tree().change_scene_to_file("res://sscenes/ui/game_over_screen.tscn")
 
 func on_timer_timeout() -> void:
 	if water_consumer_nums > 0:

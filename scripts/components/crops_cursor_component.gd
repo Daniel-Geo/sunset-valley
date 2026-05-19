@@ -3,7 +3,7 @@ extends Node
 
 @export var tilled_soil_tilemap_layer: TileMapLayer
 
-@onready var player: Player
+var player: Player
 
 var corn_plant_scene = preload("res://scenes/objects/plants/corn.tscn")
 var tomato_plant_scene = preload("res://scenes/objects/plants/tomato.tscn")

@@ -8,6 +8,8 @@
 
 [node name="MainScene" type="Node" unique_id=125503953]
 
+[node name="MouseCursorComponent" parent="." unique_id=1489407991 instance=ExtResource("4_gubc5")]
+
 [node name="DayNightCycleComponent" parent="." unique_id=228609925 instance=ExtResource("1_7ykc4")]
 
 [node name="GameRoot" type="Node2D" parent="." unique_id=370633640]
@@ -22,7 +24,5 @@ y_sort_enabled = true
 position = Vector2(310, 242)
 
 [node name="Camera2D" type="Camera2D" parent="GameRoot/Player" unique_id=1685421559]
-
-[node name="MouseCursorComponent" parent="." unique_id=1489407991 instance=ExtResource("4_gubc5")]
 
 [node name="GameScreen" parent="." unique_id=495133500 instance=ExtResource("3_gubc5")]

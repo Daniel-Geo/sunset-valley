@@ -8,6 +8,8 @@
 [node name="GameMenuScreen" type="CanvasLayer" unique_id=1999529442]
 script = ExtResource("1_jk4o3")
 
+[node name="MouseCursorComputer" parent="." unique_id=1489407991 instance=ExtResource("4_vrg0q")]
+
 [node name="GameMenuScreenBackground" parent="." unique_id=13460925 instance=ExtResource("2_arotu")]
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2001799786]
@@ -25,13 +27,13 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
-theme_override_colors/font_color = Color(0.54901963, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.47058824, 0.6313726, 0.34509805, 1)
+theme_override_colors/font_shadow_color = Color(0.6431373, 0.7607843, 0.3882353, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
-theme_override_font_sizes/font_size = 54
-text = "WATER
-QUEST"
+theme_override_font_sizes/font_size = 72
+text = "SPROUT
+VALLEY"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1713681484]
 layout_mode = 2
@@ -44,6 +46,18 @@ layout_mode = 2
 theme_type_variation = &"GameMenuButton"
 text = "START"
 
-[node name="MouseCursorComputer" parent="." unique_id=1489407991 instance=ExtResource("4_vrg0q")]
+[node name="SaveGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=844322353]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "SAVE"
+
+[node name="ExitGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=801904217]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "EXIT"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SaveGameButton" to="." method="_on_save_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
