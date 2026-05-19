@@ -20,26 +20,44 @@ func _ready() -> void:
 	
 	tool_tomato.disabled = true
 	tool_tomato.focus_mode = Control.FOCUS_NONE
+	
+func _process(delta: float) -> void:
+	if Input.is_key_pressed(KEY_1):
+		tool_axe.grab_focus()
+	elif Input.is_key_pressed(KEY_2):
+		tool_tilling.grab_focus()
+	elif Input.is_key_pressed(KEY_3):
+		tool_watering.grab_focus()
+	elif Input.is_key_pressed(KEY_4):
+		tool_corn.grab_focus()
+	elif Input.is_key_pressed(KEY_5):
+		tool_tomato.grab_focus()
+	
+	if tool_axe.has_focus():
+		ToolManager.select_tool(DataTypes.Tools.AxeWood)
+	elif tool_tilling.has_focus():
+		ToolManager.select_tool(DataTypes.Tools.TillGround)
+	elif tool_watering.has_focus():
+		ToolManager.select_tool(DataTypes.Tools.WaterCrops)
+	elif tool_corn.has_focus():
+		ToolManager.select_tool(DataTypes.Tools.PlantCorn)
+	elif tool_tomato.has_focus():
+		ToolManager.select_tool(DataTypes.Tools.PlantTomato)
 
 
 func _on_tool_axe_pressed() -> void:
-	ToolManager.select_tool(DataTypes.Tools.AxeWood)
 	tool_axe.grab_focus()
 
 func _on_tool_tilling_pressed() -> void:
-	ToolManager.select_tool(DataTypes.Tools.TillGround)
 	tool_tilling.grab_focus()
 
 func _on_tool_watering_pressed() -> void:
-	ToolManager.select_tool(DataTypes.Tools.WaterCrops)
 	tool_watering.grab_focus()
 
 func _on_tool_corn_pressed() -> void:
-	ToolManager.select_tool(DataTypes.Tools.PlantCorn)
 	tool_corn.grab_focus()
 
 func _on_tool_tomato_pressed() -> void:
-	ToolManager.select_tool(DataTypes.Tools.PlantTomato)
 	tool_tomato.grab_focus()
 
 

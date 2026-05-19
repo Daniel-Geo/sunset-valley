@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://s6ghtvay8m5a"]
 
 [ext_resource type="Script" uid="uid://btbm0qsg36rgm" path="res://scripts/ui/game_menu_screen_background.gd" id="1_cixva"]
-[ext_resource type="TileSet" uid="uid://bbwqf10w2yb7g" path="res://Tilesets/game_tile_set.tres" id="1_spn7g"]
+[ext_resource type="TileSet" uid="uid://bbwqf10w2yb7g" path="res://tilesets/game_tile_set.tres" id="1_spn7g"]
 [ext_resource type="PackedScene" uid="uid://dyt4tw8garygn" path="res://scenes/characters/player/player.tscn" id="2_cixva"]
 
 [node name="GameMenuScreenBackground" type="Node2D" unique_id=13460925]
@@ -34,7 +34,7 @@ tile_map_data = PackedByteArray("AAAQAAkABAAAAAAABgAZAAAABQABAAAAAAAZAAEABQAAAAE
 tile_set = ExtResource("1_spn7g")
 
 [node name="Houses" type="TileMapLayer" parent="GameTilemap" unique_id=1136146296]
-tile_map_data = PackedByteArray("AAAhABMABAAAAAAAAwATAA0ABAAAAAAABAAXAA0ABAAAAAAABAALAAkABAAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAATAA0ABAAAAAAABAAXAA0ABAAAAAAABAALAAIABAAAAAAAAQAhAA4ABAAAAAAAAwA=")
 tile_set = ExtResource("1_spn7g")
 
 [node name="Player" parent="." unique_id=908330864 instance=ExtResource("2_cixva")]

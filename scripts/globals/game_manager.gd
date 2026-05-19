@@ -8,7 +8,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		show_game_menu_screen()
 
 func start_game() -> void:
-	SceneManager.load_level("Level1")
+	SceneManager.load_level("MainScene")
 
 func show_game_menu_screen() -> void:
 	get_tree().change_scene_to_file("res://scenes/ui/game_menu_screen.tscn")

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dn4xb5tixn6d3"]
 
-[ext_resource type="TileSet" uid="uid://bbwqf10w2yb7g" path="res://Tilesets/game_tile_set.tres" id="1_6qx8m"]
+[ext_resource type="TileSet" uid="uid://bbwqf10w2yb7g" path="res://tilesets/game_tile_set.tres" id="1_6qx8m"]
 [ext_resource type="PackedScene" uid="uid://dyt4tw8garygn" path="res://scenes/characters/player/player.tscn" id="2_8ykp8"]
 
 [node name="TestSceneHouseTilemap" type="Node2D" unique_id=13460925]
@@ -16,7 +16,7 @@ tile_map_data = PackedByteArray("AAAdAA8AAQABAAEAAAAdAA4AAQAFAAIAAAAdAA0AAQACAAE
 tile_set = ExtResource("1_6qx8m")
 
 [node name="Houses" type="TileMapLayer" parent="GameTilemap" unique_id=469507823]
-tile_map_data = PackedByteArray("AAALAAkABAAAAAAAAQAUAAkABAAAAAAAAgAhABMABAAAAAAAAwATAA0ABAAAAAAABAAXAA0ABAAAAAAABAA=")
+tile_map_data = PackedByteArray("AAALAAQABAAAAAAAAQATAAgABAAAAAAABAAUAAQABAAAAAAAAgAXAAgABAAAAAAABAAhAA4ABAAAAAAAAwA=")
 tile_set = ExtResource("1_6qx8m")
 
 [node name="Player" parent="." unique_id=908330864 instance=ExtResource("2_8ykp8")]

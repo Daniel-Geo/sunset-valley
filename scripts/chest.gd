@@ -6,7 +6,7 @@ var corn_harvest_scene = preload("res://scenes/objects/plants/corn_harvest.tscn"
 var tomato_harvest_scene = preload("res://scenes/objects/plants/tomato_harvest.tscn")
 
 @export var dialogue_start_command: String
-@export var food_drop_height: int =40
+@export var food_drop_height: int = 40
 @export var reward_output_radius: int = 20
 @export var output_reward_scenes: Array[PackedScene] = []
 
@@ -18,7 +18,6 @@ var tomato_harvest_scene = preload("res://scenes/objects/plants/tomato_harvest.t
 
 var in_range: bool
 var is_chest_open: bool
-
 
 
 func _ready() -> void:
@@ -66,6 +65,7 @@ func trigger_feed_harvest(inventory_item: String, scene: Resource) -> void:
 	
 	for index in inventory_item_count:
 		var harvest_instance = scene.instantiate() as Node2D
+		harvest_instance.get_node("CollectableComponent").collision_mask = 0
 		harvest_instance.global_position = Vector2(global_position.x, global_position.y - food_drop_height)
 		get_tree().root.add_child(harvest_instance)
 		var target_position = global_position

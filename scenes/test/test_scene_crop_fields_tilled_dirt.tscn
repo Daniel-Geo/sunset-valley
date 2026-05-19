@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ch3p5h26eux33" path="res://scenes/components/day_night_cycle_component.tscn" id="1_mapoa"]
 [ext_resource type="PackedScene" uid="uid://tvhppldy6tov" path="res://scenes/components/test_scene_save_data_manager_component.tscn" id="1_w2jyg"]
-[ext_resource type="TileSet" uid="uid://bbwqf10w2yb7g" path="res://Tilesets/game_tile_set.tres" id="2_ff0kp"]
+[ext_resource type="TileSet" uid="uid://bbwqf10w2yb7g" path="res://tilesets/game_tile_set.tres" id="2_ff0kp"]
 [ext_resource type="PackedScene" uid="uid://e5o0soygsbwg" path="res://scenes/components/save_level_data_component.tscn" id="2_nk4dp"]
 [ext_resource type="PackedScene" uid="uid://dyt4tw8garygn" path="res://scenes/characters/player/player.tscn" id="3_aolun"]
 [ext_resource type="PackedScene" uid="uid://nvmhg0a413sk" path="res://scenes/components/test_scene_enable_tool_buttons_component.tscn" id="3_dxoer"]

@@ -1,7 +1,7 @@
 extends Node
 
 var level_scenes: Dictionary = {
-	"Level1": "res://scenes/game.tscn"
+	"MainScene": "res://scenes/main_scene.tscn"
 }
 
 func load_level(level: String) -> void:
