@@ -8,6 +8,8 @@
 [node name="GameOverScreen" type="CanvasLayer" unique_id=203722165]
 script = ExtResource("1_sq23l")
 
+[node name="MouseCursorComputer" parent="." unique_id=1489407991 instance=ExtResource("4_ywta2")]
+
 [node name="GameMenuScreenBackground" parent="." unique_id=13460925 instance=ExtResource("1_qfu14")]
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1672945382]
@@ -43,7 +45,5 @@ custom_minimum_size = Vector2(100, 29)
 layout_mode = 2
 theme_type_variation = &"GameMenuButton"
 text = "TRY AGAIN"
-
-[node name="MouseCursorComputer" parent="." unique_id=1489407991 instance=ExtResource("4_ywta2")]
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TryAgainButton" to="." method="_on_try_again_button_pressed"]

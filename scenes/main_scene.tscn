@@ -21,8 +21,18 @@ y_sort_enabled = true
 [node name="Preset1" parent="GameRoot/PresetRoot" unique_id=378852687 instance=ExtResource("2_pu3yx")]
 
 [node name="Player" parent="GameRoot" unique_id=908330864 instance=ExtResource("3_pu3yx")]
-position = Vector2(310, 242)
+position = Vector2(248, 224)
 
 [node name="Camera2D" type="Camera2D" parent="GameRoot/Player" unique_id=1685421559]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 640
+limit_bottom = 368
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="GameScreen" parent="." unique_id=495133500 instance=ExtResource("3_gubc5")]

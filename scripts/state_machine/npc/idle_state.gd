@@ -2,7 +2,7 @@ extends NodeState
 
 @export var character: CharacterBody2D
 @export var animated_sprite: AnimatedSprite2D
-@export var idle_state_time_interval: float = 5.0
+@export var idle_state_time_interval_range: Vector2i = Vector2(2, 5)
 
 @onready var idle_state_timer: Timer = Timer.new()
 
@@ -10,7 +10,7 @@ var idle_state_timeout: bool = false
 
 
 func _ready() -> void:
-	idle_state_timer.wait_time = idle_state_time_interval
+	idle_state_timer.wait_time = randi_range(idle_state_time_interval_range[0], idle_state_time_interval_range[1])
 	idle_state_timer.timeout.connect(on_idle_state_timeout)
 	add_child(idle_state_timer)
 

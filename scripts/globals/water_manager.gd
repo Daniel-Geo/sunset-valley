@@ -3,18 +3,20 @@ extends Node
 var water_value: int = 100
 var water_leakage: int = 1
 var water_consumer_nums: int = 0
+var timer: Timer
 
 func _ready() -> void:
-	var timer := Timer.new()
+	timer = Timer.new()
 	add_child(timer)
 	
 	timer.wait_time = 1.0
 	timer.timeout.connect(on_timer_timeout)
-	timer.start()
 
 func _process(delta: float) -> void:
 	if water_value <= 0:
-		get_tree().change_scene_to_file("res://sscenes/ui/game_over_screen.tscn")
+		GameManager.show_game_over_screen()
+		water_value = 100
+		timer.stop()
 
 func on_timer_timeout() -> void:
 	if water_consumer_nums > 0:

@@ -15,6 +15,10 @@ run/main_scene="uid://h8p05qdn6pp0"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://doxl4b07c5cwh"
+
 [autoload]
 
 ToolManager="*uid://dof4ns5y0p4w0"
@@ -44,6 +48,7 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg", "res://add
 
 folder_colors={
 "res://assets/": "teal",
+"res://audio/": "green",
 "res://dialogue/": "orange",
 "res://resources/": "gray",
 "res://scenes/": "blue",

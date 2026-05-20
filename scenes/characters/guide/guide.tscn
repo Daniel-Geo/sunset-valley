@@ -44,11 +44,11 @@ script = ExtResource("1_pdv8u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=545667710]
 material = SubResource("ShaderMaterial_rdkl4")
-position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_temh0")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.6726885
+offset = Vector2(0, -5)
 
 [node name="AutoInteractableComponent" parent="." unique_id=1201297642 instance=ExtResource("4_yvxhl")]
 

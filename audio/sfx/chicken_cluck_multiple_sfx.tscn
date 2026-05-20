@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bsbjy4fd8m18f"]
+
+[ext_resource type="AudioStream" uid="uid://dpu0olerdmgyq" path="res://assets/audio/sfx/chicken_cluck_1.ogg" id="1_h6qwj"]
+[ext_resource type="AudioStream" uid="uid://c57iyutr0ohw1" path="res://assets/audio/sfx/chicken_cluck_2.ogg" id="2_mfy8w"]
+[ext_resource type="AudioStream" uid="uid://b0emacyfda4i1" path="res://assets/audio/sfx/chicken_cluck_3.ogg" id="3_samlp"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qp3e0"]
+streams_count = 3
+stream_0/stream = ExtResource("1_h6qwj")
+stream_1/stream = ExtResource("2_mfy8w")
+stream_2/stream = ExtResource("3_samlp")
+
+[node name="ChickenCluckMultipleSFX" type="AudioStreamPlayer2D" unique_id=1311501570]
+stream = SubResource("AudioStreamRandomizer_qp3e0")
+max_distance = 160.0
+bus = &"SFX"
