@@ -110,3 +110,5 @@ shape = SubResource("RectangleShape2D_bxi54")
 scale = Vector2(1, 3)
 shape = SubResource("RectangleShape2D_nno8d")
 debug_color = Color(1, 0.6, 0.69803923, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=1461851982]

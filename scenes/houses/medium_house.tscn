@@ -1,6 +1,9 @@
 [gd_scene format=4 uid="uid://d1vi6stdap83c"]
 
 [ext_resource type="TileSet" uid="uid://dmd4asshtueja" path="res://tilesets/house_tile_set.tres" id="1_xnliw"]
+[ext_resource type="PackedScene" uid="uid://b5i36hs0mw6nj" path="res://scenes/components/auto_interactable_component.tscn" id="2_2svu4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtijg"]
 
 [node name="MediumHouse" type="Node2D" unique_id=985233808]
 y_sort_enabled = true
@@ -22,3 +25,17 @@ tile_set = ExtResource("1_xnliw")
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD9/wEAAQAFAAAAAAD9/wUAAQADAAAAAAD+/wAAAQAGAAMAAAD+/wMAAQAEAAIAAAD//wEAAQADAAUAAAD//wIAAQAGAAIAAAD//wMAAQADAAMAAAD//wQAAQAHAAIAAAD//wUAAQAAAAUAAAAAAAAAAQABAAAAAAAAAAEAAgAAAAAAAgAAAAMAAQAFAAIAAAABAAEAAQAAAAEAAAA=")
 tile_set = ExtResource("1_xnliw")
+
+[node name="Roof" type="TileMapLayer" parent="HouseTilemap" unique_id=1192539396]
+z_index = 1
+tile_map_data = PackedByteArray("AAD9/wQAAwAFAAQAAAD+/wQAAwAGAAQAAAD//wQAAwAEAAQAAAAAAAQAAwADAAQAAAABAAQAAwAEAAQAAAD9/wUAAwADAAQAAAD+/wUAAwAEAAQAAAD//wUAAwAFAAQAAAAAAAUAAwAGAAQAAAABAAUAAwADAAQAAAD9/wEAAwAFAAIAAAD+/wEAAwAGAAIAAAD//wEAAwADAAIAAAAAAAEAAwAEAAIAAAABAAEAAwAFAAIAAAD9/wYAAwABAAQAAAD+/wYAAwABAAQAAAD//wYAAwABAAQAAAAAAAYAAwABAAQAAAABAAYAAwABAAQAAAACAAYAAwACAAQAAAABAP//AwABAAAAAAAAAP//AwABAAAAAAD/////AwABAAAAAAD+////AwABAAAAAAD9////AwABAAAAAAD9/wAAAwABAAEAAAD+/wAAAwABAAEAAAD//wAAAwABAAEAAAAAAAAAAwABAAEAAAABAAAAAwABAAEAAAD9/wMAAwAFAAQAAAD+/wMAAwAGAAQAAAD//wMAAwAEAAQAAAAAAAMAAwADAAQAAAABAAMAAwAEAAQAAAACAAUAAwACAAMAAAACAAQAAwACAAMAAAACAAMAAwACAAMAAAACAAEAAwACAAEAAAACAAAAAwACAAEAAAACAP//AwACAAAAAAD8////AwAAAAAAAAD8/wYAAwAAAAQAAAD8/wUAAwAAAAMAAAD8/wQAAwAAAAMAAAD8/wMAAwAAAAMAAAD8/wAAAwAAAAEAAAD8/wEAAwAAAAEAAAD8/wIAAwAAAAIAAAD9/wIAAwAFAAMAAAD+/wIAAwAGAAMAAAD//wIAAwADAAMAAAAAAAIAAwAEAAMAAAABAAIAAwAFAAMAAAACAAIAAwACAAIAAAA=")
+tile_set = ExtResource("1_xnliw")
+
+[node name="AutoInteractableComponent" parent="." unique_id=1201297642 instance=ExtResource("2_2svu4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoInteractableComponent" unique_id=170920568]
+position = Vector2(0, 56)
+scale = Vector2(5, 7)
+shape = SubResource("RectangleShape2D_qtijg")
+
+[node name="Timer" type="Timer" parent="." unique_id=678001722]

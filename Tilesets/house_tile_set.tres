@@ -4,26 +4,34 @@
 [ext_resource type="Texture2D" uid="uid://dj3er1au6wgsv" path="res://assets/game/objects/basic_furniture.png" id="2_s4u7f"]
 [ext_resource type="PackedScene" uid="uid://p6anyfv3h2ih" path="res://scenes/houses/door.tscn" id="3_s4u7f"]
 [ext_resource type="PackedScene" uid="uid://b27n5fskqnla0" path="res://scenes/objects/interactable_furniture/sink.tscn" id="4_7tasb"]
+[ext_resource type="Texture2D" uid="uid://drfpv56gnqv05" path="res://assets/game/tilesets/wooden_house_roof_tilset.png" id="5_2pgpr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7tasb"]
 texture = ExtResource("1_juxxr")
 1:1/0 = 0
 0:0/0 = 0
+0:0/0/y_sort_origin = 22
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(3, -8, 8, -8, 8, 8, 3, 8)
 1:0/0 = 0
+1:0/0/y_sort_origin = 8
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
+2:0/0/y_sort_origin = 22
 2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, -8, -8, -8, 8, -3, 8)
 2:1/0 = 0
+2:1/0/y_sort_origin = 22
 2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, -8, -8, -8, 8, -3, 8)
 2:2/0 = 0
+2:2/0/y_sort_origin = 6
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3, -8, -8, -8, -8, 8, -3, 8)
 1:2/0 = 0
 1:2/0/y_sort_origin = 6
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:2/0 = 0
+0:2/0/y_sort_origin = 6
 0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(3, -8, 8, -8, 8, 8, 3, 8)
 0:1/0 = 0
+0:1/0/y_sort_origin = 22
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(3, -8, 8, -8, 8, 8, 3, 8)
 3:0/0 = 0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -34,6 +42,7 @@ texture = ExtResource("1_juxxr")
 3:1/0 = 0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:2/0 = 0
+3:2/0/y_sort_origin = 8
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_06qnv"]
@@ -111,8 +120,45 @@ texture = ExtResource("2_s4u7f")
 scenes/1/scene = ExtResource("3_s4u7f")
 scenes/2/scene = ExtResource("4_7tasb")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okpgf"]
+texture = ExtResource("5_2pgpr")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7tasb")
 sources/1 = SubResource("TileSetAtlasSource_06qnv")
 sources/2 = SubResource("TileSetScenesCollectionSource_7tasb")
+sources/3 = SubResource("TileSetAtlasSource_okpgf")

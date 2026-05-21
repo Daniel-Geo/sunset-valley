@@ -1,6 +1,9 @@
 [gd_scene format=4 uid="uid://broovbg1wlsv5"]
 
 [ext_resource type="TileSet" uid="uid://dmd4asshtueja" path="res://tilesets/house_tile_set.tres" id="1_jp7p4"]
+[ext_resource type="PackedScene" uid="uid://b5i36hs0mw6nj" path="res://scenes/components/auto_interactable_component.tscn" id="2_sjs3w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ys1l1"]
 
 [node name="SmallHouse" type="Node2D" unique_id=985233808]
 y_sort_enabled = true
@@ -22,3 +25,17 @@ tile_set = ExtResource("1_jp7p4")
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAD9/wAAAQAHAAMAAAD9/wEAAQAGAAIAAAD9/wIAAQADAAMAAAD9/wMAAQAHAAIAAAD+/wEAAgAAAAAAAgD//wEAAQADAAIAAAD//wIAAQAHAAUAAAAAAAEAAQAEAAEAAAABAAAAAQACAAAAAAABAAEAAQABAAEAAAABAAMAAQAFAAAAAAA=")
 tile_set = ExtResource("1_jp7p4")
+
+[node name="Roof" type="TileMapLayer" parent="HouseTilemap" unique_id=1179343536]
+z_index = 1
+tile_map_data = PackedByteArray("AAD9/wEAAwAFAAMAAAD+/wEAAwAGAAMAAAD//wEAAwADAAMAAAAAAAEAAwAEAAMAAAABAAEAAwAFAAMAAAD9/wAAAwABAAEAAAD+/wAAAwABAAEAAAD//wAAAwABAAEAAAAAAAAAAwABAAEAAAABAAAAAwABAAEAAAD9////AwABAAAAAAD+////AwABAAAAAAD/////AwABAAAAAAAAAP//AwABAAAAAAABAP//AwABAAAAAAD9/wQAAwABAAQAAAD+/wQAAwABAAQAAAD//wQAAwABAAQAAAAAAAQAAwABAAQAAAABAAQAAwABAAQAAAACAAQAAwACAAQAAAD8/wQAAwAAAAQAAAD8////AwAAAAAAAAACAP//AwACAAAAAAACAAAAAwACAAEAAAACAAEAAwACAAIAAAD8/wAAAwAAAAEAAAD8/wEAAwAAAAIAAAD8/wMAAwAAAAMAAAD9/wMAAwAFAAQAAAD+/wMAAwAGAAQAAAD//wMAAwAEAAQAAAAAAAMAAwADAAQAAAABAAMAAwAEAAQAAAACAAMAAwACAAMAAAD8/wIAAwAAAAMAAAD9/wIAAwAFAAQAAAD+/wIAAwAGAAQAAAD//wIAAwAEAAQAAAAAAAIAAwADAAQAAAABAAIAAwAEAAQAAAACAAIAAwACAAMAAAA=")
+tile_set = ExtResource("1_jp7p4")
+
+[node name="AutoInteractableComponent" parent="." unique_id=1201297642 instance=ExtResource("2_sjs3w")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoInteractableComponent" unique_id=1985286306]
+position = Vector2(0, 40)
+scale = Vector2(5, 5)
+shape = SubResource("RectangleShape2D_ys1l1")
+
+[node name="Timer" type="Timer" parent="." unique_id=975142142]
