@@ -30,6 +30,7 @@ DayAndNightCycleManager="*uid://cyexhhua6ptnp"
 SaveGameManager="*uid://c2fhlxj00u4r5"
 DialogueManager="*uid://c3rodes2l3gxb"
 GameDialogueManager="*uid://c1civ8bs608ob"
+CoinsManager="*uid://67qj18ygipf8"
 
 [dialogue_manager]
 

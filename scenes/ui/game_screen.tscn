@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://cakqa8fgyj0rv" path="res://scenes/ui/emotes_panel.tscn" id="2_ooiym"]
 [ext_resource type="PackedScene" uid="uid://bic8krev277eo" path="res://scenes/ui/inventory_panel.tscn" id="3_gusqm"]
 [ext_resource type="PackedScene" uid="uid://bn7ief7im031a" path="res://scenes/ui/water_bar.tscn" id="4_gkbp4"]
-[ext_resource type="Script" uid="uid://2pfpikgto10r" path="res://scripts/ui/elapsed_time.gd" id="5_0kkfd"]
 [ext_resource type="PackedScene" uid="uid://cfr5mbe8neu7y" path="res://scenes/ui/day_and_night_panel.tscn" id="6_nwa5a"]
+[ext_resource type="PackedScene" uid="uid://cae275y48rfdx" path="res://scenes/ui/coins_panel.tscn" id="7_ooiym"]
 
 [node name="GameScreen" type="CanvasLayer" unique_id=495133500]
 
@@ -56,15 +56,15 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 
-[node name="ElapsedTime" type="Label" parent="MarginContainer" unique_id=2084201769]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 0
-text = "Elapsed time: 0"
-horizontal_alignment = 1
-script = ExtResource("5_0kkfd")
-
 [node name="DayAndNightPanel" parent="MarginContainer" unique_id=1683517702 instance=ExtResource("6_nwa5a")]
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+
+[node name="CoinsPanel" parent="." unique_id=866749303 instance=ExtResource("7_ooiym")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_right = 24.0
+grow_horizontal = 2

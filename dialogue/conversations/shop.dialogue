@@ -5,20 +5,43 @@ Olivia: Tell me what brings you to my humble shop?
 	Olivia: What do you want to buy?
 	- Corn seeds
 		set item_name = "corn seed"
-	- Tomato seeds
+		set item_price = 10
+	- Tomato seed
 		set item_name = "tomato seed"
-	do InventoryManager.add_collectable(item_name)
+		set item_price = 15
+	if CoinsManager.coins >= item_price
+		Olivia: Here you are. Take this {{item_name}}
+		do CoinsManager.remove_coins(item_price)
+		do InventoryManager.add_collectable(item_name)
+	else
+		Olivia: You don't have enough money. {{item_name}} costs {{item_price}} coins
 
 - I want to sell some of my farm products
 	Olivia: Which products do you want to sell?
+	- Log
+		set item_name = "log"
+		set item_price = 5
+	- Stone
+		set item_name = "stone"
+		set item_price = 10
 	- Corn
 		set item_name = "corn"
+		set item_price = 20
 	- Tomato
 		set item_name = "tomato"
+		set item_price = 30
 	- Egg
 		set item_name = "egg"
+		set item_price = 40
 	- Milk
 		set item_name = "milk"
-	do InventoryManager.remove_collectable(item_name)
+		set item_price = 50
+	if InventoryManager.inventory.has(item_name)
+		if InventoryManager.inventory[item_name] > 0
+			Olivia: Take these {{item_price}} coins
+			do CoinsManager.add_coins(item_price)
+			do InventoryManager.remove_collectable(item_name)
+			=> END
+	Olivia: You don't have this item
 - Never mind
 => END

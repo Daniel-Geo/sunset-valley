@@ -7,6 +7,7 @@ var balloon_scene = preload("res://dialogue/game_dialogue_balloon.tscn")
 
 class ShopState:
 	var item_name: String
+	var item_price: int
 
 var dialogue_variables = ShopState.new()
 var in_range: bool
