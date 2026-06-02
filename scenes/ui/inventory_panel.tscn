@@ -30,6 +30,14 @@ region = Rect2(80, 16, 16, 16)
 atlas = ExtResource("5_b11k6")
 region = Rect2(32, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdvod"]
+atlas = ExtResource("3_cvy6a")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yjab"]
+atlas = ExtResource("3_cvy6a")
+region = Rect2(0, 16, 16, 16)
+
 [node name="InventoryPanel" type="PanelContainer" unique_id=1754825695]
 theme = ExtResource("1_17uwj")
 theme_type_variation = &"DarkWoodPanel"
@@ -147,6 +155,42 @@ size_flags_vertical = 0
 texture = SubResource("AtlasTexture_wmmu1")
 
 [node name="MilkLabel" type="Label" parent="MarginContainer/VBoxContainer/Milk" unique_id=1933390166]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"InventoryLabel"
+text = "0"
+
+[node name="CornSeed" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=896364512]
+custom_minimum_size = Vector2(26, 32)
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/CornSeed" unique_id=600173786]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_tdvod")
+
+[node name="CornSeedLabel" type="Label" parent="MarginContainer/VBoxContainer/CornSeed" unique_id=1872856771]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"InventoryLabel"
+text = "0"
+
+[node name="TomatoSeed" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1990712999]
+custom_minimum_size = Vector2(26, 32)
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/TomatoSeed" unique_id=490916970]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_7yjab")
+
+[node name="TomatoSeedLabel" type="Label" parent="MarginContainer/VBoxContainer/TomatoSeed" unique_id=449548593]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8

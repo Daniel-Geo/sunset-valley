@@ -37,15 +37,19 @@ func get_cell_under_mouse() -> void:
 
 func add_crop() -> void:
 	if distance < 20.0:
-		if ToolManager.selected_tool == DataTypes.Tools.PlantCorn:
-			var corn_instance = corn_plant_scene.instantiate() as Node2D
-			corn_instance.global_position = local_cell_position
-			get_parent().find_child("CropFields").add_child(corn_instance)
+		if ToolManager.selected_tool == DataTypes.Tools.PlantCorn and InventoryManager.inventory.has("corn seed"):
+			if InventoryManager.inventory["corn seed"] > 0:
+				var corn_instance = corn_plant_scene.instantiate() as Node2D
+				corn_instance.global_position = local_cell_position
+				get_parent().find_child("CropFields").add_child(corn_instance)
+				InventoryManager.remove_collectable("corn seed")
 		
-		elif ToolManager.selected_tool == DataTypes.Tools.PlantTomato:
-			var tomato_instance = tomato_plant_scene.instantiate() as Node2D
-			tomato_instance.global_position = local_cell_position
-			get_parent().find_child("CropFields").add_child(tomato_instance)
+		elif ToolManager.selected_tool == DataTypes.Tools.PlantTomato and InventoryManager.inventory.has("tomato seed"):
+			if InventoryManager.inventory["tomato seed"] > 0:
+				var tomato_instance = tomato_plant_scene.instantiate() as Node2D
+				tomato_instance.global_position = local_cell_position
+				get_parent().find_child("CropFields").add_child(tomato_instance)
+				InventoryManager.remove_collectable("tomato seed")
 
 func remove_crop() -> void:
 	if distance < 20.0:

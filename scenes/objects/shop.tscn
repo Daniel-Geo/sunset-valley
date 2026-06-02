@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://iv287t1oohku"]
+
+[ext_resource type="Texture2D" uid="uid://dd7l0625rbwpt" path="res://assets/game/tilesets/farmingTilesheetComplete.png" id="1_suugs"]
+[ext_resource type="Script" uid="uid://buxmh0ubbglb" path="res://scenes/objects/shop.gd" id="1_y5y2e"]
+[ext_resource type="Shader" uid="uid://dw132o0kfkl3d" path="res://shaders/replace_color.gdshader" id="2_ul1bt"]
+[ext_resource type="Texture2D" uid="uid://jvvvw2dr61vo" path="res://assets/game/characters/character_spritesheet.png" id="3_frdv1"]
+[ext_resource type="PackedScene" uid="uid://dv8ayl7gwr3tu" path="res://scenes/components/interactable_label_component.tscn" id="4_ul1bt"]
+[ext_resource type="PackedScene" uid="uid://b5i36hs0mw6nj" path="res://scenes/components/auto_interactable_component.tscn" id="5_ul1bt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tlnv0"]
+shader = ExtResource("2_ul1bt")
+shader_parameter/original_0 = Color(0.36078432, 0.30588236, 0.57254905, 1)
+shader_parameter/original_1 = Color(0.4627451, 0.42745098, 0.6666667, 1)
+shader_parameter/replace_0 = Color(0.8392157, 0.30980393, 0.57254905, 1)
+shader_parameter/replace_1 = Color(1, 0.41568628, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq85q"]
+atlas = ExtResource("3_frdv1")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3cl1"]
+atlas = ExtResource("3_frdv1")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q80wf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq85q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3cl1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2dy8"]
+atlas = ExtResource("1_suugs")
+region = Rect2(0, 176, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_suugs"]
+size = Vector2(24, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frdv1"]
+size = Vector2(16, 4.666667)
+
+[node name="Shop" type="StaticBody2D" unique_id=2063551947]
+y_sort_enabled = true
+script = ExtResource("1_y5y2e")
+
+[node name="Sprites" type="Node2D" parent="." unique_id=2026377570]
+y_sort_enabled = true
+position = Vector2(0, 22)
+
+[node name="Stallholder" type="AnimatedSprite2D" parent="Sprites" unique_id=527842941]
+material = SubResource("ShaderMaterial_tlnv0")
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_q80wf")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -5)
+
+[node name="Stall" type="Sprite2D" parent="Sprites" unique_id=1797298219]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_o2dy8")
+offset = Vector2(0, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1989465719]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_suugs")
+
+[node name="AutoInteractableComponent" parent="." unique_id=1201297642 instance=ExtResource("5_ul1bt")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoInteractableComponent" unique_id=1191162101]
+position = Vector2(0, 30)
+scale = Vector2(1, 3)
+shape = SubResource("RectangleShape2D_frdv1")
+debug_color = Color(1, 0.6, 0.69803923, 0.41960785)
+
+[node name="InteractableLabelComponent" parent="." unique_id=1177734875 instance=ExtResource("4_ul1bt")]

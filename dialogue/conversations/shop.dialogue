@@ -1,0 +1,24 @@
+~ start
+Olivia: [[Hey|Hiya|Hey there]], I'm Olivia the one in charge of running this shop stall
+Olivia: Tell me what brings you to my humble shop?
+- I want to buy some stuff
+	Olivia: What do you want to buy?
+	- Corn seeds
+		set item_name = "corn seed"
+	- Tomato seeds
+		set item_name = "tomato seed"
+	do InventoryManager.add_collectable(item_name)
+
+- I want to sell some of my farm products
+	Olivia: Which products do you want to sell?
+	- Corn
+		set item_name = "corn"
+	- Tomato
+		set item_name = "tomato"
+	- Egg
+		set item_name = "egg"
+	- Milk
+		set item_name = "milk"
+	do InventoryManager.remove_collectable(item_name)
+- Never mind
+=> END
