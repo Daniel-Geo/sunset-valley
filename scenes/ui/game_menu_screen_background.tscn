@@ -37,11 +37,11 @@ tile_set = ExtResource("1_spn7g")
 
 [node name="Objects" type="TileMapLayer" parent="GameTilemap" unique_id=1890211043]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAQAAkABAAAAAAABgAZAAAABQABAAAAAAAZAAEABQAAAAEAAAAZAAIABQAAAAIAAAAaAAAABQACAAMAAAAbAAAABQACAAMAAAAcAAAABQACAAMAAAAcAAcABQACAAMAAAAdAAAABQACAAMAAAAdAAcABQACAAMAAAAeAAAABQACAAMAAAAeAAcABQACAAMAAAAfAAAABQACAAMAAAAfAAcABQACAAMAAAAgAAAABQADAAAAAAAgAAEABQAAAAEAAAAgAAIABQAAAAEAAAAgAAMABQAAAAEAAAAgAAQABQAAAAEAAAAgAAUABQAAAAEAAAAgAAYABQAAAAEAAAAgAAcABQADAAIAAAAbAAcABQABAAMAAAA=")
+tile_map_data = PackedByteArray("AAAZAAAABQABAAAAAAAZAAEABQAAAAEAAAAZAAIABQAAAAIAAAAaAAAABQACAAMAAAAbAAAABQACAAMAAAAcAAAABQACAAMAAAAcAAcABQACAAMAAAAdAAAABQACAAMAAAAdAAcABQACAAMAAAAeAAAABQACAAMAAAAeAAcABQACAAMAAAAfAAAABQACAAMAAAAfAAcABQACAAMAAAAgAAAABQADAAAAAAAgAAEABQAAAAEAAAAgAAIABQAAAAEAAAAgAAMABQAAAAEAAAAgAAQABQAAAAEAAAAgAAUABQAAAAEAAAAgAAYABQAAAAEAAAAgAAcABQADAAIAAAAbAAcABQABAAMAAAAQAAoABAAAAAAABgA=")
 tile_set = ExtResource("1_spn7g")
 
 [node name="Houses" type="TileMapLayer" parent="GameTilemap" unique_id=1136146296]
-tile_map_data = PackedByteArray("AAATAA0ABAAAAAAABAAXAA0ABAAAAAAABAALAAIABAAAAAAAAQAUAAIABAAAAAAAAwA=")
+tile_map_data = PackedByteArray("AAATAA0ABAAAAAAABAAXAA0ABAAAAAAABAALAAMABAAAAAAAAQAUAAMABAAAAAAAAwA=")
 tile_set = ExtResource("1_spn7g")
 
 [node name="Player" parent="." unique_id=908330864 instance=ExtResource("2_cixva")]
@@ -56,13 +56,13 @@ position = Vector2(429, 33)
 [node name="Chicken2" parent="Chickens" unique_id=1326493626 instance=ExtResource("4_3acs3")]
 position = Vector2(442, 70)
 
-[node name="AnimatedSprite2D" parent="Chickens/Chicken2" index="0" unique_id=1925269984]
+[node name="AnimatedSprite2D" parent="Chickens/Chicken2" index="1" unique_id=1925269984]
 flip_h = true
 
 [node name="Chicken3" parent="Chickens" unique_id=378328537 instance=ExtResource("4_3acs3")]
 position = Vector2(486, 55)
 
-[node name="AnimatedSprite2D" parent="Chickens/Chicken3" index="0" unique_id=1925269984]
+[node name="AnimatedSprite2D" parent="Chickens/Chicken3" index="1" unique_id=1925269984]
 flip_h = true
 
 [node name="Chicken4" parent="Chickens" unique_id=824911003 instance=ExtResource("4_3acs3")]
@@ -74,7 +74,7 @@ position = Vector2(479, 93)
 [node name="Chicken6" parent="Chickens" unique_id=597342855 instance=ExtResource("4_3acs3")]
 position = Vector2(428, 62)
 
-[node name="AnimatedSprite2D" parent="Chickens/Chicken6" index="0" unique_id=1925269984]
+[node name="AnimatedSprite2D" parent="Chickens/Chicken6" index="1" unique_id=1925269984]
 flip_h = true
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Chickens" unique_id=988966841]

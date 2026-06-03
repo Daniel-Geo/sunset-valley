@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bn7ief7im031a"]
+
+[ext_resource type="Texture2D" uid="uid://bdbslvim4da0k" path="res://assets/ui/bar_shadow_round_large_top_down.png" id="1_43gb7"]
+[ext_resource type="Texture2D" uid="uid://6jfwjshf768h" path="res://assets/ui/bar_round_gloss_large_top_down.png" id="1_c3jmv"]
+[ext_resource type="Script" uid="uid://e06ubggeiek4" path="res://scripts/ui/coins_bar.gd" id="2_43gb7"]
+
+[node name="CoinsBar" type="TextureProgressBar" unique_id=1951462898]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -48.0
+offset_bottom = 48.0
+grow_horizontal = 0
+grow_vertical = 2
+value = 33.0
+fill_mode = 3
+texture_under = ExtResource("1_43gb7")
+texture_progress = ExtResource("1_c3jmv")
+script = ExtResource("2_43gb7")

@@ -50,13 +50,9 @@ tile_set = ExtResource("1_lnu2h")
 [node name="SaveDataComponent" parent="GameTilemap/TilledSoil" unique_id=664960314 instance=ExtResource("2_q7coc")]
 save_data_resource = ExtResource("3_x1tsa")
 
-[node name="Undergrowth" type="TileMapLayer" parent="GameTilemap" unique_id=1801979142]
-tile_map_data = PackedByteArray("AAAGAAYAAwAHAAAAAAAJAAoAAwAFAAEAAAAKAAwAAwAGAAEAAAAEAAkAAwAFAAMAAAAIAA0AAwAHAAIAAAACAAgAAwAGAAIAAAAJAAcAAwAIAAAAAAA=")
-tile_set = ExtResource("1_lnu2h")
-
 [node name="Overgrowth" type="TileMapLayer" parent="GameTilemap" unique_id=265891289]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAATAA0AAwAGAAAAAAAZAAkAAwAFAAEAAAAZAAsAAwAFAAAAAAAZAA0AAwADAAIAAAAaAAkAAwAGAAEAAAAaAAsAAwAGAAAAAAAaAA0AAwAEAAIAAAAbAAsAAwAHAAAAAAAbAA0AAwAFAAIAAAAcAAsAAwAIAAAAAAAcAA0AAwAGAAIAAAAdAA0AAwAHAAIAAAARAAwAAwAFAAAAAAA=")
+tile_map_data = PackedByteArray("AAATAA0AAwAGAAAAAAARAAwAAwAFAAAAAAACAAgAAwAGAAIAAAAEAAkAAwAFAAMAAAAJAAoAAwAFAAEAAAAKAAwAAwAGAAEAAAAIAA0AAwAHAAIAAAAGAAYAAwAHAAAAAAAJAAcAAwAIAAAAAAAZAAsAAwADAAIAAAAcAAwAAwAEAAIAAAAbAAwAAwAFAAIAAAAWAAYAAwAGAAEAAAAbAAoAAwAFAAEAAAAZAA0AAwAGAAIAAAAbABEAAwAHAAIAAAA=")
 tile_set = ExtResource("1_lnu2h")
 
 [node name="Objects" type="TileMapLayer" parent="GameTilemap" unique_id=570221386 groups=["navigation_polygon_source_geometry_group"]]

@@ -1,7 +1,5 @@
 extends Panel
 
-@export var apply_color_change: bool = false
-
 @onready var animated_sprite_2d: AnimatedSprite2D = $Emote/AnimatedSprite2D
 @onready var emote_idle_timer: Timer = $EmoteIdleTimer
 
@@ -12,7 +10,9 @@ func _ready() -> void:
 	animated_sprite_2d.play("emote1_idle")
 	InventoryManager.inventory_changed.connect(on_inventory_changed)
 	GameDialogueManager.feed_the_animals.connect(on_feed_the_animals)
-	GameDialogueManager.change_emote_color.connect(on_change_emote_color)
+	if get_parent() is HBoxContainer:
+		GameDialogueManager.change_emote_color.connect(on_change_emote_color)
+		GameDialogueManager.change_emote_visibility.connect(on_change_emote_visibility)
 
 func play_emote(animation: String) -> void:
 	animated_sprite_2d.play(animation)
@@ -29,8 +29,13 @@ func on_feed_the_animals() -> void:
 	animated_sprite_2d.play("emote6_love_kiss")
 
 func on_change_emote_color(replace_0: Vector4, replace_1: Vector4) -> void:
-	print(name, " | Apply change: ", apply_color_change)
-	if apply_color_change:
-		animated_sprite_2d.material.set("shader_parameter/replace_0", replace_0)
-		animated_sprite_2d.material.set("shader_parameter/replace_1", replace_1)
-	
+	animated_sprite_2d.material.set("shader_parameter/replace_0", replace_0)
+	animated_sprite_2d.material.set("shader_parameter/replace_1", replace_1)
+
+func on_change_emote_visibility(visible: bool) -> void:
+	if visible:
+		print(visible)
+		show()
+	else:
+		print(visible)
+		hide()

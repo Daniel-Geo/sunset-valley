@@ -1,6 +1,6 @@
 extends PanelContainer
 
-@onready var coin_label: Label = $MarginContainer/Coins/CoinLabel
+@onready var coin_label: Label = $MarginContainer/VBoxContainer/Coins/CoinLabel
 
 func _ready() -> void:
 	CoinsManager.coins_changed.connect(on_coins_changed)

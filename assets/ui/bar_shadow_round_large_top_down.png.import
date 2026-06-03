@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c77nud8ltlxk5"
-path="res://.godot/imported/bar_round_gloss_large.png-34b49b8660d3bb0aefecb27fd12bc3f8.ctex"
+uid="uid://bdbslvim4da0k"
+path="res://.godot/imported/bar_shadow_round_large_top_down.png-2bb9dc3f323f4f7eb6467658d5822ad8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/bar_round_gloss_large.png"
-dest_files=["res://.godot/imported/bar_round_gloss_large.png-34b49b8660d3bb0aefecb27fd12bc3f8.ctex"]
+source_file="res://assets/ui/bar_shadow_round_large_top_down.png"
+dest_files=["res://.godot/imported/bar_shadow_round_large_top_down.png-2bb9dc3f323f4f7eb6467658d5822ad8.ctex"]
 
 [params]
 

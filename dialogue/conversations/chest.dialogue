@@ -1,16 +1,18 @@
 ~ start_cow_pasture_box
-Pasture box: [[Hi|Hello|Howdy]], your animals are hungry.
-Pasture box: Would you like to feed your cows?
-- Yes, I would like.
+do change_emote_visibility.emit(false)
+Pasture box: The animals are hungry.
+Pasture box: Do you want to feed your cows?
+- Yes, feed them
 	do GameDialogueManager.feed_the_animals.emit()
-- No, I have enough milk.
+- No, they seem will fed
 => END
 
 
 ~ start_cicken_pasture_box
-Pasture box: [[Hi|Hello|Howdy]], your animals are hungry.
-Pasture box: Would you like to feed your chickens?
-- Yes, I would like.
+do change_emote_visibility.emit(false)
+Pasture box: The animals are hungry.
+Pasture box: Do you want to feed your chickens?
+- Yes, feed them
 	do GameDialogueManager.feed_the_animals.emit()
-- No, I have enogh eggs.
+- No, they seem will fed
 => END

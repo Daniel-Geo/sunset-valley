@@ -18,16 +18,13 @@ func _ready() -> void:
 
 func on_interactable_activated() -> void:
 	print("sink_activated")
-	WaterManager.water_consumer_nums += 1
 
 func on_interactable_deactivated() -> void:
 	print("sink_deactivated")
-	WaterManager.water_consumer_nums -= 1
 
 func on_timer_timeout() -> void:
 	need_repair = true
 	label.visible = true
-	WaterManager.water_consumer_nums += 1
 	print("need repairs")
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -35,7 +32,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		if InventoryManager.inventory.get("log", 0) >= 2 and InventoryManager.inventory.get("stone", 0) >= 1:
 			need_repair = false
 			label.visible = false
-			WaterManager.water_consumer_nums -= 1
 			InventoryManager.inventory["log"] -= 2
 			InventoryManager.inventory["stone"] -= 1
 			InventoryManager.inventory_changed.emit()

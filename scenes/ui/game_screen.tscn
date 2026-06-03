@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://btipei7cxjwb3" path="res://scenes/ui/tools_panel.tscn" id="2_gusqm"]
 [ext_resource type="PackedScene" uid="uid://cakqa8fgyj0rv" path="res://scenes/ui/emotes_panel.tscn" id="2_ooiym"]
 [ext_resource type="PackedScene" uid="uid://bic8krev277eo" path="res://scenes/ui/inventory_panel.tscn" id="3_gusqm"]
-[ext_resource type="PackedScene" uid="uid://bn7ief7im031a" path="res://scenes/ui/water_bar.tscn" id="4_gkbp4"]
 [ext_resource type="PackedScene" uid="uid://cfr5mbe8neu7y" path="res://scenes/ui/day_and_night_panel.tscn" id="6_nwa5a"]
 [ext_resource type="PackedScene" uid="uid://cae275y48rfdx" path="res://scenes/ui/coins_panel.tscn" id="7_ooiym"]
 
@@ -38,20 +37,6 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
-[node name="WaterBar" parent="MarginContainer/NonContainer" unique_id=1951462898 instance=ExtResource("4_gkbp4")]
-layout_mode = 1
-anchors_preset = 3
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = -31.0
-offset_top = -24.0
-offset_right = 65.0
-offset_bottom = 0.0
-grow_vertical = 0
-size_flags_horizontal = 8
-size_flags_vertical = 4
-fill_mode = 0
-
 [node name="ToolsPanel" parent="MarginContainer" unique_id=2058770080 instance=ExtResource("2_gusqm")]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -62,7 +47,12 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
-[node name="CoinsPanel" parent="MarginContainer" unique_id=866749303 instance=ExtResource("7_ooiym")]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer" unique_id=231466983]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="CoinsPanel" parent="MarginContainer/VBoxContainer2" unique_id=866749303 instance=ExtResource("7_ooiym")]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 0
+size_flags_vertical = 8

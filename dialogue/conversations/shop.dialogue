@@ -1,6 +1,7 @@
 ~ start
 do GameDialogueManager.change_emote_color.emit(Vector4(214.0/255.0, 79.0/255.0, 146.0/255.0, 1.0), Vector4(0.0, 188.0/255.0, 134.0/255.0, 1.0))
-Olivia: [[Hey|Hiya|Hey there]], I'm Olivia the one in charge of running this shop stall
+do change_emote_visibility.emit(true)
+Olivia: [[Hey|Hiya|Hey there]], I'm Olivia the one in charge of running this shop stall.
 Olivia: Tell me what brings you to my humble shop?
 - I want to buy some stuff
 	Olivia: What do you want to buy?
@@ -11,11 +12,11 @@ Olivia: Tell me what brings you to my humble shop?
 		set item_name = "tomato seed"
 		set item_price = 15
 	if CoinsManager.coins >= item_price
-		Olivia: Here you are. Take this {{item_name}}
+		Olivia: Here you are. Take this {{item_name}}.
 		do CoinsManager.remove_coins(item_price)
 		do InventoryManager.add_collectable(item_name)
 	else
-		Olivia: You don't have enough money. {{item_name}} costs {{item_price}} coins
+		Olivia: You don't have enough money. {{item_name}} costs {{item_price}} coins.
 
 - I want to sell some of my farm products
 	Olivia: Which products do you want to sell?
@@ -39,10 +40,10 @@ Olivia: Tell me what brings you to my humble shop?
 		set item_price = 50
 	if InventoryManager.inventory.has(item_name)
 		if InventoryManager.inventory[item_name] > 0
-			Olivia: Take these {{item_price}} coins
+			Olivia: Take these {{item_price}} coins.
 			do CoinsManager.add_coins(item_price)
 			do InventoryManager.remove_collectable(item_name)
 			=> END
-	Olivia: You don't have this item
+	Olivia: You don't have this item.
 - Never mind
 => END

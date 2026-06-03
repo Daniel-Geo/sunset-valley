@@ -23,7 +23,6 @@ buses/default_bus_layout="uid://doxl4b07c5cwh"
 
 ToolManager="*uid://dof4ns5y0p4w0"
 InventoryManager="*uid://ci8squ07mj3k6"
-WaterManager="*uid://b48sjrwefwxnt"
 GameManager="*uid://bp70y6cineqjl"
 SceneManager="*uid://glydwcgfw7ea"
 DayAndNightCycleManager="*uid://cyexhhua6ptnp"
