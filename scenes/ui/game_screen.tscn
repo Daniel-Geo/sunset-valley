@@ -22,6 +22,7 @@ theme = ExtResource("1_e2vrk")
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_constants/separation = 2
 
 [node name="EmotesPanel" parent="MarginContainer/VBoxContainer" unique_id=265173646 instance=ExtResource("2_ooiym")]
 layout_mode = 2
@@ -61,10 +62,7 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 
-[node name="CoinsPanel" parent="." unique_id=866749303 instance=ExtResource("7_ooiym")]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -24.0
-offset_right = 24.0
-grow_horizontal = 2
+[node name="CoinsPanel" parent="MarginContainer" unique_id=866749303 instance=ExtResource("7_ooiym")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0

@@ -80,3 +80,7 @@ shape = SubResource("RectangleShape2D_frdv1")
 debug_color = Color(1, 0.6, 0.69803923, 0.41960785)
 
 [node name="InteractableLabelComponent" parent="." unique_id=1177734875 instance=ExtResource("4_ul1bt")]
+offset_left = -23.0
+offset_top = -11.0
+offset_right = -5.0
+offset_bottom = 7.0

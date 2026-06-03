@@ -1,4 +1,5 @@
 ~ start
+do GameDialogueManager.change_emote_color.emit(Vector4(214.0/255.0, 79.0/255.0, 146.0/255.0, 1.0), Vector4(0.0, 188.0/255.0, 134.0/255.0, 1.0))
 Olivia: [[Hey|Hiya|Hey there]], I'm Olivia the one in charge of running this shop stall
 Olivia: Tell me what brings you to my humble shop?
 - I want to buy some stuff

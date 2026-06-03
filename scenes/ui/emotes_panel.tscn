@@ -4,6 +4,42 @@
 [ext_resource type="Script" uid="uid://dnn0gejh3j2jw" path="res://scripts/ui/emotes_panel.gd" id="2_gdn4g"]
 [ext_resource type="Texture2D" uid="uid://bo4l7c07i77pv" path="res://assets/ui/emotes.png" id="3_jyaba"]
 
+[sub_resource type="Shader" id="Shader_157xx"]
+code = "shader_type canvas_item;
+
+uniform vec4 original_0: source_color;
+uniform vec4 original_1: source_color;
+
+uniform vec4 replace_0: source_color;
+uniform vec4 replace_1: source_color;
+
+const float precision = 0.1;
+
+vec4 replace_color(vec4 color) {
+	vec4 original_colors[2] = vec4[2](original_0, original_1);
+	vec4 replace_colors[2] = vec4[2](replace_0, replace_1);
+	
+	for (int i = 0; i < 2; i++) {
+		if (distance(color, original_colors[i]) <= precision) {
+		color = replace_colors[i];
+		}
+	}
+	
+	return color;
+}
+void fragment() {
+	
+	COLOR = replace_color(texture(TEXTURE, UV));
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gdn4g"]
+shader = SubResource("Shader_157xx")
+shader_parameter/original_0 = Color(0.36078432, 0.30588236, 0.57254905, 1)
+shader_parameter/original_1 = Color(0.4627451, 0.42745098, 0.6666667, 1)
+shader_parameter/replace_0 = Color(0.36078432, 0.30588236, 0.57254905, 1)
+shader_parameter/replace_1 = Color(0.4627451, 0.42745098, 0.6666667, 1)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0v663"]
 atlas = ExtResource("3_jyaba")
 region = Rect2(0, 352, 32, 32)
@@ -76,7 +112,7 @@ region = Rect2(0, 192, 32, 32)
 atlas = ExtResource("3_jyaba")
 region = Rect2(32, 192, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_iqjry"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_jyaba"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -192,7 +228,8 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Emote" unique_id=386598350]
-sprite_frames = SubResource("SpriteFrames_iqjry")
+material = SubResource("ShaderMaterial_gdn4g")
+sprite_frames = SubResource("SpriteFrames_jyaba")
 animation = &"emote1_idle"
 autoplay = "emote1_idle"
 offset = Vector2(20, 22)

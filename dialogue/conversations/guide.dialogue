@@ -1,4 +1,5 @@
 ~ start
+do GameDialogueManager.change_emote_color.emit(Vector4(0.0, 0.0, 0.0, 1.0), Vector4(119.0/255.0, 119.0/255.0, 119.0/255.0, 1.0))
 if !met_Daniel
 	Daniel: [[Hi|Hello|Howdy]], I am Daniel, your helper guide.
 	Daniel: It is nice to meet you.

@@ -11,6 +11,14 @@ func _unhandled_input(event: InputEvent) -> void:
 func start_game() -> void:
 	SceneManager.load_main_scene_container()
 	SceneManager.load_preset("Preset1")
+	SaveGameManager.allow_save_game = true
+	WaterManager.timer.start()
+	WaterManager.water_value = 100
+	WaterManager.water_consumer_nums = 0
+
+func load_game() -> void:
+	SceneManager.load_main_scene_container()
+	SceneManager.load_preset("Preset1")
 	SaveGameManager.load_game()
 	SaveGameManager.allow_save_game = true
 	WaterManager.timer.start()
