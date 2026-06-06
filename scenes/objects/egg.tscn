@@ -9,9 +9,11 @@ radius = 7.0
 [node name="Egg" type="Sprite2D" unique_id=782838189]
 y_sort_enabled = true
 texture = ExtResource("1_h452w")
+offset = Vector2(0, -4)
 
 [node name="CollectableComponent" parent="." unique_id=1287066447 instance=ExtResource("2_twloa")]
 collectable_name = "egg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent" unique_id=1978740481]
+position = Vector2(0, -4)
 shape = SubResource("CircleShape2D_kxl7r")

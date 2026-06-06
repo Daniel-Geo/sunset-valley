@@ -3,6 +3,8 @@ extends Node
 
 @export var tilled_soil_tilemap_layer: TileMapLayer
 
+@onready var crop_fields: Node2D = %CropFields
+
 var player: Player
 
 var corn_plant_scene = preload("res://scenes/objects/plants/corn.tscn")
@@ -41,7 +43,7 @@ func add_crop() -> void:
 			if InventoryManager.inventory["corn seed"] > 0:
 				var corn_instance = corn_plant_scene.instantiate() as Node2D
 				corn_instance.global_position = local_cell_position
-				get_parent().find_child("CropFields").add_child(corn_instance)
+				crop_fields.add_child(corn_instance)
 				InventoryManager.remove_collectable("corn seed")
 		
 		elif ToolManager.selected_tool == DataTypes.Tools.PlantTomato and InventoryManager.inventory.has("tomato seed"):

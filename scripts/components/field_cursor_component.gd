@@ -6,6 +6,8 @@ extends Node
 @export var terrain_set: int = 0
 @export var terrain: int = 3
 
+@onready var game_tilemap: Node2D = $"../GameTilemap"
+
 var player: Player
 var mouse_position: Vector2
 var cell_position: Vector2i
@@ -35,7 +37,13 @@ func get_cell_under_mouse() -> void:
 	distance = player.global_position.distance_to(local_cell_position)
 
 func add_tilled_soil_cell() -> void:
-	if distance < 20.0 and cell_source_id != -1:
+	if distance < 20.0 and cell_source_id != -1 and cell_position:
+		for layer in game_tilemap.get_children():
+			if layer == grass_tilemap_layer or layer.name == "Water":
+				continue
+			if layer.get_cell_source_id(cell_position) != -1:
+				return
+		
 		tilled_soil_tilemap_layer.set_cells_terrain_connect([cell_position], terrain_set, terrain, true)
 
 func remove_tilled_soil_cell() -> void:

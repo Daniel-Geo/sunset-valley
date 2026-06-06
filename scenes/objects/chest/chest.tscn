@@ -132,9 +132,6 @@ offset_top = -26.0
 offset_right = -3.0
 offset_bottom = -8.0
 
-[node name="RewardMarker" type="Marker2D" parent="." unique_id=1675084918]
-position = Vector2(12, 15)
-
 [node name="FeedComponent" parent="." unique_id=1555493319 instance=ExtResource("5_osdbi")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FeedComponent" unique_id=1916933076]

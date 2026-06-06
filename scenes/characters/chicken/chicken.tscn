@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://di0g8grlv2ka"]
 
 [ext_resource type="Texture2D" uid="uid://bocvy34ex5wm" path="res://assets/game/characters/chicken_sprites.png" id="1_awcwn"]
-[ext_resource type="Script" uid="uid://b7rnrhurdrl1d" path="res://scripts/state_machine/npc/npc_walk_cycles.gd" id="1_r6a33"]
+[ext_resource type="Script" uid="uid://cxeiidg7fo2lk" path="res://scripts/non_playable_character.gd" id="1_hv82h"]
 [ext_resource type="Script" uid="uid://dxxauacri3vts" path="res://scripts/state_machine/node_state_machine.gd" id="2_31inw"]
 [ext_resource type="PackedScene" uid="uid://bsbjy4fd8m18f" path="res://audio/sfx/chicken_cluck_multiple_sfx.tscn" id="2_hv82h"]
+[ext_resource type="PackedScene" uid="uid://cal6io7ws1qa4" path="res://scenes/objects/egg.tscn" id="2_wh5lc"]
 [ext_resource type="Script" uid="uid://q3cspm725rkc" path="res://scripts/state_machine/npc/idle_state.gd" id="3_r6a33"]
 [ext_resource type="Script" uid="uid://d03opv8hd6uqt" path="res://scripts/state_machine/npc/walk_state.gd" id="4_31inw"]
 [ext_resource type="PackedScene" uid="uid://bh3qql5opojxl" path="res://scenes/components/audio_play_time_component.tscn" id="7_wh5lc"]
@@ -69,9 +70,8 @@ radius = 4.0
 [node name="Chicken" type="CharacterBody2D" unique_id=3803691]
 y_sort_enabled = true
 collision_layer = 64
-script = ExtResource("1_r6a33")
-min_walk_cycle = null
-max_walk_cycle = null
+script = ExtResource("1_hv82h")
+output_reward_scenes = Array[PackedScene]([ExtResource("2_wh5lc")])
 
 [node name="ChickenCluckMultipleSFX" parent="." unique_id=1311501570 instance=ExtResource("2_hv82h")]
 

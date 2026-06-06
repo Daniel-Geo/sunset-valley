@@ -7,17 +7,19 @@ var tomato_harvest_scene = preload("res://scenes/objects/plants/tomato_harvest.t
 
 @export var dialogue_start_command: String
 @export var food_drop_height: int = 40
-@export var reward_output_radius: int = 20
-@export var output_reward_scenes: Array[PackedScene] = []
+@export var days_until_produce: int
+@export var animal_group: Node2D
 
 @onready var auto_interactable_component: AutoInteractableComponent = $AutoInteractableComponent
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var feed_component: FeedComponent = $FeedComponent
-@onready var reward_marker: Marker2D = $RewardMarker
 @onready var interactable_label_component: Control = $InteractableLabelComponent
 
 var in_range: bool
 var is_chest_open: bool
+
+var starting_day: int = 0
+var food_storage: int = 0
 
 
 func _ready() -> void:
@@ -27,8 +29,8 @@ func _ready() -> void:
 	
 	GameDialogueManager.feed_the_animals.connect(on_feed_the_animals)
 	feed_component.food_received.connect(on_food_received)
-	
-	
+	DayAndNightCycleManager.time_tick_day.connect(on_time_tick_day)
+
 func on_interactable_activated() -> void:
 	interactable_label_component.show()
 	in_range = true
@@ -80,19 +82,19 @@ func trigger_feed_harvest(inventory_item: String, scene: Resource) -> void:
 		
 		InventoryManager.remove_collectable(inventory_item)
 
-func on_food_received(area: Area2D) -> void:
-	call_deferred("add_reward_scene")
+func on_food_received() -> void:
+	food_storage += 1
 
-func add_reward_scene() -> void:
-	for scene in output_reward_scenes:
-		var reward_scene: Node2D = scene.instantiate()
-		var reward_position: Vector2 = get_random_position_in_circle(reward_marker.global_position, reward_output_radius)
-		reward_scene.global_position = reward_position
-		get_tree().root.add_child(reward_scene)
-
-func get_random_position_in_circle(center: Vector2, radius: int) -> Vector2i:
-	var angle = randf() * TAU
-	var distance_from_center = sqrt(randf()) * radius
-	var x: int = center.x + distance_from_center * cos(angle)
-	var y: int = center.y + distance_from_center * cos(angle)
-	return Vector2i(x, y)
+func on_time_tick_day(day: int) -> void:
+	if starting_day == 0:
+		starting_day = day
+	
+	var days_passed = day - starting_day
+	if days_passed == days_until_produce:
+		for animal_index in animal_group.get_child_count():
+			if food_storage > 0 and animal_index < animal_group.get_child_count() - 1:
+				animal_group.get_child(animal_index).add_reward()
+				food_storage -= 1
+		
+		if food_storage > 0:
+			starting_day = day

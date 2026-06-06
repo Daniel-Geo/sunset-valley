@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bn7hcktmbdhek"]
 
+[ext_resource type="Script" uid="uid://cxeiidg7fo2lk" path="res://scripts/non_playable_character.gd" id="1_cgos1"]
 [ext_resource type="Texture2D" uid="uid://8i2wnq8ync03" path="res://assets/game/characters/cow_sprites.png" id="1_ilrem"]
-[ext_resource type="Script" uid="uid://b7rnrhurdrl1d" path="res://scripts/state_machine/npc/npc_walk_cycles.gd" id="1_j7g5r"]
 [ext_resource type="PackedScene" uid="uid://uyc7luwc8fxk" path="res://audio/sfx/cow_moo_sfx.tscn" id="2_cgos1"]
+[ext_resource type="PackedScene" uid="uid://bm3q0ikl84rv" path="res://scenes/objects/milk.tscn" id="2_gsrfl"]
 [ext_resource type="Script" uid="uid://dxxauacri3vts" path="res://scripts/state_machine/node_state_machine.gd" id="2_j7g5r"]
 [ext_resource type="Script" uid="uid://q3cspm725rkc" path="res://scripts/state_machine/npc/idle_state.gd" id="3_4jynl"]
 [ext_resource type="Script" uid="uid://d03opv8hd6uqt" path="res://scripts/state_machine/npc/walk_state.gd" id="4_cgos1"]
@@ -62,7 +63,8 @@ radius = 7.071068
 [node name="Cow" type="CharacterBody2D" unique_id=839064705]
 y_sort_enabled = true
 collision_layer = 64
-script = ExtResource("1_j7g5r")
+script = ExtResource("1_cgos1")
+output_reward_scenes = Array[PackedScene]([ExtResource("2_gsrfl")])
 
 [node name="CowMooSFX" parent="." unique_id=858571109 instance=ExtResource("2_cgos1")]
 

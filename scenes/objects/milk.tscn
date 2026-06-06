@@ -10,6 +10,7 @@ height = 14.0
 [node name="Milk" type="Sprite2D" unique_id=1031065859]
 y_sort_enabled = true
 texture = ExtResource("1_h1788")
+offset = Vector2(0, -5)
 hframes = 4
 frame = 2
 
@@ -17,4 +18,5 @@ frame = 2
 collectable_name = "milk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent" unique_id=1174706258]
+position = Vector2(0, -5)
 shape = SubResource("CapsuleShape2D_o2iuq")

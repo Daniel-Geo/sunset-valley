@@ -52,27 +52,33 @@ y_sort_enabled = true
 
 [node name="Chicken" parent="Chickens" unique_id=3803691 instance=ExtResource("4_3acs3")]
 position = Vector2(429, 33)
+script = null
 
 [node name="Chicken2" parent="Chickens" unique_id=1326493626 instance=ExtResource("4_3acs3")]
 position = Vector2(442, 70)
+script = null
 
 [node name="AnimatedSprite2D" parent="Chickens/Chicken2" index="1" unique_id=1925269984]
 flip_h = true
 
 [node name="Chicken3" parent="Chickens" unique_id=378328537 instance=ExtResource("4_3acs3")]
 position = Vector2(486, 55)
+script = null
 
 [node name="AnimatedSprite2D" parent="Chickens/Chicken3" index="1" unique_id=1925269984]
 flip_h = true
 
 [node name="Chicken4" parent="Chickens" unique_id=824911003 instance=ExtResource("4_3acs3")]
 position = Vector2(505, 37)
+script = null
 
 [node name="Chicken5" parent="Chickens" unique_id=161646165 instance=ExtResource("4_3acs3")]
 position = Vector2(479, 93)
+script = null
 
 [node name="Chicken6" parent="Chickens" unique_id=597342855 instance=ExtResource("4_3acs3")]
 position = Vector2(428, 62)
+script = null
 
 [node name="AnimatedSprite2D" parent="Chickens/Chicken6" index="1" unique_id=1925269984]
 flip_h = true

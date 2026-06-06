@@ -12,20 +12,18 @@
 [ext_resource type="Script" uid="uid://dfw22x01vetku" path="res://scripts/components/crops_cursor_component.gd" id="5_mv77o"]
 [ext_resource type="PackedScene" uid="uid://bn7hcktmbdhek" path="res://scenes/characters/cow/cow.tscn" id="6_6wi7b"]
 [ext_resource type="PackedScene" uid="uid://dk61ru5dw5sjx" path="res://scenes/objects/chest/chest.tscn" id="8_xwbr2"]
-[ext_resource type="PackedScene" uid="uid://cal6io7ws1qa4" path="res://scenes/objects/egg.tscn" id="9_mv77o"]
-[ext_resource type="PackedScene" uid="uid://bm3q0ikl84rv" path="res://scenes/objects/milk.tscn" id="10_4ek8o"]
 [ext_resource type="PackedScene" uid="uid://e5o0soygsbwg" path="res://scenes/components/save_preset_data_component.tscn" id="10_6wi7b"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p57ef"]
-vertices = PackedVector2Array(425.8828, 30.703125, 504.64063, 26.5625, 502.29688, 95.89844, 448.0625, 101.25, 440.2422, 76.796875, 421, 38.960938, 421, 58, 386.4297, 78.25, 395, 58, 382.3203, 49.570313, 395, 51.382813, 384.9922, 110.10156, 386.4922, 133.49219, 384.64063, 134)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 0, 4, 6), PackedInt32Array(6, 4, 7, 8), PackedInt32Array(9, 10, 8, 7), PackedInt32Array(11, 12, 13), PackedInt32Array(11, 13, 9), PackedInt32Array(9, 7, 11)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(372, 38, 375, 147, 397, 141, 395, 110, 396, 88, 433, 87, 441, 112, 512, 105, 515, 16, 420, 21, 407, 43)])
+vertices = PackedVector2Array(427, 103, 427, 106.921875, 387, 104.328125, 395, 58, 421, 58, 387, 119.67969, 341.21875, 118.296875, 342.77344, 49.15625, 395, 50, 502, 26, 507, 26, 507, 102, 502, 102, 426, 26, 502, 103, 421, 26, 426, 22, 502, 22)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(2, 5, 6, 7), PackedInt32Array(2, 7, 8, 3), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(13, 12, 14, 0, 4, 15), PackedInt32Array(13, 16, 17, 9), PackedInt32Array(13, 9, 12)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(333, 39, 331, 128, 397, 130, 397, 115, 443, 118, 521, 118, 522, 7, 409, 8, 395, 40)])
 source_geometry_mode = 2
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4ek8o"]
-vertices = PackedVector2Array(305, 118, 310, 118, 310, 178, 305, 178, 305, 179, 229, 179, 229, 178, 229, 118, 224, 178, 224, 118, 305, 114, 229, 114)
+vertices = PackedVector2Array(582, 250, 587, 250, 587, 310, 582, 310, 582, 311, 506, 311, 506, 310, 506, 250, 501, 310, 501, 250, 582, 246, 506, 246)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(0, 3, 6, 7), PackedInt32Array(6, 8, 9, 7), PackedInt32Array(10, 0, 7, 11)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(211, 99, 323, 102, 323, 197, 211, 197)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(488, 231, 599, 231, 602, 329, 488, 330)])
 source_geometry_mode = 2
 
 [node name="Preset1" type="Node2D" unique_id=378852687]
@@ -66,6 +64,11 @@ tile_map_data = PackedByteArray("AAAPAAIABAAAAAAAAQA=")
 tile_set = ExtResource("1_lnu2h")
 
 [node name="CropFields" type="Node2D" parent="." unique_id=1439979903]
+unique_name_in_owner = true
+
+[node name="Rewards" type="Node2D" parent="." unique_id=1239668784]
+unique_name_in_owner = true
+y_sort_enabled = true
 
 [node name="Chickens" type="Node2D" parent="." unique_id=709090166]
 y_sort_enabled = true
@@ -93,13 +96,12 @@ navigation_polygon = SubResource("NavigationPolygon_p57ef")
 
 [node name="Cows" type="Node2D" parent="." unique_id=1403808176]
 y_sort_enabled = true
-position = Vector2(277, 132)
 
 [node name="Cow" parent="Cows" unique_id=839064705 instance=ExtResource("6_6wi7b")]
-position = Vector2(240, 128)
+position = Vector2(517, 260)
 
 [node name="Cow2" parent="Cows" unique_id=2032190621 instance=ExtResource("6_6wi7b")]
-position = Vector2(289, 160)
+position = Vector2(566, 292)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Cows" unique_id=1659992428]
 navigation_polygon = SubResource("NavigationPolygon_4ek8o")
@@ -108,15 +110,17 @@ navigation_layers = 2
 [node name="Guide" parent="." unique_id=1070874471 instance=ExtResource("5_bhkia")]
 position = Vector2(320, 160)
 
-[node name="ChickenPastureBox" parent="." unique_id=1979468901 instance=ExtResource("8_xwbr2")]
+[node name="ChickenPastureBox" parent="." unique_id=1979468901 node_paths=PackedStringArray("animal_group") instance=ExtResource("8_xwbr2")]
 position = Vector2(456, 128)
 dialogue_start_command = "start_cicken_pasture_box"
-output_reward_scenes = Array[PackedScene]([ExtResource("9_mv77o")])
+days_until_produce = 1
+animal_group = NodePath("../Chickens")
 
-[node name="CowPastureBox" parent="." unique_id=259336044 instance=ExtResource("8_xwbr2")]
+[node name="CowPastureBox" parent="." unique_id=259336044 node_paths=PackedStringArray("animal_group") instance=ExtResource("8_xwbr2")]
 position = Vector2(464, 256)
 dialogue_start_command = "start_cow_pasture_box"
-output_reward_scenes = Array[PackedScene]([ExtResource("10_4ek8o")])
+days_until_produce = 2
+animal_group = NodePath("../Cows")
 
 [node name="SavePresetDataComponent" parent="." unique_id=357140339 instance=ExtResource("10_6wi7b")]
 
