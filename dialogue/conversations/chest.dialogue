@@ -3,8 +3,13 @@ do change_emote_visibility.emit(false)
 Pasture box: The animals are hungry.
 Pasture box: Do you want to feed your cows?
 - Yes, feed them
-	do GameDialogueManager.feed_the_animals.emit()
+	if food_storage > 0:
+		do GameDialogueManager.feed_the_animals.emit()
+	else:
+		Pasture box: You don't have enough food
 - No, they seem will fed
+do animated_sprite.play("chest_close")
+do interactable_label_component.show()
 => END
 
 
@@ -13,6 +18,11 @@ do change_emote_visibility.emit(false)
 Pasture box: The animals are hungry.
 Pasture box: Do you want to feed your chickens?
 - Yes, feed them
-	do GameDialogueManager.feed_the_animals.emit()
+	if food_storage > 0:
+		do GameDialogueManager.feed_the_animals.emit()
+	else:
+		Pasture box: You don't have enough food
 - No, they seem will fed
+do animated_sprite.play("chest_close")
+do interactable_label_component.show()
 => END

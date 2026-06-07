@@ -35,9 +35,9 @@ func set_initial_time() -> void:
 
 func recalculate_time() -> void:
 	var total_minutes: int = int(time / GAME_MINUTES_DURATION)
-	var day: int = int(total_minutes / MINUTES_PER_DAY)
+	var day: int = total_minutes / MINUTES_PER_DAY
 	var current_day_minutes:  int = total_minutes % MINUTES_PER_DAY
-	var hour: int = int(current_day_minutes / MINUTES_PER_HOUR)
+	var hour: int = current_day_minutes / MINUTES_PER_HOUR
 	var minute: int = current_day_minutes % MINUTES_PER_HOUR
 	
 	if current_minute != minute:

@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://bofbqe6ircr4h"]
 
 [ext_resource type="TileSet" uid="uid://bbwqf10w2yb7g" path="res://tilesets/game_tile_set.tres" id="1_o2w7t"]
-[ext_resource type="PackedScene" uid="uid://dyt4tw8garygn" path="res://scenes/characters/player/player.tscn" id="2_bjwqa"]
-[ext_resource type="PackedScene" uid="uid://bn7hcktmbdhek" path="res://scenes/characters/cow/cow.tscn" id="3_o2w7t"]
+[ext_resource type="PackedScene" uid="uid://dyt4tw8garygn" path="res://scenes/characters/player.tscn" id="2_bjwqa"]
+[ext_resource type="PackedScene" uid="uid://bn7hcktmbdhek" path="res://scenes/characters/cow.tscn" id="3_o2w7t"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_743br"]
 vertices = PackedVector2Array(358, 221, 169.40625, 221, 175.60156, 69, 358, 69)

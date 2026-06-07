@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://tvhppldy6tov" path="res://scenes/components/test_scene_save_data_manager_component.tscn" id="1_w2jyg"]
 [ext_resource type="TileSet" uid="uid://bbwqf10w2yb7g" path="res://tilesets/game_tile_set.tres" id="2_ff0kp"]
 [ext_resource type="PackedScene" uid="uid://e5o0soygsbwg" path="res://scenes/components/save_preset_data_component.tscn" id="2_nk4dp"]
-[ext_resource type="PackedScene" uid="uid://dyt4tw8garygn" path="res://scenes/characters/player/player.tscn" id="3_aolun"]
+[ext_resource type="PackedScene" uid="uid://dyt4tw8garygn" path="res://scenes/characters/player.tscn" id="3_aolun"]
 [ext_resource type="PackedScene" uid="uid://nvmhg0a413sk" path="res://scenes/components/test_scene_enable_tool_buttons_component.tscn" id="3_dxoer"]
 [ext_resource type="PackedScene" uid="uid://twr1jnb00dji" path="res://scenes/components/field_cursor_component.tscn" id="3_mapoa"]
 [ext_resource type="PackedScene" uid="uid://c2nx8e8r5utbd" path="res://scenes/ui/game_screen.tscn" id="4_bb1mf"]

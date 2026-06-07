@@ -1,0 +1,13 @@
+~ start
+do wait(1)
+do GameDialogueManager.change_emote_color.emit(Vector4(0.0, 136/255.0, 0.0, 1.0), Vector4(119.0/255, 187.0/255.0, 119.0/255.0, 1.0))
+do GameDialogueManager.change_emote_visibility.emit(true)
+Grandpa: [[Hi|Hello|Howdy]], my dear grandson.
+Grandpa: I want you to take care of my farm.
+- As you wish
+	Grandpa: You are a good grandson.
+- No, I am not ready
+	Grandpa: No, you are more than ready.
+Grandpa: Take care of yourself and my humble farm.
+do GameManager.dialogue_finished.emit()
+=> END

@@ -8,6 +8,16 @@ var preset_scenes: Dictionary = {
 	"Preset1": "res://scenes/presets/preset_1.tscn"
 }
 
+signal cutscenes_finished
+
+func load_cutscenes() -> void:
+	get_tree().change_scene_to_file("res://scenes/cutscenes/grandpa_house.tscn")
+	await GameManager.dialogue_finished
+	TransitionScreen.transition()
+	await TransitionScreen.transition_finished
+	get_parent().get_child(10).queue_free()
+	cutscenes_finished.emit()
+
 func load_main_scene_container() -> void:
 	if get_tree().root.has_node(main_scene_root_path):
 		return
@@ -18,9 +28,6 @@ func load_main_scene_container() -> void:
 	
 func load_preset(preset: String) -> void:
 	var scene_path: String = preset_scenes.get(preset)
-	if scene_path == null:
-		return
-	
 	var preset_scene: Node = load(scene_path).instantiate()
 	var preset_root: Node = get_node(main_scene_preset_root_path)
 	if preset_root != null:

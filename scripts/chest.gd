@@ -2,8 +2,8 @@ extends Node2D
 
 var balloon_scene = preload("res://dialogue/game_dialogue_balloon.tscn")
 
-var corn_harvest_scene = preload("res://scenes/objects/plants/corn_harvest.tscn")
-var tomato_harvest_scene = preload("res://scenes/objects/plants/tomato_harvest.tscn")
+var corn_harvest_scene = preload("res://scenes/objects/plants/corn/corn_harvest.tscn")
+var tomato_harvest_scene = preload("res://scenes/objects/plants/tomato/tomato_harvest.tscn")
 
 @export var dialogue_start_command: String
 @export var food_drop_height: int = 40
@@ -21,8 +21,16 @@ var is_chest_open: bool
 var starting_day: int = 0
 var food_storage: int = 0
 
+class ChestState:
+	var food_storage: int
+	var animated_sprite: AnimatedSprite2D
+	var interactable_label_component: Control
+
+var dialogue_variables = ChestState.new()
 
 func _ready() -> void:
+	dialogue_variables.animated_sprite = animated_sprite_2d
+	dialogue_variables.interactable_label_component = interactable_label_component
 	auto_interactable_component.interactable_activated.connect(on_interactable_activated)
 	auto_interactable_component.interactable_deactivated.connect(on_interactable_deactivated)
 	interactable_label_component.hide()
@@ -36,7 +44,7 @@ func on_interactable_activated() -> void:
 	in_range = true
 
 func on_interactable_deactivated() -> void:
-	if is_chest_open:
+	if is_chest_open and animated_sprite_2d.animation == "chest_open":
 		animated_sprite_2d.play("chest_close")
 		is_chest_open = false
 	interactable_label_component.hide()
@@ -49,9 +57,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			animated_sprite_2d.play("chest_open")
 			is_chest_open = true
 			
+			dialogue_variables.food_storage = food_storage
 			var balloon: BaseGameDialogueBalloon = balloon_scene.instantiate()
 			get_tree().root.add_child(balloon)
-			balloon.start(load("res://dialogue/conversations/chest.dialogue"), dialogue_start_command)
+			balloon.start(load("res://dialogue/conversations/chest.dialogue"), dialogue_start_command, [dialogue_variables])
 
 func on_feed_the_animals() -> void:
 	if in_range:

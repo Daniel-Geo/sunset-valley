@@ -3,11 +3,18 @@ extends Node
 var game_menu_screen = preload("res://scenes/ui/game_menu_screen.tscn")
 var game_over_screen = preload("res://scenes/ui/game_over_screen.tscn")
 
+signal dialogue_finished
+
+func _ready() -> void:
+	dialogue_finished.connect(on_dialogue_finished)
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("game_menu"):
 		show_game_menu_screen()
 
 func start_game() -> void:
+	SceneManager.load_cutscenes()
+	await SceneManager.cutscenes_finished
 	SceneManager.load_main_scene_container()
 	SceneManager.load_preset("Preset1")
 	SaveGameManager.allow_save_game = true
@@ -29,3 +36,6 @@ func show_game_menu_screen() -> void:
 func show_game_over_screen() -> void:
 	var game_over_screen_instance = game_over_screen.instantiate()
 	get_tree().root.add_child(game_over_screen_instance)
+
+func on_dialogue_finished() -> void:
+	TransitionScreen.transition()

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b7kl173vdd25w"]
+
+[ext_resource type="Script" uid="uid://cmf2u3f1srr58" path="res://scripts/characters/grandpa.gd" id="1_ny3mj"]
+[ext_resource type="Shader" uid="uid://dw132o0kfkl3d" path="res://shaders/replace_color.gdshader" id="2_j3uxk"]
+[ext_resource type="Texture2D" uid="uid://jvvvw2dr61vo" path="res://assets/game/characters/character_spritesheet.png" id="3_cn057"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tm4fw"]
+shader = ExtResource("2_j3uxk")
+shader_parameter/original_0 = Color(0.36078432, 0.30588236, 0.57254905, 1)
+shader_parameter/original_1 = Color(0.4627451, 0.42745098, 0.6666667, 1)
+shader_parameter/replace_0 = Color(0, 0.53333336, 0, 1)
+shader_parameter/replace_1 = Color(0.46666667, 0.73333335, 0.46666667, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq85q"]
+atlas = ExtResource("3_cn057")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3cl1"]
+atlas = ExtResource("3_cn057")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uphd3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq85q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3cl1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[node name="Grandpa" type="Node2D" unique_id=1320159540]
+script = ExtResource("1_ny3mj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1359933938]
+material = SubResource("ShaderMaterial_tm4fw")
+sprite_frames = SubResource("SpriteFrames_uphd3")
+animation = &"idle"
+autoplay = "idle"
+offset = Vector2(0, -5)

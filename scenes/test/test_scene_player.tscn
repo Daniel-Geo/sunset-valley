@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cw451wjwyjyqd"]
 
 [ext_resource type="TileSet" uid="uid://bbwqf10w2yb7g" path="res://tilesets/game_tile_set.tres" id="1_mhild"]
-[ext_resource type="PackedScene" uid="uid://dyt4tw8garygn" path="res://scenes/characters/player/player.tscn" id="2_q17pk"]
+[ext_resource type="PackedScene" uid="uid://dyt4tw8garygn" path="res://scenes/characters/player.tscn" id="2_q17pk"]
 
 [node name="TestSceneSink" type="Node2D" unique_id=13460925]
 

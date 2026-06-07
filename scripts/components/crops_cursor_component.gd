@@ -7,8 +7,8 @@ extends Node
 
 var player: Player
 
-var corn_plant_scene = preload("res://scenes/objects/plants/corn.tscn")
-var tomato_plant_scene = preload("res://scenes/objects/plants/tomato.tscn")
+var corn_plant_scene = preload("res://scenes/objects/plants/corn/corn.tscn")
+var tomato_plant_scene = preload("res://scenes/objects/plants/tomato/tomato.tscn")
 
 var mouse_position: Vector2
 var cell_position: Vector2i

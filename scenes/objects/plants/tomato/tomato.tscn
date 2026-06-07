@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://lvvxlvt6aud8"]
 
 [ext_resource type="Script" uid="uid://cdft3asn18mb3" path="res://scripts/plant.gd" id="1_i4hd5"]
-[ext_resource type="PackedScene" uid="uid://c6p11xpffe5yw" path="res://scenes/objects/plants/tomato_harvest.tscn" id="2_83wcf"]
+[ext_resource type="PackedScene" uid="uid://c6p11xpffe5yw" path="res://scenes/objects/plants/tomato/tomato_harvest.tscn" id="2_83wcf"]
 [ext_resource type="Texture2D" uid="uid://bhsinav664dw4" path="res://assets/game/objects/basic_plants.png" id="2_huvgt"]
 [ext_resource type="PackedScene" uid="uid://b2rfmw17s2uwb" path="res://scenes/objects/plants/particles/watering_particles.tscn" id="3_83wcf"]
 [ext_resource type="PackedScene" uid="uid://bv52ru4p8nxya" path="res://scenes/objects/plants/particles/flowering_particles.tscn" id="4_wpajg"]

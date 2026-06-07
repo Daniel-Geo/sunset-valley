@@ -30,6 +30,7 @@ SaveGameManager="*uid://c2fhlxj00u4r5"
 DialogueManager="*uid://c3rodes2l3gxb"
 GameDialogueManager="*uid://c1civ8bs608ob"
 CoinsManager="*uid://67qj18ygipf8"
+TransitionScreen="*uid://b8mvm561lha1p"
 
 [dialogue_manager]
 
@@ -126,7 +127,7 @@ save_game={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/conversations/guide.dialogue", "res://dialogue/conversations/chest.dialogue", "res://dialogue/conversations/shop.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/conversations/guide.dialogue", "res://dialogue/conversations/chest.dialogue", "res://dialogue/conversations/shop.dialogue", "res://dialogue/conversations/grandpa.dialogue")
 
 [layer_names]
 
