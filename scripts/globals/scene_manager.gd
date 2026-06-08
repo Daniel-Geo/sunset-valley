@@ -15,7 +15,7 @@ func load_cutscenes() -> void:
 	await GameManager.dialogue_finished
 	TransitionScreen.transition()
 	await TransitionScreen.transition_finished
-	get_parent().get_child(10).queue_free()
+	get_parent().get_child(11).queue_free()
 	cutscenes_finished.emit()
 
 func load_main_scene_container() -> void:

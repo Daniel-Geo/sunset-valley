@@ -1,38 +1,23 @@
 extends StaticBody2D
 
-@onready var manual_interactable_component: ManualInteractableComponent = $ManualInteractableComponent
-@onready var label: Label = $Label
+@onready var auto_interactable_component: AutoInteractableComponent = $AutoInteractableComponent
+@onready var interactable_label_component: Control = $InteractableLabelComponent
 
-var need_repair: bool = false
+var in_range: bool = false
 
 func _ready() -> void:
-	manual_interactable_component.interactable_activated.connect(on_interactable_activated)
-	manual_interactable_component.interactable_deactivated.connect(on_interactable_deactivated)
-	label.visible = false
-	var timer := Timer.new()
-	add_child(timer)
-	
-	timer.wait_time = randi_range(10, 50)
-	timer.timeout.connect(on_timer_timeout)
-	timer.start()
+	interactable_label_component.hide()
+	auto_interactable_component.interactable_activated.connect(on_interactable_activated)
+	auto_interactable_component.interactable_deactivated.connect(on_interactable_deactivated)
 
 func on_interactable_activated() -> void:
-	print("sink_activated")
+	interactable_label_component.show()
+	in_range = true
 
 func on_interactable_deactivated() -> void:
-	print("sink_deactivated")
+	interactable_label_component.hide()
+	in_range = false
 
-func on_timer_timeout() -> void:
-	need_repair = true
-	label.visible = true
-	print("need repairs")
-
-func _unhandled_input(event: InputEvent) -> void:
-	if manual_interactable_component.is_player_nearby and Input.is_action_just_pressed("repair") and need_repair:
-		if InventoryManager.inventory.get("log", 0) >= 2 and InventoryManager.inventory.get("stone", 0) >= 1:
-			need_repair = false
-			label.visible = false
-			InventoryManager.inventory["log"] -= 2
-			InventoryManager.inventory["stone"] -= 1
-			InventoryManager.inventory_changed.emit()
-			print("repaired")
+func _unhandled_input(_event: InputEvent) -> void:
+	if in_range and Input.is_action_just_pressed("interact"):
+		WaterManager.refill_water()

@@ -29,7 +29,7 @@ func _on_next_transition() -> void:
 		transition.emit("Chopping")
 	elif player.current_tool == DataTypes.Tools.TillGround && GameInputEvents.use_tool():
 		transition.emit("Tilling")
-	elif player.current_tool == DataTypes.Tools.WaterCrops && GameInputEvents.use_tool():
+	elif player.current_tool == DataTypes.Tools.WaterCrops && GameInputEvents.use_tool() && WaterManager.water_value > 0:
 		transition.emit("Watering")
 
 func _on_enter() -> void:

@@ -34,6 +34,8 @@ func _on_enter() -> void:
 	else:
 		animated_sprite.play("watering_front")
 	
+	WaterManager.remove_water(1)
+	
 	hit_component_collision_shape.disabled = false
 func _on_exit() -> void:
 	animated_sprite.stop()

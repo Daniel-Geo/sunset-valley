@@ -16,10 +16,10 @@ func on_tool_selected(tool: DataTypes.Tools) -> void:
 	current_tool = tool
 	hit_component.current_tool = tool
 
-func on_dialogue_started(resource: DialogueResource) -> void:
+func on_dialogue_started(_resource: DialogueResource) -> void:
 	print("started")
 	find_child("StateMachine").process_mode = Node.PROCESS_MODE_DISABLED
 
-func on_dialogue_ended(resource: DialogueResource) -> void:
+func on_dialogue_ended(_resource: DialogueResource) -> void:
 	print("ended")
 	find_child("StateMachine").process_mode = Node.PROCESS_MODE_INHERIT

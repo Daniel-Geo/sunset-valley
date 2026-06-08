@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dircw42v5wtuj" path="res://scripts/sink.gd" id="1_ehist"]
 [ext_resource type="Texture2D" uid="uid://5q2v67miln7l" path="res://assets/game/objects/sink.png" id="2_80yrh"]
-[ext_resource type="PackedScene" uid="uid://d35l3nsembuxm" path="res://scenes/components/manual_interactable_component.tscn" id="3_l1ihp"]
-[ext_resource type="FontVariation" uid="uid://80rl31go6gkm" path="res://assets/ui/fonts/zx_palm_variation.tres" id="4_w5o82"]
+[ext_resource type="PackedScene" uid="uid://b5i36hs0mw6nj" path="res://scenes/components/auto_interactable_component.tscn" id="3_pxus0"]
+[ext_resource type="PackedScene" uid="uid://dv8ayl7gwr3tu" path="res://scenes/components/interactable_label_component.tscn" id="4_ehist"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sqh8b"]
 size = Vector2(16, 16)
@@ -21,23 +21,15 @@ texture = ExtResource("2_80yrh")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=638817909]
 shape = SubResource("RectangleShape2D_sqh8b")
 
-[node name="ManualInteractableComponent" parent="." unique_id=685583961 instance=ExtResource("3_l1ihp")]
+[node name="AutoInteractableComponent" parent="." unique_id=1201297642 instance=ExtResource("3_pxus0")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ManualInteractableComponent" unique_id=1869141313]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoInteractableComponent" unique_id=1869141313]
 position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_slcjk")
 debug_color = Color(1, 0.6, 0.69803923, 0.41960785)
 
-[node name="Label" type="Label" parent="." unique_id=1170535080]
-visible = false
-z_index = 1
-offset_left = -54.0
-offset_top = -35.0
-offset_right = 54.0
-offset_bottom = -12.0
-theme_override_fonts/font = ExtResource("4_w5o82")
-theme_override_font_sizes/font_size = 8
-text = "Repair the sink using
-2 logs and 1 stone"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="InteractableLabelComponent" parent="." unique_id=1177734875 instance=ExtResource("4_ehist")]
+offset_left = -21.0
+offset_top = -22.0
+offset_right = -3.0
+offset_bottom = -4.0

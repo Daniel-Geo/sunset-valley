@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://dhkfqgd3ycagq" path="res://scripts/ui/tools_panel.gd" id="2_0jxvs"]
 [ext_resource type="Texture2D" uid="uid://dyngyvvra682p" path="res://assets/game/objects/basic_tools_and_meterials.png" id="2_a7ivs"]
 [ext_resource type="Texture2D" uid="uid://bhsinav664dw4" path="res://assets/game/objects/basic_plants.png" id="3_0jxvs"]
+[ext_resource type="Texture2D" uid="uid://876gigjbqqv0" path="res://assets/ui/bar_shadow_round_large.png" id="4_a6726"]
+[ext_resource type="Texture2D" uid="uid://c77nud8ltlxk5" path="res://assets/ui/bar_round_gloss_large.png" id="5_3neg6"]
+[ext_resource type="Script" uid="uid://b6mxhdp0mdsw5" path="res://scripts/ui/water_bar.gd" id="6_3neg6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbtgy"]
 atlas = ExtResource("2_a7ivs")
@@ -72,6 +75,24 @@ theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_bdu3n")
 icon_alignment = 1
 
+[node name="WaterBar" type="TextureProgressBar" parent="MarginContainer/HBoxContainer/ToolWatering" unique_id=1556698847]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -8.0
+offset_right = 100.0
+offset_bottom = 16.0
+grow_vertical = 0
+scale = Vector2(0.19, 0.1)
+tooltip_text = "Water remaining"
+max_value = 10.0
+value = 3.0
+texture_under = ExtResource("4_a6726")
+texture_progress = ExtResource("5_3neg6")
+script = ExtResource("6_3neg6")
+
 [node name="ToolCorn" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1898142684]
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
@@ -85,6 +106,9 @@ layout_mode = 2
 theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_n1kta")
 icon_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1612072974]
+layout_mode = 2
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]
