@@ -112,15 +112,16 @@ position = Vector2(320, 160)
 
 [node name="ChickenPastureBox" parent="." unique_id=1979468901 node_paths=PackedStringArray("animal_group") instance=ExtResource("8_xwbr2")]
 position = Vector2(456, 128)
-dialogue_start_command = "start_cicken_pasture_box"
-days_until_produce = 1
+animal_type = "chicken"
 animal_group = NodePath("../Chickens")
+animal_food = "corn"
 
 [node name="CowPastureBox" parent="." unique_id=259336044 node_paths=PackedStringArray("animal_group") instance=ExtResource("8_xwbr2")]
 position = Vector2(464, 256)
-dialogue_start_command = "start_cow_pasture_box"
+animal_type = "cow"
 days_until_produce = 2
 animal_group = NodePath("../Cows")
+animal_food = "tomato"
 
 [node name="SavePresetDataComponent" parent="." unique_id=357140339 instance=ExtResource("10_6wi7b")]
 

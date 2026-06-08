@@ -16,4 +16,5 @@ if !took_seeds
 	- No, I don't want them
 		Daniel: As you wish, return to me when you're ready.
 set met_Daniel = true
+do interactable_label_component.show()
 => END

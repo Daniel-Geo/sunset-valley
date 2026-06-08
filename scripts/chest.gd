@@ -5,10 +5,11 @@ var balloon_scene = preload("res://dialogue/game_dialogue_balloon.tscn")
 var corn_harvest_scene = preload("res://scenes/objects/plants/corn/corn_harvest.tscn")
 var tomato_harvest_scene = preload("res://scenes/objects/plants/tomato/tomato_harvest.tscn")
 
-@export var dialogue_start_command: String
+@export var animal_type: String
 @export var food_drop_height: int = 40
-@export var days_until_produce: int
+@export var days_until_produce: int = 1
 @export var animal_group: Node2D
+@export var animal_food: String
 
 @onready var auto_interactable_component: AutoInteractableComponent = $AutoInteractableComponent
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -17,18 +18,23 @@ var tomato_harvest_scene = preload("res://scenes/objects/plants/tomato/tomato_ha
 
 var in_range: bool
 var is_chest_open: bool
+var is_feeding: bool = false
 
 var starting_day: int = 0
 var food_storage: int = 0
 
 class ChestState:
 	var food_storage: int
+	var animal_type: String
+	var animal_food: String
 	var animated_sprite: AnimatedSprite2D
 	var interactable_label_component: Control
 
 var dialogue_variables = ChestState.new()
 
 func _ready() -> void:
+	dialogue_variables.animal_food = animal_food
+	dialogue_variables.animal_type = animal_type
 	dialogue_variables.animated_sprite = animated_sprite_2d
 	dialogue_variables.interactable_label_component = interactable_label_component
 	auto_interactable_component.interactable_activated.connect(on_interactable_activated)
@@ -40,56 +46,65 @@ func _ready() -> void:
 	DayAndNightCycleManager.time_tick_day.connect(on_time_tick_day)
 
 func on_interactable_activated() -> void:
-	interactable_label_component.show()
+	if !is_feeding:
+		interactable_label_component.show()
 	in_range = true
 
 func on_interactable_deactivated() -> void:
-	if is_chest_open and animated_sprite_2d.animation == "chest_open":
+	if is_chest_open and animated_sprite_2d.animation == "chest_open" and !is_feeding:
 		animated_sprite_2d.play("chest_close")
 		is_chest_open = false
 	interactable_label_component.hide()
 	in_range = false
 
 func _unhandled_input(event: InputEvent) -> void:
-	if in_range:
+	if in_range and !is_feeding:
 		if event.is_action_pressed("interact"):
 			interactable_label_component.hide()
 			animated_sprite_2d.play("chest_open")
 			is_chest_open = true
 			
 			dialogue_variables.food_storage = food_storage
-			var balloon: BaseGameDialogueBalloon = balloon_scene.instantiate()
-			get_tree().root.add_child(balloon)
-			balloon.start(load("res://dialogue/conversations/chest.dialogue"), dialogue_start_command, [dialogue_variables])
+			DialogueManager.show_dialogue_balloon_scene(balloon_scene, load("res://dialogue/conversations/chest.dialogue"), "start", [dialogue_variables])
 
 func on_feed_the_animals() -> void:
 	if in_range:
-		trigger_feed_harvest("corn", corn_harvest_scene)
-		trigger_feed_harvest("tomato", tomato_harvest_scene)
+		if animal_food == "corn":
+			trigger_feed_harvest("corn", corn_harvest_scene)
+		elif animal_food == "tomato":
+			trigger_feed_harvest("tomato", tomato_harvest_scene)
 
 func trigger_feed_harvest(inventory_item: String, scene: Resource) -> void:
+	is_feeding = true
 	var inventory: Dictionary = InventoryManager.inventory
 	if !inventory.has(inventory_item):
 		return
 	
+	var last_tween: Tween
 	var inventory_item_count = inventory[inventory_item]
 	
 	for index in inventory_item_count:
+		InventoryManager.remove_collectable(inventory_item)
 		var harvest_instance = scene.instantiate() as Node2D
 		harvest_instance.get_node("CollectableComponent").collision_mask = 0
 		harvest_instance.global_position = Vector2(global_position.x, global_position.y - food_drop_height)
 		get_tree().root.add_child(harvest_instance)
 		var target_position = global_position
 		
-		var time_delay = randf_range(0.5, 2.0)
-		await get_tree().create_timer(time_delay).timeout
+		var delay_time = randf_range(0.5, 2.0)
+		await get_tree().create_timer(delay_time).timeout
 		
 		var tween = get_tree().create_tween()
 		tween.tween_property(harvest_instance, "position", target_position, 1.0)
 		tween.tween_property(harvest_instance, "scale", Vector2(0.5, 0.5), 1.0)
 		tween.tween_callback(harvest_instance.queue_free)
-		
-		InventoryManager.remove_collectable(inventory_item)
+		last_tween = tween
+	
+	await last_tween.finished
+	is_feeding = false
+	animated_sprite_2d.play("chest_close")
+	if in_range:
+		interactable_label_component.show()
 
 func on_food_received() -> void:
 	food_storage += 1

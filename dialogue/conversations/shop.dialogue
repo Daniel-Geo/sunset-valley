@@ -46,4 +46,5 @@ Olivia: Tell me what brings you to my humble shop?
 			=> END
 	Olivia: You don't have this item.
 - Never mind
+do interactable_label_component.show()
 => END

@@ -8,11 +8,13 @@ var balloon_scene = preload("res://dialogue/game_dialogue_balloon.tscn")
 class ShopState:
 	var item_name: String
 	var item_price: int
+	var interactable_label_component: Control
 
 var dialogue_variables = ShopState.new()
 var in_range: bool
 
 func _ready() -> void:
+	dialogue_variables.interactable_label_component = interactable_label_component
 	auto_interactable_component.interactable_activated.connect(on_interactable_activated)
 	auto_interactable_component.interactable_deactivated.connect(on_interactable_deactivated)
 	interactable_label_component.hide()
@@ -27,6 +29,5 @@ func on_interactable_deactivated() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if in_range and event.is_action_pressed("interact"):
-		var balloon: BaseGameDialogueBalloon = balloon_scene.instantiate()
-		get_tree().root.add_child(balloon)
-		balloon.start(load("res://dialogue/conversations/shop.dialogue"), "start", [dialogue_variables])
+		interactable_label_component.hide()
+		DialogueManager.show_dialogue_balloon_scene(balloon_scene, load("res://dialogue/conversations/shop.dialogue"), "start", [dialogue_variables])
