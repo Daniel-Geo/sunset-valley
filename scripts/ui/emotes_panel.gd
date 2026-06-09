@@ -32,10 +32,8 @@ func on_change_emote_color(replace_0: Vector4, replace_1: Vector4) -> void:
 	animated_sprite_2d.material.set("shader_parameter/replace_0", replace_0)
 	animated_sprite_2d.material.set("shader_parameter/replace_1", replace_1)
 
-func on_change_emote_visibility(visible: bool) -> void:
-	if visible:
-		print(visible)
+func on_change_emote_visibility(emote_visible: bool) -> void:
+	if emote_visible:
 		show()
 	else:
-		print(visible)
 		hide()

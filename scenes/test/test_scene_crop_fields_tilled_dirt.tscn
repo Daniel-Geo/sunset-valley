@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c0feu10jo7mu3" path="res://scenes/components/crops_cursor_component.tscn" id="5_aolun"]
 [ext_resource type="PackedScene" uid="uid://f23hdkea44w4" path="res://scenes/components/save_data_component.tscn" id="5_dxoer"]
 [ext_resource type="Script" uid="uid://dfw22x01vetku" path="res://scripts/components/crops_cursor_component.gd" id="6_bb1mf"]
-[ext_resource type="Resource" uid="uid://da3w7hh7v8l1g" path="res://resources/tilemap_layer_data_resource.tres" id="6_t4lsr"]
+[ext_resource type="Resource" uid="uid://da3w7hh7v8l1g" path="res://resources/tilled_soil_tilemap_layer_data_resource.tres" id="6_t4lsr"]
 
 [node name="TestSceneCropFieldsTilledDirt" type="Node2D" unique_id=13460925]
 

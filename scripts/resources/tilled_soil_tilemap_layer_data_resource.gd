@@ -1,4 +1,4 @@
-class_name TilemapLayerDataResource
+class_name TilledSoilTilemapLayerDataResource
 extends NodeDataResource
 
 @export var tilemap_layer_used_cells: Array[Vector2i]

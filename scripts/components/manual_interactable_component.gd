@@ -24,7 +24,7 @@ func _on_body_exited(body: Node2D) -> void:
 		is_player_nearby = false
 	get_node("InteractableLabelComponent").hide()
 
-func _unhandled_input(event: InputEvent) -> void:
+func _unhandled_input(_event: InputEvent) -> void:
 	if is_player_nearby and Input.is_action_just_pressed("interact"):
 		is_active = !is_active
 		if is_active:

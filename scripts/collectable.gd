@@ -20,8 +20,8 @@ func on_hurt(hit_damage: int) -> void:
 	sprite.material.set_shader_parameter("shake_intensity", 0.0)
 
 func on_max_damage_reached() -> void:
-	var position = global_position
-	var cell = get_parent().local_to_map(position)
+	var cell_position = global_position
+	var cell = get_parent().local_to_map(cell_position)
 	get_parent().set_cell(cell, -1)
 	call_deferred("add_collictable_scene")
 	queue_free()

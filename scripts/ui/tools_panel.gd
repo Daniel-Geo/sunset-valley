@@ -21,7 +21,7 @@ func _ready() -> void:
 	tool_tomato.disabled = true
 	tool_tomato.focus_mode = Control.FOCUS_NONE
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_key_pressed(KEY_1):
 		tool_axe.grab_focus()
 	elif Input.is_key_pressed(KEY_2):
