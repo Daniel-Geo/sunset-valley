@@ -4,9 +4,35 @@
 [ext_resource type="Texture2D" uid="uid://c4fxiicewepqn" path="res://assets/ui/basic_ui_sprites.png" id="2_25t5k"]
 [ext_resource type="Script" uid="uid://ba4honx16ib0k" path="res://scripts/ui/day_and_night_panel.gd" id="2_xc6ft"]
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_xc6ft"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_xc6ft"]
+device = -1
+keycode = 74
+unicode = 106
+
+[sub_resource type="Shortcut" id="Shortcut_k3f4j"]
+events = [SubResource("InputEventKey_xc6ft")]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_xc6ft"]
 atlas = ExtResource("2_25t5k")
 region = Rect2(261, 2, 7, 12)
+
+[sub_resource type="InputEventKey" id="InputEventKey_ckqsh"]
+device = -1
+keycode = 75
+unicode = 107
+
+[sub_resource type="Shortcut" id="Shortcut_5brvh"]
+events = [SubResource("InputEventKey_ckqsh")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_nu4uv"]
+device = -1
+keycode = 76
+unicode = 108
+
+[sub_resource type="Shortcut" id="Shortcut_bmtoy"]
+events = [SubResource("InputEventKey_nu4uv")]
 
 [node name="DayAndNightPanel" type="Control" unique_id=1683517702]
 layout_mode = 3
@@ -64,6 +90,10 @@ layout_mode = 0
 offset_right = 26.0
 offset_bottom = 18.0
 theme_type_variation = &"DayAndNightButton"
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_xc6ft")
+shortcut = SubResource("Shortcut_k3f4j")
 
 [node name="TextureRect" type="TextureRect" parent="Control/NormalSpeedButton" unique_id=670857613]
 layout_mode = 1
@@ -86,6 +116,9 @@ offset_left = 27.0
 offset_right = 53.0
 offset_bottom = 18.0
 theme_type_variation = &"DayAndNightButton"
+toggle_mode = true
+button_group = SubResource("ButtonGroup_xc6ft")
+shortcut = SubResource("Shortcut_5brvh")
 
 [node name="TextureRect" type="TextureRect" parent="Control/FastSpeedButton" unique_id=2057231562]
 layout_mode = 1
@@ -123,6 +156,9 @@ offset_left = 54.0
 offset_right = 80.0
 offset_bottom = 18.0
 theme_type_variation = &"DayAndNightButton"
+toggle_mode = true
+button_group = SubResource("ButtonGroup_xc6ft")
+shortcut = SubResource("Shortcut_bmtoy")
 
 [node name="TextureRect" type="TextureRect" parent="Control/CheetahSpeedButton" unique_id=1851710827]
 layout_mode = 1

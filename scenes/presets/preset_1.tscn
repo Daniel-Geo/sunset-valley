@@ -17,9 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://e5o0soygsbwg" path="res://scenes/components/save_preset_data_component.tscn" id="10_6wi7b"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_p57ef"]
-vertices = PackedVector2Array(427, 103, 427, 106.921875, 387, 104.328125, 395, 58, 421, 58, 387, 119.67969, 341.21875, 118.296875, 342.77344, 49.15625, 395, 50, 502, 26, 507, 26, 507, 102, 502, 102, 426, 26, 502, 103, 421, 26, 426, 22, 502, 22)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(2, 5, 6, 7), PackedInt32Array(2, 7, 8, 3), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(13, 12, 14, 0, 4, 15), PackedInt32Array(13, 16, 17, 9), PackedInt32Array(13, 9, 12)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(333, 39, 331, 128, 397, 130, 397, 115, 443, 118, 521, 118, 522, 7, 409, 8, 395, 40)])
+vertices = PackedVector2Array(502, 103, 445.6328, 103, 446.40625, 84.27344, 502, 102, 387.2578, 120, 341.21875, 120, 342.78906, 49, 388.27344, 82.74219, 395, 49, 395, 58, 421, 58, 502, 26, 507, 26, 507, 102, 421, 26, 426, 26, 502, 22, 426, 22)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(7, 6, 8, 9), PackedInt32Array(2, 7, 9, 10), PackedInt32Array(11, 12, 13, 3, 2, 10), PackedInt32Array(10, 14, 15), PackedInt32Array(11, 10, 15, 16), PackedInt32Array(16, 15, 17)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(333, 39, 331, 130, 397, 130, 398, 93, 436, 94, 435, 118, 521, 118, 522, 7, 409, 8, 408, 39)])
 source_geometry_mode = 2
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_4ek8o"]

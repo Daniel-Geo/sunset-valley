@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dv3f67gswgd8p" path="res://scenes/objects/trees/large_tree.tscn" id="9_mt8is"]
 [ext_resource type="PackedScene" uid="uid://c1qgrcuaw3dak" path="res://scenes/objects/rocks/rock.tscn" id="10_o2x3h"]
 [ext_resource type="Texture2D" uid="uid://04ke5ghk868a" path="res://assets/game/tilesets/fences.png" id="11_tmfy7"]
-[ext_resource type="PackedScene" uid="uid://iv287t1oohku" path="res://scenes/characters/shop.tscn" id="11_y5jhp"]
 [ext_resource type="Texture2D" uid="uid://bd4kbl0xg71ff" path="res://assets/game/tilesets/tilled_dirt_wide_cropfield.png" id="12_skfke"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cbdxd"]
@@ -556,7 +555,6 @@ scenes/3/scene = ExtResource("7_4agr7")
 scenes/4/scene = ExtResource("8_4agr7")
 scenes/5/scene = ExtResource("9_mt8is")
 scenes/6/scene = ExtResource("10_o2x3h")
-scenes/7/scene = ExtResource("11_y5jhp")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skfke"]
 texture = ExtResource("11_tmfy7")

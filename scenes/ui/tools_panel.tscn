@@ -8,9 +8,28 @@
 [ext_resource type="Texture2D" uid="uid://c77nud8ltlxk5" path="res://assets/ui/bar_round_gloss_large.png" id="5_3neg6"]
 [ext_resource type="Script" uid="uid://b6mxhdp0mdsw5" path="res://scripts/ui/water_bar.gd" id="6_3neg6"]
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_3neg6"]
+allow_unpress = true
+
+[sub_resource type="InputEventKey" id="InputEventKey_3neg6"]
+device = -1
+keycode = 49
+unicode = 49
+
+[sub_resource type="Shortcut" id="Shortcut_ur6ba"]
+events = [SubResource("InputEventKey_3neg6")]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbtgy"]
 atlas = ExtResource("2_a7ivs")
 region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="InputEventKey" id="InputEventKey_bdu3n"]
+device = -1
+keycode = 50
+unicode = 50
+
+[sub_resource type="Shortcut" id="Shortcut_62b2c"]
+events = [SubResource("InputEventKey_bdu3n")]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a6726"]
 load_path = "res://.godot/imported/basic_tools_and_meterials.png-dc4e25f18f664f6d22b0d3438dace52c.ctex"
@@ -19,6 +38,14 @@ load_path = "res://.godot/imported/basic_tools_and_meterials.png-dc4e25f18f664f6
 atlas = SubResource("CompressedTexture2D_a6726")
 region = Rect2(32, 0, 16, 16)
 
+[sub_resource type="InputEventKey" id="InputEventKey_icge2"]
+device = -1
+keycode = 51
+unicode = 51
+
+[sub_resource type="Shortcut" id="Shortcut_n1kta"]
+events = [SubResource("InputEventKey_icge2")]
+
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ur6ba"]
 load_path = "res://.godot/imported/basic_tools_and_meterials.png-dc4e25f18f664f6d22b0d3438dace52c.ctex"
 
@@ -26,9 +53,25 @@ load_path = "res://.godot/imported/basic_tools_and_meterials.png-dc4e25f18f664f6
 atlas = SubResource("CompressedTexture2D_ur6ba")
 region = Rect2(0, 0, 16, 16)
 
+[sub_resource type="InputEventKey" id="InputEventKey_uel26"]
+device = -1
+keycode = 52
+unicode = 52
+
+[sub_resource type="Shortcut" id="Shortcut_ara0f"]
+events = [SubResource("InputEventKey_uel26")]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_62b2c"]
 atlas = ExtResource("3_0jxvs")
 region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="InputEventKey" id="InputEventKey_01f5n"]
+device = -1
+keycode = 53
+unicode = 53
+
+[sub_resource type="Shortcut" id="Shortcut_fxb2d"]
+events = [SubResource("InputEventKey_01f5n")]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_icge2"]
 load_path = "res://.godot/imported/basic_plants.png-95b9b15040aa30969080ee5e6985e7ef.ctex"
@@ -58,6 +101,9 @@ layout_mode = 2
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
+toggle_mode = true
+button_group = SubResource("ButtonGroup_3neg6")
+shortcut = SubResource("Shortcut_ur6ba")
 icon = SubResource("AtlasTexture_gbtgy")
 icon_alignment = 1
 
@@ -65,6 +111,9 @@ icon_alignment = 1
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
+toggle_mode = true
+button_group = SubResource("ButtonGroup_3neg6")
+shortcut = SubResource("Shortcut_62b2c")
 icon = SubResource("AtlasTexture_3neg6")
 icon_alignment = 1
 
@@ -72,6 +121,9 @@ icon_alignment = 1
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
+toggle_mode = true
+button_group = SubResource("ButtonGroup_3neg6")
+shortcut = SubResource("Shortcut_n1kta")
 icon = SubResource("AtlasTexture_bdu3n")
 icon_alignment = 1
 
@@ -97,6 +149,9 @@ script = ExtResource("6_3neg6")
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
+toggle_mode = true
+button_group = SubResource("ButtonGroup_3neg6")
+shortcut = SubResource("Shortcut_ara0f")
 icon = SubResource("AtlasTexture_62b2c")
 icon_alignment = 1
 
@@ -104,14 +159,14 @@ icon_alignment = 1
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 theme_type_variation = &"ToolButton"
+toggle_mode = true
+button_group = SubResource("ButtonGroup_3neg6")
+shortcut = SubResource("Shortcut_fxb2d")
 icon = SubResource("AtlasTexture_n1kta")
 icon_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1612072974]
-layout_mode = 2
-
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWatering" to="." method="_on_tool_watering_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolCorn" to="." method="_on_tool_corn_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTomato" to="." method="_on_tool_tomato_pressed"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/ToolWatering" to="." method="_on_tool_watering_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/ToolCorn" to="." method="_on_tool_corn_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/ToolTomato" to="." method="_on_tool_tomato_toggled"]
