@@ -13,15 +13,16 @@ func _unhandled_input(event: InputEvent) -> void:
 		show_game_menu_screen()
 
 func start_game() -> void:
-	SceneManager.load_cutscenes()
-	await SceneManager.cutscenes_finished
+	reset_data()
 	SceneManager.load_main_scene_container()
-	SceneManager.load_preset("Preset1")
+	SceneManager.load_preset("Grandpa", "cutscene")
+	await SceneManager.finished_cutscene
+	SceneManager.load_preset("Preset1", "preset")
 	SaveGameManager.allow_save_game = true
 
 func load_game() -> void:
 	SceneManager.load_main_scene_container()
-	SceneManager.load_preset("Preset1")
+	SceneManager.load_preset("Preset1", "preset")
 	SaveGameManager.load_game()
 	SaveGameManager.allow_save_game = true
 
@@ -39,3 +40,11 @@ func show_game_over_screen() -> void:
 
 func on_dialogue_finished() -> void:
 	TransitionScreen.transition()
+
+func reset_data() -> void:
+	GameDialogueManager.guide_met = false
+	InventoryManager.reset_inventory()
+	CoinsManager.reset_coins()
+	WaterManager.refill_water()
+	DayAndNightCycleManager.set_initial_time()
+	ToolManager.disable_tools.emit()

@@ -1,20 +1,20 @@
 ~ start
 do GameDialogueManager.change_emote_color.emit(Vector4(0.0, 0.0, 0.0, 1.0), Vector4(119.0/255.0, 119.0/255.0, 119.0/255.0, 1.0))
 do change_emote_visibility.emit(true)
-if !met_Daniel
+if !guide_met
 	Daniel: [[Hi|Hello|Howdy]], I am Daniel, your helper guide.
 	Daniel: It is nice to meet you.
 	Daniel: Welcome to your new farm.
+	set ToolManager.tools_enabled = false
+	set guide_met = true
 Daniel: As you can see the cows and chickens are hungry.
 Daniel: You need to grow some crops to feed them.
-if !took_seeds
+if !ToolManager.tools_enabled:
 	Daniel: Here are some seeds to grow some crops.
 	- OK, thanks for the seeds
-		do GameDialogueManager.give_crop_seeds.emit()
+		do ToolManager.enable_tool_buttons()
 		Daniel: You are welcome, now you are ready to grow your own farm.
-		set took_seeds = true
 	- No, I don't want them
 		Daniel: As you wish, return to me when you're ready.
-set met_Daniel = true
 do interactable_label_component.show()
 => END

@@ -24,3 +24,8 @@ func remove_collectable(collectable_name: String) -> void:
 			inventory[collectable_name] -= 1
 	
 	inventory_changed.emit()
+
+func reset_inventory() -> void:
+	for item in inventory:
+		inventory[item] = 0
+	inventory_changed.emit()

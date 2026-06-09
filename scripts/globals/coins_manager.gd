@@ -10,3 +10,7 @@ func add_coins(ammount: int) -> void:
 func remove_coins(ammount: int) -> void:
 	coins -= ammount
 	coins_changed.emit()
+
+func reset_coins() -> void:
+	coins = 0
+	coins_changed.emit()

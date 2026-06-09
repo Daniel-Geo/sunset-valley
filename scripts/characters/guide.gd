@@ -17,8 +17,6 @@ func _ready() -> void:
 	auto_interactable_component.interactable_activated.connect(on_interactable_activated)
 	auto_interactable_component.interactable_deactivated.connect(on_interactable_deactivated)
 	interactable_label_component.hide()
-	
-	GameDialogueManager.give_crop_seeds.connect(on_give_crop_seeds)
 
 func on_interactable_activated() -> void:
 	interactable_label_component.show()
@@ -32,9 +30,3 @@ func _unhandled_input(event: InputEvent) -> void:
 	if in_range and event.is_action_pressed("interact"):
 		interactable_label_component.hide()
 		DialogueManager.show_dialogue_balloon_scene(balloon_scene, load("res://dialogue/conversations/guide.dialogue"), "start", [dialogue_variables])
-
-func on_give_crop_seeds() -> void:
-	ToolManager.enable_tool_button(DataTypes.Tools.TillGround)
-	ToolManager.enable_tool_button(DataTypes.Tools.WaterCrops)
-	ToolManager.enable_tool_button(DataTypes.Tools.PlantCorn)
-	ToolManager.enable_tool_button(DataTypes.Tools.PlantTomato)

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bnmpb183bwx54" path="res://scenes/characters/guide.tscn" id="5_bhkia"]
 [ext_resource type="Script" uid="uid://dfw22x01vetku" path="res://scripts/components/crops_cursor_component.gd" id="5_mv77o"]
 [ext_resource type="PackedScene" uid="uid://bn7hcktmbdhek" path="res://scenes/characters/cow.tscn" id="6_6wi7b"]
+[ext_resource type="PackedScene" uid="uid://dyt4tw8garygn" path="res://scenes/characters/player.tscn" id="6_qryln"]
 [ext_resource type="PackedScene" uid="uid://dk61ru5dw5sjx" path="res://scenes/objects/chest/chest.tscn" id="8_xwbr2"]
 [ext_resource type="PackedScene" uid="uid://iv287t1oohku" path="res://scenes/characters/shop.tscn" id="9_4ek8o"]
 [ext_resource type="PackedScene" uid="uid://e5o0soygsbwg" path="res://scenes/components/save_preset_data_component.tscn" id="10_6wi7b"]
@@ -74,6 +75,21 @@ unique_name_in_owner = true
 [node name="Rewards" type="Node2D" parent="." unique_id=1239668784]
 unique_name_in_owner = true
 y_sort_enabled = true
+
+[node name="Player" parent="." unique_id=908330864 instance=ExtResource("6_qryln")]
+position = Vector2(248, 224)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=72589730]
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 640
+limit_bottom = 368
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [node name="Chickens" type="Node2D" parent="." unique_id=709090166]
 y_sort_enabled = true

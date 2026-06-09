@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://ch3p5h26eux33" path="res://scenes/components/day_night_cycle_component.tscn" id="1_7ykc4"]
 [ext_resource type="PackedScene" uid="uid://b54sy35eft88u" path="res://scenes/presets/preset_1.tscn" id="2_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://c2nx8e8r5utbd" path="res://scenes/ui/game_screen.tscn" id="3_gubc5"]
-[ext_resource type="PackedScene" uid="uid://dyt4tw8garygn" path="res://scenes/characters/player.tscn" id="3_pu3yx"]
 [ext_resource type="PackedScene" uid="uid://ksjj8dw4g3m8" path="res://scenes/components/mouse_cursor_component.tscn" id="4_gubc5"]
 
 [node name="MainScene" type="Node" unique_id=125503953]
@@ -19,20 +18,5 @@ y_sort_enabled = true
 y_sort_enabled = true
 
 [node name="Preset1" parent="GameRoot/PresetRoot" unique_id=378852687 instance=ExtResource("2_pu3yx")]
-
-[node name="Player" parent="GameRoot" unique_id=908330864 instance=ExtResource("3_pu3yx")]
-position = Vector2(248, 224)
-
-[node name="Camera2D" type="Camera2D" parent="GameRoot/Player" unique_id=1685421559]
-zoom = Vector2(2, 2)
-limit_left = 0
-limit_top = 0
-limit_right = 640
-limit_bottom = 368
-limit_smoothed = true
-position_smoothing_enabled = true
-position_smoothing_speed = 1.0
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
 
 [node name="GameScreen" parent="." unique_id=495133500 instance=ExtResource("3_gubc5")]

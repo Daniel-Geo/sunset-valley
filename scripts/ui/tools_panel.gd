@@ -9,12 +9,18 @@ extends Node
 
 func _ready() -> void:
 	ToolManager.enable_tool.connect(on_enable_tool_button)
+	ToolManager.disable_tools.connect(disable_tools)
+	disable_tools()
 
+func disable_tools() -> void:
 	for button: Button in h_box_container.get_children():
 		button.disabled = true
 		button.focus_mode = Control.FOCUS_NONE
 
 func on_enable_tool_button(tool: DataTypes.Tools) -> void:
+	if tool == DataTypes.Tools.AxeWood:
+		tool_axe.disabled = false
+		tool_axe.focus_mode = Control.FOCUS_ALL
 	if tool == DataTypes.Tools.TillGround:
 		tool_tilling.disabled = false
 		tool_tilling.focus_mode = Control.FOCUS_ALL
