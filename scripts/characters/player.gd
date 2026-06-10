@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody2D
 
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var state_machine: NodeStateMachine = $StateMachine
 @onready var hit_component: HitComponent = $HitComponent
 
 @export var current_tool: DataTypes.Tools = DataTypes.Tools.None
@@ -18,8 +20,17 @@ func on_tool_selected(tool: DataTypes.Tools) -> void:
 
 func on_dialogue_started(_resource: DialogueResource) -> void:
 	print("started")
-	find_child("StateMachine").process_mode = Node.PROCESS_MODE_DISABLED
+	if player_direction == Vector2.UP:
+		animated_sprite.play("idle_back")
+	elif player_direction == Vector2.DOWN:
+		animated_sprite.play("idle_front")
+	elif player_direction == Vector2.LEFT:
+		animated_sprite.play("idle_left")
+	elif player_direction == Vector2.RIGHT:
+		animated_sprite.play("idle_right")
+	
+	state_machine.process_mode = Node.PROCESS_MODE_DISABLED
 
 func on_dialogue_ended(_resource: DialogueResource) -> void:
 	print("ended")
-	find_child("StateMachine").process_mode = Node.PROCESS_MODE_INHERIT
+	state_machine.process_mode = Node.PROCESS_MODE_INHERIT

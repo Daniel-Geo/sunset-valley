@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://g02s08s2kw2c"]
+
+[ext_resource type="Script" uid="uid://dn8pfpemb00w6" path="res://scripts/ui/game_credits_screen.gd" id="1_k7ewk"]
+[ext_resource type="PackedScene" uid="uid://ksjj8dw4g3m8" path="res://scenes/components/mouse_cursor_component.tscn" id="2_76yk1"]
+[ext_resource type="PackedScene" uid="uid://s6ghtvay8m5a" path="res://scenes/ui/game_menu_screen_background.tscn" id="3_f5v0p"]
+[ext_resource type="Theme" uid="uid://c2rdcj6j4pf3a" path="res://scenes/ui/game_ui_theme.tres" id="4_fsfeh"]
+[ext_resource type="FontVariation" uid="uid://80rl31go6gkm" path="res://assets/ui/fonts/zx_palm_variation.tres" id="5_w76n8"]
+
+[node name="CreditsMenuScreen" type="CanvasLayer" unique_id=1384441459]
+script = ExtResource("1_k7ewk")
+
+[node name="MouseCursorComputer" parent="." unique_id=1489407991 instance=ExtResource("2_76yk1")]
+
+[node name="GameMenuScreenBackground" parent="." unique_id=13460925 instance=ExtResource("3_f5v0p")]
+
+[node name="Panel" type="Panel" parent="." unique_id=60507767]
+z_index = 1
+custom_minimum_size = Vector2(320, 315)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("4_fsfeh")
+theme_type_variation = &"DarkWoodPanel"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=883640264]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 20
+
+[node name="CreditsVBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=766710799]
+layout_mode = 2
+
+[node name="CreditsLabel" type="Label" parent="Panel/MarginContainer/CreditsVBoxContainer" unique_id=400746996]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Credits"
+horizontal_alignment = 1
+
+[node name="CreditsMarginContainer" type="MarginContainer" parent="Panel/MarginContainer/CreditsVBoxContainer" unique_id=1182215669]
+layout_mode = 2
+
+[node name="ContributersMarginContainer" type="MarginContainer" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer" unique_id=545695905]
+layout_mode = 2
+
+[node name="ContributersVBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer/ContributersMarginContainer" unique_id=1801410851]
+layout_mode = 2
+
+[node name="DeveloperLabel" type="Label" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer/ContributersMarginContainer/ContributersVBoxContainer" unique_id=21569839]
+layout_mode = 2
+text = "Development and Design"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer/ContributersMarginContainer/ContributersVBoxContainer" unique_id=95729319]
+layout_mode = 2
+text = "Daniel George"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer/ContributersMarginContainer/ContributersVBoxContainer" unique_id=301746094]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer/ContributersMarginContainer/ContributersVBoxContainer/MarginContainer" unique_id=1262314368]
+layout_mode = 2
+
+[node name="ArtistLabel" type="Label" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer/ContributersMarginContainer/ContributersVBoxContainer/MarginContainer/VBoxContainer" unique_id=755699852]
+layout_mode = 2
+text = "Art"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer/ContributersMarginContainer/ContributersVBoxContainer/MarginContainer/VBoxContainer" unique_id=2011374351]
+layout_mode = 2
+text = "Cup Nooble"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer/ContributersMarginContainer/ContributersVBoxContainer" unique_id=518850374]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer/ContributersMarginContainer/ContributersVBoxContainer/MarginContainer2" unique_id=1439580918]
+layout_mode = 2
+
+[node name="ArtistLabel" type="Label" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer/ContributersMarginContainer/ContributersVBoxContainer/MarginContainer2/VBoxContainer" unique_id=1150321563]
+layout_mode = 2
+text = "Additional art"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer/ContributersMarginContainer/ContributersVBoxContainer/MarginContainer2/VBoxContainer" unique_id=809028264]
+layout_mode = 2
+text = "Kenney
+Daniel George
+Josie Makes Stuff"
+horizontal_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer/ContributersMarginContainer/ContributersVBoxContainer" unique_id=1083355579]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer/ContributersMarginContainer/ContributersVBoxContainer/MarginContainer3" unique_id=59243713]
+layout_mode = 2
+
+[node name="ArtistLabel" type="Label" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer/ContributersMarginContainer/ContributersVBoxContainer/MarginContainer3/VBoxContainer" unique_id=499573153]
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="Panel/MarginContainer/CreditsVBoxContainer/CreditsMarginContainer/ContributersMarginContainer/ContributersVBoxContainer/MarginContainer3/VBoxContainer" unique_id=954123125]
+layout_mode = 2
+text = "LudoLoon"
+horizontal_alignment = 1
+
+[node name="PSMarginContainer" type="MarginContainer" parent="Panel/MarginContainer" unique_id=742481287]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_top = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/PSMarginContainer" unique_id=195688318]
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/PSMarginContainer/HBoxContainer" unique_id=1397929781]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("5_w76n8")
+theme_override_font_sizes/font_size = 8
+text = "Made with ❤ by"
+vertical_alignment = 2
+
+[node name="LinkButton" type="LinkButton" parent="Panel/MarginContainer/PSMarginContainer/HBoxContainer" unique_id=705491730]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0, 0.63529414, 1, 1)
+theme_override_fonts/font = ExtResource("5_w76n8")
+theme_override_font_sizes/font_size = 8
+text = "Daniel-Geo"
+uri = "https://daniel-geo.itch.io"
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer" unique_id=1866679255]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_bottom = 5
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/MarginContainer" unique_id=2007877524]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("4_fsfeh")
+theme_type_variation = &"GameMenuButton"
+text = "Back"
+
+[connection signal="pressed" from="Panel/MarginContainer/MarginContainer/Button" to="." method="_on_button_pressed"]

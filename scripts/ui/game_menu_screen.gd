@@ -29,5 +29,8 @@ func _on_load_game_button_pressed() -> void:
 func _on_save_game_button_pressed() -> void:
 	SaveGameManager.save_game()
 
+func _on_credits_game_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/ui/game_credits_screen.tscn")
+
 func _on_exit_game_button_pressed() -> void:
 	GameManager.exit_game()

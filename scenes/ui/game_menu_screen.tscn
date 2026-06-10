@@ -59,6 +59,12 @@ layout_mode = 2
 theme_type_variation = &"GameMenuButton"
 text = "LOAD"
 
+[node name="CreditsGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1593541808]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "Credits"
+
 [node name="ExitGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=801904217]
 custom_minimum_size = Vector2(100, 29)
 layout_mode = 2
@@ -68,4 +74,5 @@ text = "EXIT"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SaveGameButton" to="." method="_on_save_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/LoadGameButton" to="." method="_on_load_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CreditsGameButton" to="." method="_on_credits_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]

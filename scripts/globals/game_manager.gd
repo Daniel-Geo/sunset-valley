@@ -31,8 +31,11 @@ func exit_game() -> void:
 
 func show_game_menu_screen() -> void:
 	if get_tree().root.get_node_or_null("/root/GameMenuScreen") == null:
-		var game_menu_screen_instance = game_menu_screen.instantiate()
-		get_tree().root.add_child(game_menu_screen_instance)
+		if get_tree().root.get_node_or_null("/root/GameCreditsScreen") == null:
+			get_tree().change_scene_to_file("res://scenes/ui/game_menu_screen.tscn")
+		else:
+			var game_menu_screen_instance = game_menu_screen.instantiate()
+			get_tree().root.add_child(game_menu_screen_instance)
 
 func show_game_over_screen() -> void:
 	var game_over_screen_instance = game_over_screen.instantiate()
