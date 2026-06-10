@@ -20,19 +20,19 @@ func disable_tools() -> void:
 func on_enable_tool_button(tool: DataTypes.Tools) -> void:
 	if tool == DataTypes.Tools.AxeWood:
 		tool_axe.disabled = false
-		tool_axe.focus_mode = Control.FOCUS_ALL
+		tool_axe.focus_mode = Control.FOCUS_CLICK
 	if tool == DataTypes.Tools.TillGround:
 		tool_tilling.disabled = false
-		tool_tilling.focus_mode = Control.FOCUS_ALL
+		tool_tilling.focus_mode = Control.FOCUS_CLICK
 	elif tool == DataTypes.Tools.WaterCrops:
 		tool_watering.disabled = false
-		tool_watering.focus_mode = Control.FOCUS_ALL
+		tool_watering.focus_mode = Control.FOCUS_CLICK
 	elif tool == DataTypes.Tools.PlantCorn:
 		tool_corn.disabled = false
-		tool_corn.focus_mode = Control.FOCUS_ALL
+		tool_corn.focus_mode = Control.FOCUS_CLICK
 	elif tool == DataTypes.Tools.PlantTomato:
 		tool_tomato.disabled = false
-		tool_tomato.focus_mode = Control.FOCUS_ALL
+		tool_tomato.focus_mode = Control.FOCUS_CLICK
 
 
 func _on_tool_axe_toggled(toggled_on: bool) -> void:

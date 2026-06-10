@@ -39,15 +39,16 @@ func save_game() -> void:
 	game_data_resource.tools_enabled = ToolManager.tools_enabled
 
 	var result: int = ResourceSaver.save(game_data_resource, save_game_data_path + preset_save_file_name)
+	SaveGameManager.check_saved_game_data()
 	print("Save result: ", result)
 
 func load_game() -> void:
 	var preset_save_file_name: String = save_file_name % preset_scene_name
 	var save_game_path: String = save_game_data_path + preset_save_file_name
-	
+
 	if !FileAccess.file_exists(save_game_path):
 		return
-	
+
 	game_data_resource = ResourceLoader.load(save_game_path)
 	if game_data_resource == null:
 		return
@@ -65,7 +66,7 @@ func load_game() -> void:
 	ToolManager.tools_state_changed.emit()
 
 	var root_node: Window = get_tree().root
-	
+
 	for resource in game_data_resource.save_data_nodes:
 		if resource is Resource:
 			if resource is NodeDataResource:
