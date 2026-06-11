@@ -110,15 +110,14 @@ func on_food_received() -> void:
 	food_storage += 1
 
 func on_time_tick_day(day: int) -> void:
-	if starting_day == 0:
-		starting_day = day
-	
-	var days_passed = day - starting_day
-	if days_passed == days_until_produce:
-		for animal_index in animal_group.get_child_count():
-			if food_storage > 0 and animal_index < animal_group.get_child_count() - 1:
-				animal_group.get_child(animal_index).add_reward()
-				food_storage -= 1
-		
-		if food_storage > 0:
+	if food_storage > 0:
+		if starting_day == 0:
 			starting_day = day
+		var days_passed = day - starting_day
+		if days_passed == days_until_produce:
+			for animal_index in animal_group.get_child_count():
+				if food_storage > 0 and animal_index < animal_group.get_child_count() - 1:
+					animal_group.get_child(animal_index).add_reward()
+					food_storage -= 1
+	else:
+		starting_day = 0

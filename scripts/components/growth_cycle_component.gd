@@ -13,6 +13,12 @@ var current_day: int
 
 func _ready() -> void:
 	DayAndNightCycleManager.time_tick_day.connect(on_time_tick_day)
+	print(is_watered, " ", starting_day, " ", current_day)
+	if is_watered:
+		if starting_day == 0:
+			starting_day = current_day
+		growth_states(starting_day, current_day)
+		harvest_state(starting_day, current_day)
 
 func on_time_tick_day(day: int) -> void:
 	if is_watered:
@@ -22,6 +28,7 @@ func on_time_tick_day(day: int) -> void:
 		harvest_state(starting_day, day)
 
 func growth_states(starting_day: int, current_day: int) -> void:
+	self.current_day = current_day
 	if current_growth_state == DataTypes.GrowthStates.Maturity:
 		return
 	
@@ -38,6 +45,7 @@ func growth_states(starting_day: int, current_day: int) -> void:
 		crop_maturity.emit()
 
 func harvest_state(starting_day: int, current_day: int) -> void:
+	self.current_day = current_day
 	if current_growth_state == DataTypes.GrowthStates.Harvesting:
 		return
 	

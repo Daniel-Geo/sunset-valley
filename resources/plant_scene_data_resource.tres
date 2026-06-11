@@ -1,0 +1,14 @@
+[gd_resource type="Resource" format=3 uid="uid://5vs3pjxwq0f3"]
+
+[ext_resource type="Script" uid="uid://ba0p7nfdq675g" path="res://scripts/resources/plant_scene_data_resource.gd" id="1_dx3da"]
+
+[resource]
+script = ExtResource("1_dx3da")
+node_name = null
+scene_file_path = null
+is_watered = null
+starting_day = null
+current_day = null
+global_position = null
+node_path = null
+parent_node_path = null

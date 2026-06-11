@@ -43,8 +43,8 @@ Olivia: Tell me what brings you to my humble shop?
 			Olivia: Take these {{item_price}} coins.
 			do CoinsManager.add_coins(item_price)
 			do InventoryManager.remove_collectable(item_name)
-			=> END
-	Olivia: You don't have this item.
+	else:
+		Olivia: You don't have this item.
 - Never mind
 do interactable_label_component.show()
 => END

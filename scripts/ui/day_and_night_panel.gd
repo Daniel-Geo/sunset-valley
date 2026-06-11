@@ -14,11 +14,15 @@ extends Control
 
 func _ready() -> void:
 	DayAndNightCycleManager.time_tick.connect(on_timetick)
-	
+	GameManager.reset_game_speed.connect(on_reset_game_speed)
+
 func on_timetick(day: int, hour: int, minute: int) -> void:
 	day_label.text = "Day " + str(day)
 	time_label.text = "%02d:%02d" % [hour, minute]
 
+func on_reset_game_speed() -> void:
+	DayAndNightCycleManager.game_speed = normal_speed
+	normal_speed_button.button_pressed = true
 
 func _on_normal_speed_button_pressed() -> void:
 	DayAndNightCycleManager.game_speed = normal_speed

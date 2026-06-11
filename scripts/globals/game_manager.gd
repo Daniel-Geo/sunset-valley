@@ -5,6 +5,8 @@ var game_over_screen = preload("res://scenes/ui/game_over_screen.tscn")
 
 signal dialogue_finished
 
+signal reset_game_speed
+
 func _ready() -> void:
 	dialogue_finished.connect(on_dialogue_finished)
 
@@ -49,5 +51,6 @@ func reset_data() -> void:
 	InventoryManager.reset_inventory()
 	CoinsManager.reset_coins()
 	WaterManager.refill_water()
-	DayAndNightCycleManager.set_initial_time()
 	ToolManager.disable_tools.emit()
+	DayAndNightCycleManager.set_initial_time()
+	reset_game_speed.emit()
