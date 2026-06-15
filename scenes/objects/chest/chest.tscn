@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://b5i36hs0mw6nj" path="res://scenes/components/auto_interactable_component.tscn" id="3_44sq4"]
 [ext_resource type="PackedScene" uid="uid://dv8ayl7gwr3tu" path="res://scenes/components/interactable_label_component.tscn" id="4_nrpii"]
 [ext_resource type="PackedScene" uid="uid://dlc1rjk5sgnji" path="res://scenes/components/feed_component.tscn" id="5_osdbi"]
+[ext_resource type="PackedScene" uid="uid://f23hdkea44w4" path="res://scenes/components/save_data_component.tscn" id="6_ayji6"]
+[ext_resource type="Resource" uid="uid://dxsda8jkrxma1" path="res://resources/chest_data_resource.tres" id="7_44sq4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umtkn"]
 size = Vector2(16, 14)
@@ -137,3 +139,6 @@ offset_bottom = -8.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FeedComponent" unique_id=1916933076]
 shape = SubResource("CircleShape2D_0fi80")
 debug_color = Color(0.7507226, 0.45962858, 1.92523e-07, 0.41960785)
+
+[node name="SaveDataComponent" parent="." unique_id=664960314 instance=ExtResource("6_ayji6")]
+save_data_resource = ExtResource("7_44sq4")

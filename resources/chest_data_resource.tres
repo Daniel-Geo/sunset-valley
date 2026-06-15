@@ -1,0 +1,6 @@
+[gd_resource type="Resource" format=3 uid="uid://dxsda8jkrxma1"]
+
+[ext_resource type="Script" uid="uid://bj6nhwqrwtqa7" path="res://scripts/resources/chest_data_resource.gd" id="1_mrtdk"]
+
+[resource]
+script = ExtResource("1_mrtdk")

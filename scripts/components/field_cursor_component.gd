@@ -7,6 +7,7 @@ extends Node
 @export var terrain: int = 3
 
 @onready var game_tilemap: Node2D = $"../GameTilemap"
+@onready var crop_fields: Node2D = %CropFields
 
 var player: Player
 var mouse_position: Vector2
@@ -47,5 +48,11 @@ func add_tilled_soil_cell() -> void:
 		tilled_soil_tilemap_layer.set_cells_terrain_connect([cell_position], terrain_set, terrain, true)
 
 func remove_tilled_soil_cell() -> void:
-	if distance < 20.0:
+	if distance < 20.0 and !has_crops(local_cell_position):
 		tilled_soil_tilemap_layer.set_cells_terrain_connect([cell_position], 0, -1, true)
+
+func has_crops(pos: Vector2) -> bool:
+	for node: Node2D in crop_fields.get_children():
+		if node.global_position == pos:
+			return true
+	return false

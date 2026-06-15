@@ -22,13 +22,14 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("remove_dirt"):
-		if ToolManager.selected_tool == DataTypes.Tools.PlantCorn or DataTypes.Tools.PlantTomato:
+		if ToolManager.selected_tool == DataTypes.Tools.PlantCorn or ToolManager.selected_tool == DataTypes.Tools.PlantTomato:
 			get_cell_under_mouse()
 			remove_crop()
 	elif event.is_action_pressed("hit"):
-		if ToolManager.selected_tool == DataTypes.Tools.PlantCorn or DataTypes.Tools.PlantTomato:
+		if ToolManager.selected_tool == DataTypes.Tools.PlantCorn or ToolManager.selected_tool == DataTypes.Tools.PlantTomato:
 			get_cell_under_mouse()
-			add_crop()
+			if !has_crop(local_cell_position):
+				add_crop()
 
 func get_cell_under_mouse() -> void:
 	mouse_position = tilled_soil_tilemap_layer.get_local_mouse_position()
@@ -38,7 +39,7 @@ func get_cell_under_mouse() -> void:
 	distance = player.global_position.distance_to(local_cell_position)
 
 func add_crop() -> void:
-	if distance < 20.0:
+	if distance < 20.0  and cell_source_id != -1:
 		if ToolManager.selected_tool == DataTypes.Tools.PlantCorn and InventoryManager.inventory.has("corn seed"):
 			if InventoryManager.inventory["corn seed"] > 0:
 				var corn_instance = corn_plant_scene.instantiate() as Node2D
@@ -50,7 +51,7 @@ func add_crop() -> void:
 			if InventoryManager.inventory["tomato seed"] > 0:
 				var tomato_instance = tomato_plant_scene.instantiate() as Node2D
 				tomato_instance.global_position = local_cell_position
-				get_parent().find_child("CropFields").add_child(tomato_instance)
+				crop_fields.add_child(tomato_instance)
 				InventoryManager.remove_collectable("tomato seed")
 
 func remove_crop() -> void:
@@ -60,3 +61,9 @@ func remove_crop() -> void:
 		for node: Node2D in crop_nodes:
 			if node.global_position == local_cell_position:
 				node.queue_free()
+
+func has_crop(pos: Vector2) -> bool:
+	for node: Node2D in crop_fields.get_children():
+		if node.global_position == pos:
+			return true
+	return false
