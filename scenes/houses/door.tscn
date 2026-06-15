@@ -86,7 +86,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bxi54"]
-size = Vector2(16, 16)
+size = Vector2(16, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nno8d"]
 size = Vector2(12, 16)
@@ -102,6 +102,7 @@ autoplay = "default"
 offset = Vector2(0, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1278996110]
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_bxi54")
 
 [node name="AutoInteractableComponent" parent="." unique_id=1201297642 instance=ExtResource("3_1ugum")]
