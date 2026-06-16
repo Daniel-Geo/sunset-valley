@@ -34,7 +34,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(168, 168)]
+"values": [Vector2(168, 232)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -241,12 +241,41 @@ tracks/2/keys = {
 "values": [&"idle_front", &"idle_left"]
 }
 
+[sub_resource type="Animation" id="Animation_0g5f2"]
+resource_name = "walk_in"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(168, 232), Vector2(168, 168)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"walk_back", &"idle_back"]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_w4wii"]
 _data = {
 &"RESET": SubResource("Animation_4oqny"),
 &"give_envelope": SubResource("Animation_hy3u0"),
 &"leave": SubResource("Animation_w4wii"),
-&"meet_grandpa": SubResource("Animation_11m3g")
+&"meet_grandpa": SubResource("Animation_11m3g"),
+&"walk_in": SubResource("Animation_0g5f2")
 }
 
 [node name="GrandpaHouse" type="Node2D" unique_id=985233808]
@@ -284,7 +313,7 @@ tile_map_data = PackedByteArray("AAAKAAMAAgAAAAAAAgATAAMAAQABAAEAAAABAAMAAQACAAE
 tile_set = ExtResource("1_ebabg")
 
 [node name="Player" parent="." unique_id=908330864 instance=ExtResource("3_4oqny")]
-position = Vector2(168, 168)
+position = Vector2(168, 232)
 
 [node name="AnimatedSprite2D" parent="Player" index="0" unique_id=327431119]
 animation = &"idle_back"

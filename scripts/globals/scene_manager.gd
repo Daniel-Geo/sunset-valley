@@ -7,6 +7,7 @@ var main_scene_game_screen_path: String = "/root/MainScene/GameScreen"
 
 var scenes: Dictionary = {
 	"Grandpa": "res://scenes/cutscenes/grandpa_house.tscn",
+	"Valley": "res://scenes/cutscenes/sprout_valley.tscn",
 	"Preset1": "res://scenes/presets/preset_1.tscn"
 }
 

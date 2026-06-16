@@ -1,8 +1,9 @@
 ~ start
-do wait(3)
 do GameDialogueManager.change_emote_color.emit(Vector4(0.0, 136/255.0, 0.0, 1.0), Vector4(119.0/255, 187.0/255.0, 119.0/255.0, 1.0))
 do GameDialogueManager.change_emote_visibility.emit(true)
-%2 Grandpa: Ahhh, my very special grandchild.
+do get_parent().get_node("GameRoot/PresetRoot/GrandpaHouse/AnimationPlayer").play("walk_in")
+do wait(4)
+%2 Grandpa: Ahh, my very special grandchild.
 %  Grandpa: There you are, my very special grandchild.
 Grandpa: Come catch me up on how you have been.
 do get_parent().get_node("GameRoot/PresetRoot/GrandpaHouse/AnimationPlayer").play("meet_grandpa")
@@ -16,8 +17,9 @@ Grandpa: I want you to have this sealed envelope.
 do get_parent().get_node("GameRoot/PresetRoot/GrandpaHouse/AnimationPlayer").play("give_envelope")
 do wait(5)
 Grandpa: No, no, don't open it yet... have patience.
-%2 Grandpa: Head over to my old farmhouse in [b]Sprout Valley[/b], and once you are there, open the envelope I gave you.
-%  Grandpa: Go to my old farmhouse in [b]Sprout Valley[/b], then open the envelope I gave you there.
+%3 Grandpa: Head over to my old farmhouse in [b]Sprout Valley[/b], and once you are there, open the envelope I gave you.
+%2 Grandpa: Go to my old farmhouse in [b]Sprout Valley[/b], then open the envelope I gave you there.
+Grandpa: Oh, and one more thing... beware of Mayor Wiles.
 Grandpa: Now, let Grandpa rest...
 do GameManager.dialogue_finished.emit()
 do get_parent().get_node("GameRoot/PresetRoot/GrandpaHouse/AnimationPlayer").play("leave")

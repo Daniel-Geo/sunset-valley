@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://c0sify5x4sqs6"]
+
+[ext_resource type="Script" uid="uid://bh5k1oy4bk2fl" path="res://scripts/characters/mayor_wiles.gd" id="1_5jroy"]
+[ext_resource type="Shader" uid="uid://dw132o0kfkl3d" path="res://shaders/replace_color.gdshader" id="1_8yuu1"]
+[ext_resource type="Texture2D" uid="uid://jvvvw2dr61vo" path="res://assets/game/characters/character_spritesheet.png" id="2_5jroy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mlwah"]
+shader = ExtResource("1_8yuu1")
+shader_parameter/original_0 = Color(0.36078432, 0.30588236, 0.57254905, 1)
+shader_parameter/original_1 = Color(0.4627451, 0.42745098, 0.6666667, 1)
+shader_parameter/replace_0 = Color(0, 0.69803923, 0, 1)
+shader_parameter/replace_1 = Color(1, 0.8, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsn6e"]
+atlas = ExtResource("2_5jroy")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blysn"]
+atlas = ExtResource("2_5jroy")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tq85q"]
+atlas = ExtResource("2_5jroy")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3cl1"]
+atlas = ExtResource("2_5jroy")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1nod"]
+atlas = ExtResource("2_5jroy")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kqyw"]
+atlas = ExtResource("2_5jroy")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svuau"]
+atlas = ExtResource("2_5jroy")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro20i"]
+atlas = ExtResource("2_5jroy")
+region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4av5w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsn6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blysn")
+}],
+"loop": true,
+"name": &"idle_back",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tq85q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3cl1")
+}],
+"loop": true,
+"name": &"idle_front",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1nod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kqyw")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svuau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro20i")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 3.0
+}]
+
+[node name="MayorWiles" type="Node2D" unique_id=2033731101]
+script = ExtResource("1_5jroy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=580782077]
+material = SubResource("ShaderMaterial_mlwah")
+sprite_frames = SubResource("SpriteFrames_4av5w")
+animation = &"idle_back"
+autoplay = "idle_back"

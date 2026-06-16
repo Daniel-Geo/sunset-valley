@@ -19,8 +19,11 @@ func start_game() -> void:
 	SceneManager.load_main_scene_container()
 	SceneManager.load_preset("Grandpa", "cutscene")
 	await SceneManager.finished_cutscene
+	SceneManager.load_preset("Valley", "cutscene")
+	await SceneManager.finished_cutscene
 	SceneManager.load_preset("Preset1", "preset")
 	SaveGameManager.allow_save_game = true
+	DayAndNightCycleManager.process_mode = Node.PROCESS_MODE_INHERIT
 
 func load_game() -> void:
 	SceneManager.load_main_scene_container()
@@ -53,4 +56,5 @@ func reset_data() -> void:
 	WaterManager.refill_water()
 	ToolManager.disable_tools.emit()
 	DayAndNightCycleManager.set_initial_time()
+	DayAndNightCycleManager.process_mode = Node.PROCESS_MODE_DISABLED
 	reset_game_speed.emit()

@@ -1,0 +1,36 @@
+~ start
+do GameDialogueManager.change_emote_color.emit(Vector4(0, 0.69, 0, 1.0), Vector4(1, 0.8, 0, 1))
+do GameDialogueManager.change_emote_visibility.emit(true)
+do get_parent().get_node("GameRoot/PresetRoot/SproutValley/AnimationPlayer").play("walk_in")
+do wait(3)
+Mayor Wiles: Ah, You must be the new farmer!
+Mayor Wiles: Get ready to clear your farm for me!
+- What do you mean?!
+	Mayor Wiles: Did your grandpa never tell you the story?
+	Mayor Wiles: A long time ago, your grandpa took out a loan from me that he never managed to repay.
+	Mayor Wiles: Which means his farm is mine now!
+- What are you talking about?!
+	Mayor Wiles: Don't tell me your old grandpa forgot to mention it!
+	Mayor Wiles: Your grandpa has fallen into debt and mortgaged his farm.
+	Mayor Wiles: Since the loan went unpaid, I am now preparing to seize his farm!
+Mayor Wiles: Hey, what is that envelope you are holding?
+	It looks like it is from your grandpa!
+	Well, go ahead and open it up.
+do get_parent().get_node("GameRoot/PresetRoot/SproutValley/AnimationPlayer").play("open_envelope")
+do wait(1.5)
+do GameDialogueManager.change_emote_visibility.emit(false)
+Envelope: Dear grandchild,
+	If you're reading this, you must be in dire need of a change.
+	The same thing happened to me, long ago.
+Envelope: I've enclosed the deed to that place... my pride and joy.
+	It's the perfect place to start your new life.
+	This was my most precious gift of all, and now it's yours.
+	Good luck.
+	Love, Grandpa
+Envelope: P.S. I have fallen into debt and had to mortgage the farm. You have to raise 1,000 gold coins within 100 days, or we lose everything.
+- GRANDPA!!!
+- Why I have to do this?
+do GameDialogueManager.change_emote_visibility.emit(true)
+Mayor Wiles: Good luck in collecting the debt. Hahaha!
+do GameManager.dialogue_finished.emit()
+=> END

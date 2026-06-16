@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cdrlwe4xkcwsg"
+path="res://.godot/imported/mayor_wiles.dialogue-4d85aa79569ea026145d6300c3d29a8b.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/mayor_wiles.dialogue"
+dest_files=["res://.godot/imported/mayor_wiles.dialogue-4d85aa79569ea026145d6300c3d29a8b.tres"]
+
+[params]
+
+defaults=true
