@@ -21,7 +21,7 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("remove_dirt"):
+	if event.is_action_pressed("remove"):
 		if ToolManager.selected_tool == DataTypes.Tools.PlantCorn or ToolManager.selected_tool == DataTypes.Tools.PlantTomato:
 			get_cell_under_mouse()
 			remove_crop()

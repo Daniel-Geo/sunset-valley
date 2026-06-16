@@ -1,13 +1,24 @@
 ~ start
-do wait(2)
+do wait(3)
 do GameDialogueManager.change_emote_color.emit(Vector4(0.0, 136/255.0, 0.0, 1.0), Vector4(119.0/255, 187.0/255.0, 119.0/255.0, 1.0))
 do GameDialogueManager.change_emote_visibility.emit(true)
-Grandpa: [[Hi|Hello|Howdy]], my dear grandson.
-Grandpa: I want you to take care of my farm.
-- As you wish
-	Grandpa: You are a good grandson.
-- No, I am not ready
-	Grandpa: No, you are more than ready.
-Grandpa: Take care of yourself and my humble farm.
+%2 Grandpa: Ahhh, my very special grandchild.
+%  Grandpa: There you are, my very special grandchild.
+Grandpa: Come catch me up on how you have been.
+do get_parent().get_node("GameRoot/PresetRoot/GrandpaHouse/AnimationPlayer").play("meet_grandpa")
+do wait(6)
+Grandpa: So, how has life been treating you lately?
+- Honestly, I feel crushed by the burden of the modern life
+	Grandpa: Then you're ready for my gift.
+- Genuinely, it feels like my bright spirit is fading before a growing emptieness
+	Grandpa: In that case, I have a little gift for you.
+Grandpa: I want you to have this sealed envelope.
+do get_parent().get_node("GameRoot/PresetRoot/GrandpaHouse/AnimationPlayer").play("give_envelope")
+do wait(5)
+Grandpa: No, no, don't open it yet... have patience.
+%2 Grandpa: Head over to my old farmhouse in [b]Sprout Valley[/b], and once you are there, open the envelope I gave you.
+%  Grandpa: Go to my old farmhouse in [b]Sprout Valley[/b], then open the envelope I gave you there.
+Grandpa: Now, let Grandpa rest...
 do GameManager.dialogue_finished.emit()
+do get_parent().get_node("GameRoot/PresetRoot/GrandpaHouse/AnimationPlayer").play("leave")
 => END

@@ -5,6 +5,249 @@
 [ext_resource type="PackedScene" uid="uid://ksjj8dw4g3m8" path="res://scenes/components/mouse_cursor_component.tscn" id="2_81mls"]
 [ext_resource type="PackedScene" uid="uid://dyt4tw8garygn" path="res://scenes/characters/player.tscn" id="3_4oqny"]
 [ext_resource type="PackedScene" uid="uid://b7kl173vdd25w" path="res://scenes/characters/grandpa.tscn" id="4_4oqny"]
+[ext_resource type="Texture2D" uid="uid://d2so3yln4svpg" path="res://assets/game/objects/envelope/envelope-sealed.png" id="5_w4wii"]
+[ext_resource type="Texture2D" uid="uid://bmh1oy47jhgoc" path="res://assets/game/objects/envelope/envelope-unsealed.png" id="6_0g5f2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pnmv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_w4wii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0g5f2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_4oqny"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(168, 168)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle_back"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Grandpa/AnimatedSprite2D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle_front"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Grandpa/Envelope:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -24)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Grandpa/Envelope:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Player/StateMachine:process_mode")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_hy3u0"]
+resource_name = "give_envelope"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(280, 72)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle_right"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Grandpa/AnimatedSprite2D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle_left"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Grandpa/Envelope:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5, 2.5, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -24), Vector2(0, -3), Vector2(0, -3), Vector2(-16, -3)]
+}
+
+[sub_resource type="Animation" id="Animation_w4wii"]
+resource_name = "leave"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(280, 72), Vector2(280, 136)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk_front"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Grandpa/Envelope:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Player/StateMachine:process_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_11m3g"]
+resource_name = "meet_grandpa"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(168, 168), Vector2(168, 136), Vector2(280, 136), Vector2(280, 72)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player/AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [&"walk_back", &"walk_right", &"walk_back", &"idle_right"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Grandpa/AnimatedSprite2D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [&"idle_front", &"idle_left"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w4wii"]
+_data = {
+&"RESET": SubResource("Animation_4oqny"),
+&"give_envelope": SubResource("Animation_hy3u0"),
+&"leave": SubResource("Animation_w4wii"),
+&"meet_grandpa": SubResource("Animation_11m3g")
+}
 
 [node name="GrandpaHouse" type="Node2D" unique_id=985233808]
 y_sort_enabled = true
@@ -41,7 +284,18 @@ tile_map_data = PackedByteArray("AAAKAAMAAgAAAAAAAgATAAMAAQABAAEAAAABAAMAAQACAAE
 tile_set = ExtResource("1_ebabg")
 
 [node name="Player" parent="." unique_id=908330864 instance=ExtResource("3_4oqny")]
-position = Vector2(232, 72)
+position = Vector2(168, 168)
+
+[node name="AnimatedSprite2D" parent="Player" index="0" unique_id=327431119]
+animation = &"idle_back"
+
+[node name="Grandpa" parent="." unique_id=1320159540 instance=ExtResource("4_4oqny")]
+position = Vector2(296, 72)
+
+[node name="Envelope" type="AnimatedSprite2D" parent="Grandpa" unique_id=856438139]
+position = Vector2(0, -24)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_3pnmv")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1870235674]
 position = Vector2(168, 112)
@@ -56,7 +310,11 @@ position_smoothing_speed = 1.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[node name="Grandpa" parent="." unique_id=1320159540 instance=ExtResource("4_4oqny")]
-position = Vector2(280, 72)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1386956031]
+libraries/ = SubResource("AnimationLibrary_w4wii")
+autoplay = &"RESET"
 
 [node name="MouseCursorComponent" parent="." unique_id=1489407991 instance=ExtResource("2_81mls")]
+
+[editable path="Player"]
+[editable path="Grandpa"]

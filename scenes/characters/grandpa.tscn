@@ -11,6 +11,14 @@ shader_parameter/original_1 = Color(0.4627451, 0.42745098, 0.6666667, 1)
 shader_parameter/replace_0 = Color(0, 0.53333336, 0, 1)
 shader_parameter/replace_1 = Color(0.46666667, 0.73333335, 0.46666667, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsn6e"]
+atlas = ExtResource("3_cn057")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blysn"]
+atlas = ExtResource("3_cn057")
+region = Rect2(48, 48, 48, 48)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tq85q"]
 atlas = ExtResource("3_cn057")
 region = Rect2(0, 0, 48, 48)
@@ -19,8 +27,35 @@ region = Rect2(0, 0, 48, 48)
 atlas = ExtResource("3_cn057")
 region = Rect2(48, 0, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1nod"]
+atlas = ExtResource("3_cn057")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4kqyw"]
+atlas = ExtResource("3_cn057")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_svuau"]
+atlas = ExtResource("3_cn057")
+region = Rect2(0, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro20i"]
+atlas = ExtResource("3_cn057")
+region = Rect2(48, 144, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_uphd3"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsn6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blysn")
+}],
+"loop": true,
+"name": &"idle_back",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tq85q")
@@ -29,7 +64,29 @@ animations = [{
 "texture": SubResource("AtlasTexture_l3cl1")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idle_front",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1nod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4kqyw")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svuau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro20i")
+}],
+"loop": true,
+"name": &"idle_right",
 "speed": 3.0
 }]
 
@@ -39,6 +96,6 @@ script = ExtResource("1_ny3mj")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1359933938]
 material = SubResource("ShaderMaterial_tm4fw")
 sprite_frames = SubResource("SpriteFrames_uphd3")
-animation = &"idle"
-autoplay = "idle"
+animation = &"idle_front"
+autoplay = "idle_front"
 offset = Vector2(0, -5)

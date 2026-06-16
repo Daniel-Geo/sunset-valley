@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://dxsda8jkrxma1" path="res://resources/chest_data_resource.tres" id="7_44sq4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_umtkn"]
-size = Vector2(16, 14)
+size = Vector2(16, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_23oep"]
 atlas = ExtResource("2_ayji6")
@@ -115,7 +115,7 @@ radius = 19.026299
 script = ExtResource("1_umtkn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1368732577]
-position = Vector2(0, 1)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_umtkn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=651673213]
