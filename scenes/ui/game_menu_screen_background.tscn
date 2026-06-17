@@ -1,19 +1,17 @@
 [gd_scene format=4 uid="uid://s6ghtvay8m5a"]
 
-[ext_resource type="Script" uid="uid://btbm0qsg36rgm" path="res://scripts/ui/game_menu_screen_background.gd" id="1_cixva"]
 [ext_resource type="TileSet" uid="uid://bbwqf10w2yb7g" path="res://tilesets/game_tile_set.tres" id="1_spn7g"]
 [ext_resource type="PackedScene" uid="uid://dyt4tw8garygn" path="res://scenes/characters/player.tscn" id="2_cixva"]
 [ext_resource type="PackedScene" uid="uid://di0g8grlv2ka" path="res://scenes/characters/chicken.tscn" id="4_3acs3"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_b46jp"]
-vertices = PackedVector2Array(425.8828, 30.703125, 504.64063, 26.5625, 502.29688, 95.89844, 448.0625, 101.25, 440.2422, 76.796875, 412.21094, 53.851563, 386.4297, 78.25, 382.3203, 49.570313, 384.9922, 110.10156, 386.4922, 133.49219, 384.64063, 134)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 0, 4), PackedInt32Array(5, 4, 6, 7), PackedInt32Array(8, 9, 10), PackedInt32Array(8, 10, 7), PackedInt32Array(7, 6, 8)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(372, 38, 375, 147, 397, 141, 395, 110, 396, 88, 433, 87, 441, 112, 512, 105, 515, 16, 420, 21, 407, 43)])
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_cixva"]
+vertices = PackedVector2Array(507, 108, 445.42188, 108, 446.40625, 84.27344, 507, 22, 421, 22, 421, 58, 388.27344, 82.74219, 395, 58, 387.27344, 119.53906, 384.89063, 119.42969, 384.10938, 49, 395, 49)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 3, 2, 5), PackedInt32Array(5, 2, 6, 7), PackedInt32Array(6, 8, 9, 10), PackedInt32Array(7, 6, 10, 11)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(374, 39, 375, 129, 397, 130, 398, 93, 436, 94, 435, 118, 521, 118, 522, 7, 409, 8, 408, 39)])
 source_geometry_mode = 2
 
 [node name="GameMenuScreenBackground" type="Node2D" unique_id=13460925]
 y_sort_enabled = true
-script = ExtResource("1_cixva")
 
 [node name="GameTilemap" type="Node2D" parent="." unique_id=368024729]
 y_sort_enabled = true
@@ -31,57 +29,83 @@ y_sort_enabled = true
 tile_map_data = PackedByteArray("AAANAA0AAwADAAAAAAACAAgAAwAGAAIAAAAEAAcAAwAIAAAAAAAEAAkAAwAFAAMAAAAGAAYAAwAHAAAAAAAIAA0AAwAHAAIAAAAJAAoAAwAHAAMAAAAKAAwAAwAGAAEAAAARAAwAAwAFAAAAAAATAA4AAwAGAAAAAAANAAoAAwAHAAIAAAAVAAgAAwAHAAIAAAATAAgAAwAHAAMAAAAWABEAAwAIAAIAAAASABEAAwAIAAIAAAAaAAoAAwAFAAIAAAAUABAAAwAGAAQAAAAOABMAAwAIAAQAAAANABAAAwAFAAQAAAAWABUAAwAHAAQAAAAGABIAAwAGAAQAAAACABQAAwAIAAQAAAACAAsAAwAFAAQAAAAUAAoAAwAGAAEAAAAcAAsAAwAFAAAAAAAZAAsAAwAFAAEAAAAbAAgAAwAHAAAAAAA=")
 tile_set = ExtResource("1_spn7g")
 
-[node name="Objects" type="TileMapLayer" parent="GameTilemap" unique_id=1890211043]
+[node name="Objects" type="TileMapLayer" parent="GameTilemap" unique_id=1890211043 groups=["navigation_polygon_source_geometry_group"]]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAZAAAABQABAAAAAAAZAAEABQAAAAEAAAAZAAIABQAAAAIAAAAaAAAABQACAAMAAAAbAAAABQACAAMAAAAcAAAABQACAAMAAAAcAAcABQACAAMAAAAdAAAABQACAAMAAAAdAAcABQACAAMAAAAeAAAABQACAAMAAAAeAAcABQACAAMAAAAfAAAABQACAAMAAAAfAAcABQACAAMAAAAgAAAABQADAAAAAAAgAAEABQAAAAEAAAAgAAIABQAAAAEAAAAgAAMABQAAAAEAAAAgAAQABQAAAAEAAAAgAAUABQAAAAEAAAAgAAYABQAAAAEAAAAgAAcABQADAAIAAAAbAAcABQABAAMAAAAQAAoABAAAAAAABgATAA0ABAAAAAAABAAXAA0ABAAAAAAABAADAAIAAwAIAAEAAAAWAAoAAwAEAAIAAAAYAAQAAwAGAAEAAAAeAAUAAwAFAAEAAAAcAAMAAwAFAAEAAAAfAAEAAwAGAAEAAAAaAAEAAwAGAAMAAAALAA4AAwAFAAMAAAAEAA4AAwAGAAEAAAASAAEAAwAFAAQAAAAMAAEAAwAIAAQAAAALAAEAAwAHAAQAAAAJAAAAAwAGAAQAAAAWAAAAAwAIAAQAAAAlAAIAAwAIAAQAAAAiAAQAAwAHAAQAAAAmAAYAAwAIAAQAAAAkAAwAAwAIAAQAAAAjAAwAAwAHAAQAAAAfAAoAAwAIAAEAAAAjAAgAAwAHAAEAAAA=")
 tile_set = ExtResource("1_spn7g")
 
-[node name="Houses" type="TileMapLayer" parent="GameTilemap" unique_id=1136146296]
+[node name="Houses" type="TileMapLayer" parent="GameTilemap" unique_id=1136146296 groups=["navigation_polygon_source_geometry_group"]]
+process_mode = 4
 tile_map_data = PackedByteArray("AAATAA0ABAAAAAAABAALAAMABAAAAAAAAQAUAAMABAAAAAAAAwA=")
 tile_set = ExtResource("1_spn7g")
 
 [node name="Player" parent="." unique_id=908330864 instance=ExtResource("2_cixva")]
 position = Vector2(283, 231)
 
+[node name="StateMachine" parent="Player" index="2" unique_id=771446107]
+process_mode = 4
+
 [node name="Chickens" type="Node2D" parent="." unique_id=1543932069]
 y_sort_enabled = true
 
 [node name="Chicken" parent="Chickens" unique_id=3803691 instance=ExtResource("4_3acs3")]
 position = Vector2(429, 33)
+output_reward_scenes = Array[PackedScene]([])
+
+[node name="AudioPlayTimeComponent" parent="Chickens/Chicken" index="5" unique_id=1317374662]
 script = null
 
 [node name="Chicken2" parent="Chickens" unique_id=1326493626 instance=ExtResource("4_3acs3")]
 position = Vector2(442, 70)
-script = null
+output_reward_scenes = Array[PackedScene]([])
 
 [node name="AnimatedSprite2D" parent="Chickens/Chicken2" index="1" unique_id=1925269984]
 flip_h = true
 
+[node name="AudioPlayTimeComponent" parent="Chickens/Chicken2" index="5" unique_id=1317374662]
+script = null
+
 [node name="Chicken3" parent="Chickens" unique_id=378328537 instance=ExtResource("4_3acs3")]
 position = Vector2(486, 55)
-script = null
+output_reward_scenes = Array[PackedScene]([])
 
 [node name="AnimatedSprite2D" parent="Chickens/Chicken3" index="1" unique_id=1925269984]
 flip_h = true
 
+[node name="AudioPlayTimeComponent" parent="Chickens/Chicken3" index="5" unique_id=1317374662]
+script = null
+
 [node name="Chicken4" parent="Chickens" unique_id=824911003 instance=ExtResource("4_3acs3")]
 position = Vector2(505, 37)
+output_reward_scenes = Array[PackedScene]([])
+
+[node name="AudioPlayTimeComponent" parent="Chickens/Chicken4" index="5" unique_id=1317374662]
 script = null
 
 [node name="Chicken5" parent="Chickens" unique_id=161646165 instance=ExtResource("4_3acs3")]
 position = Vector2(479, 93)
+output_reward_scenes = Array[PackedScene]([])
+
+[node name="AudioPlayTimeComponent" parent="Chickens/Chicken5" index="5" unique_id=1317374662]
 script = null
 
 [node name="Chicken6" parent="Chickens" unique_id=597342855 instance=ExtResource("4_3acs3")]
 position = Vector2(428, 62)
-script = null
+output_reward_scenes = Array[PackedScene]([])
 
 [node name="AnimatedSprite2D" parent="Chickens/Chicken6" index="1" unique_id=1925269984]
 flip_h = true
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Chickens" unique_id=988966841]
-navigation_polygon = SubResource("NavigationPolygon_b46jp")
+[node name="AudioPlayTimeComponent" parent="Chickens/Chicken6" index="5" unique_id=1317374662]
+script = null
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Chickens" unique_id=471072132]
+navigation_polygon = SubResource("NavigationPolygon_cixva")
+
+[editable path="Player"]
+[editable path="Chickens/Chicken"]
 [editable path="Chickens/Chicken2"]
 [editable path="Chickens/Chicken3"]
+[editable path="Chickens/Chicken4"]
+[editable path="Chickens/Chicken5"]
 [editable path="Chickens/Chicken6"]

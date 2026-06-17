@@ -6,7 +6,7 @@
 [ext_resource type="Theme" uid="uid://c2rdcj6j4pf3a" path="res://scenes/ui/game_ui_theme.tres" id="4_fsfeh"]
 [ext_resource type="FontVariation" uid="uid://80rl31go6gkm" path="res://assets/ui/fonts/zx_palm_variation.tres" id="5_w76n8"]
 
-[node name="CreditsMenuScreen" type="CanvasLayer" unique_id=1384441459]
+[node name="GameCreditsScreen" type="CanvasLayer" unique_id=1384441459]
 script = ExtResource("1_k7ewk")
 
 [node name="MouseCursorComputer" parent="." unique_id=1489407991 instance=ExtResource("2_76yk1")]

@@ -4,11 +4,11 @@ var game_menu_screen = preload("res://scenes/ui/game_menu_screen.tscn")
 var game_over_screen = preload("res://scenes/ui/game_over_screen.tscn")
 
 signal dialogue_finished
-
 signal reset_game_speed
 
 func _ready() -> void:
 	dialogue_finished.connect(on_dialogue_finished)
+	DayAndNightCycleManager.time_tick_day.connect(on_time_tick_day)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("game_menu"):
@@ -30,13 +30,15 @@ func load_game() -> void:
 	SceneManager.load_preset("Preset1", "preset")
 	SaveGameManager.load_game()
 	SaveGameManager.allow_save_game = true
+	DayAndNightCycleManager.process_mode = Node.PROCESS_MODE_INHERIT
 
 func exit_game() -> void:
 	get_tree().quit()
 
 func show_game_menu_screen() -> void:
 	if get_tree().root.get_node_or_null("/root/GameMenuScreen") == null:
-		if get_tree().root.get_node_or_null("/root/GameCreditsScreen") == null:
+		print(get_tree().current_scene)
+		if get_tree().root.get_node_or_null("/root/GameCreditsScreen") != null or get_tree().root.get_node_or_null("/root/GameOverScreen") != null:
 			get_tree().change_scene_to_file("res://scenes/ui/game_menu_screen.tscn")
 		else:
 			var game_menu_screen_instance = game_menu_screen.instantiate()
@@ -45,9 +47,20 @@ func show_game_menu_screen() -> void:
 func show_game_over_screen() -> void:
 	var game_over_screen_instance = game_over_screen.instantiate()
 	get_tree().root.add_child(game_over_screen_instance)
+	get_tree().current_scene = game_over_screen_instance
 
 func on_dialogue_finished() -> void:
 	TransitionScreen.transition()
+
+func on_time_tick_day(day: int) -> void:
+	if day > 3:
+		TransitionScreen.transition()
+		await TransitionScreen.transition_finished
+		DayAndNightCycleManager.process_mode = Node.PROCESS_MODE_DISABLED
+		if CoinsManager.coins >= 20:
+			pass
+		else:
+			show_game_over_screen()
 
 func reset_data() -> void:
 	GameDialogueManager.guide_met = false

@@ -26,10 +26,10 @@ Envelope: I've enclosed the deed to that place... my pride and joy.
 	It's the perfect place to start your new life.
 	This was my most precious gift of all, and now it's yours.
 	Good luck.
-	Love, Grandpa
+	Love, Grandpa.
 Envelope: P.S. I have fallen into debt and had to mortgage the farm. You have to raise 1,000 gold coins within 100 days, or we lose everything.
 - GRANDPA!!!
-- Why I have to do this?
+- Why does this have to fall on me, grandpa?
 do GameDialogueManager.change_emote_visibility.emit(true)
 Mayor Wiles: Good luck in collecting the debt. Hahaha!
 do GameManager.dialogue_finished.emit()

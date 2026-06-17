@@ -11,7 +11,7 @@ var walk_cycles: int
 var current_walk_cycle: int
 
 func _ready() -> void:
-	rewards = %Rewards
+	rewards = get_node_or_null("%Rewards")
 	walk_cycles = randi_range(min_walk_cycle, max_walk_cycle)
 
 func add_reward() -> void:
