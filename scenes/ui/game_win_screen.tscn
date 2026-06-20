@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://csx32h5k7rtrb"]
+
+[ext_resource type="Script" uid="uid://cq53uxk4uqvi6" path="res://scripts/ui/game_win_screen.gd" id="1_sfvpy"]
+[ext_resource type="PackedScene" uid="uid://ksjj8dw4g3m8" path="res://scenes/components/mouse_cursor_component.tscn" id="2_gduah"]
+[ext_resource type="PackedScene" uid="uid://s6ghtvay8m5a" path="res://scenes/ui/game_menu_screen_background.tscn" id="3_177on"]
+[ext_resource type="Theme" uid="uid://c2rdcj6j4pf3a" path="res://scenes/ui/game_ui_theme.tres" id="4_so5sk"]
+
+[node name="GameWinScreen" type="CanvasLayer" unique_id=203722165]
+script = ExtResource("1_sfvpy")
+
+[node name="MouseCursorComputer" parent="." unique_id=1489407991 instance=ExtResource("2_gduah")]
+
+[node name="GameMenuScreenBackground" parent="." unique_id=13460925 instance=ExtResource("3_177on")]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1672945382]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_so5sk")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=1535971790]
+layout_mode = 2
+
+[node name="GameWinLabel" type="Label" parent="MarginContainer/MarginContainer" unique_id=1629568983]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 72
+text = "You
+Win"
+
+[node name="WinningLabel" type="Label" parent="MarginContainer/MarginContainer" unique_id=1979279400]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0.6361109, 9.62615e-07, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "You have done it!
+Debt paid. The farm is officially safe"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=623229243]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="PlayAgainButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1351451816]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "Play Again"
+
+[node name="EndlessModeButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=161230511]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "Endless"
+
+[node name="LoadGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=150097439]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "LOAD"
+
+[node name="MenuGameButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1384511950]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "Main Menu"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/EndlessModeButton" to="." method="_on_endless_mode_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/LoadGameButton" to="." method="_on_load_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuGameButton" to="." method="_on_menu_game_button_pressed"]

@@ -35,8 +35,10 @@ func save_game() -> void:
 	game_data_resource.inventory = InventoryManager.inventory
 	game_data_resource.coins = CoinsManager.coins
 	game_data_resource.water_value = WaterManager.water_value
-	game_data_resource.time = DayAndNightCycleManager.time
 	game_data_resource.tools_enabled = ToolManager.tools_enabled
+	game_data_resource.endless_mode = GameManager.endless_mode
+	game_data_resource.game_over = GameManager.game_over
+	game_data_resource.time = DayAndNightCycleManager.time
 
 	var result: int = ResourceSaver.save(game_data_resource, save_game_data_path + preset_save_file_name)
 	SaveGameManager.check_saved_game_data()
@@ -60,10 +62,12 @@ func load_game() -> void:
 	CoinsManager.coins_changed.emit()
 	WaterManager.water_value = game_data_resource.water_value
 	WaterManager.water_changed.emit()
-	DayAndNightCycleManager.time = game_data_resource.time
-	DayAndNightCycleManager.recalculate_time()
 	ToolManager.tools_enabled = game_data_resource.tools_enabled
 	ToolManager.tools_state_changed.emit()
+	GameManager.endless_mode = game_data_resource.endless_mode
+	GameManager.game_over = game_data_resource.game_over
+	DayAndNightCycleManager.time = game_data_resource.time
+	DayAndNightCycleManager.recalculate_time()
 
 	var root_node: Window = get_tree().root
 

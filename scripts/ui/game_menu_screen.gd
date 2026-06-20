@@ -6,10 +6,10 @@ extends CanvasLayer
 
 func _ready() -> void:
 	SaveGameManager.check_saved_game_data()
-	continue_game_button.disabled = !SaveGameManager.allow_save_game
-	continue_game_button.focus_mode = Control.FOCUS_ALL if SaveGameManager.allow_save_game else Control.FOCUS_NONE
-	save_game_button.disabled = !SaveGameManager.allow_save_game
-	save_game_button.focus_mode = Control.FOCUS_ALL if SaveGameManager.allow_save_game else Control.FOCUS_NONE
+	continue_game_button.disabled = !(SaveGameManager.allow_save_game and GameManager.allow_continue_and_save_game)
+	continue_game_button.focus_mode = Control.FOCUS_ALL if SaveGameManager.allow_save_game and GameManager.allow_continue_and_save_game else Control.FOCUS_NONE
+	save_game_button.disabled = !(SaveGameManager.allow_save_game and GameManager.allow_continue_and_save_game)
+	save_game_button.focus_mode = Control.FOCUS_ALL if SaveGameManager.allow_save_game and GameManager.allow_continue_and_save_game else Control.FOCUS_NONE
 	load_game_button.disabled = !SaveGameManager.allow_load_game
 	load_game_button.focus_mode = Control.FOCUS_ALL if SaveGameManager.allow_load_game else Control.FOCUS_NONE
 	SaveGameManager.load_state_changed.connect(on_load_state_changed)
