@@ -7,7 +7,7 @@ extends Node
 
 var player: Player
 
-var corn_plant_scene = preload("res://scenes/objects/plants/corn/corn.tscn")
+var wheat_plant_scene = preload("res://scenes/objects/plants/wheat/wheat.tscn")
 var tomato_plant_scene = preload("res://scenes/objects/plants/tomato/tomato.tscn")
 
 var mouse_position: Vector2
@@ -22,11 +22,11 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("remove"):
-		if ToolManager.selected_tool == DataTypes.Tools.PlantCorn or ToolManager.selected_tool == DataTypes.Tools.PlantTomato:
+		if ToolManager.selected_tool == DataTypes.Tools.PlantWheat or ToolManager.selected_tool == DataTypes.Tools.PlantTomato:
 			get_cell_under_mouse()
 			remove_crop()
 	elif event.is_action_pressed("hit"):
-		if ToolManager.selected_tool == DataTypes.Tools.PlantCorn or ToolManager.selected_tool == DataTypes.Tools.PlantTomato:
+		if ToolManager.selected_tool == DataTypes.Tools.PlantWheat or ToolManager.selected_tool == DataTypes.Tools.PlantTomato:
 			get_cell_under_mouse()
 			if !has_crop(local_cell_position):
 				add_crop()
@@ -40,12 +40,12 @@ func get_cell_under_mouse() -> void:
 
 func add_crop() -> void:
 	if distance < 20.0  and cell_source_id != -1:
-		if ToolManager.selected_tool == DataTypes.Tools.PlantCorn and InventoryManager.inventory.has("corn seed"):
-			if InventoryManager.inventory["corn seed"] > 0:
-				var corn_instance = corn_plant_scene.instantiate() as Node2D
-				corn_instance.global_position = local_cell_position
-				crop_fields.add_child(corn_instance)
-				InventoryManager.remove_collectable("corn seed")
+		if ToolManager.selected_tool == DataTypes.Tools.PlantWheat and InventoryManager.inventory.has("wheat seed"):
+			if InventoryManager.inventory["wheat seed"] > 0:
+				var wheat_instance = wheat_plant_scene.instantiate() as Node2D
+				wheat_instance.global_position = local_cell_position
+				crop_fields.add_child(wheat_instance)
+				InventoryManager.remove_collectable("wheat seed")
 		
 		elif ToolManager.selected_tool == DataTypes.Tools.PlantTomato and InventoryManager.inventory.has("tomato seed"):
 			if InventoryManager.inventory["tomato seed"] > 0:

@@ -19,9 +19,15 @@ func _on_endless_mode_button_pressed() -> void:
 	queue_free()
 
 func _on_load_game_button_pressed() -> void:
+	MusicManager.play_music(MusicManager.Music.Game)
+	TransitionScreen.transition()
+	await TransitionScreen.transition_finished
 	GameManager.load_game()
 	queue_free()
 
 func _on_menu_game_button_pressed() -> void:
+	MusicManager.play_music(MusicManager.Music.Menu)
+	TransitionScreen.transition()
+	await TransitionScreen.transition_finished
 	GameManager.show_game_menu_screen()
 	queue_free()

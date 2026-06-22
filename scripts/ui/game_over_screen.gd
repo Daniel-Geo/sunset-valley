@@ -7,15 +7,22 @@ func _ready() -> void:
 	load_game_button.focus_mode = Control.FOCUS_ALL if SaveGameManager.allow_save_game else Control.FOCUS_NONE
 
 func _on_try_again_button_pressed() -> void:
+	MusicManager.play_music(MusicManager.Music.Cutscene)
 	TransitionScreen.transition()
 	await TransitionScreen.transition_finished
 	GameManager.start_game()
 	queue_free()
 
 func _on_load_game_button_pressed() -> void:
+	MusicManager.play_music(MusicManager.Music.Game)
+	TransitionScreen.transition()
+	await TransitionScreen.transition_finished
 	GameManager.load_game()
 	queue_free()
 
 func _on_menu_game_button_pressed() -> void:
+	MusicManager.play_music(MusicManager.Music.Menu)
+	TransitionScreen.transition()
+	await TransitionScreen.transition_finished
 	GameManager.show_game_menu_screen()
 	queue_free()

@@ -5,7 +5,7 @@ enum Tools {
 	AxeWood,
 	TillGround,
 	WaterCrops,
-	PlantCorn,
+	PlantWheat,
 	PlantTomato
 }
 

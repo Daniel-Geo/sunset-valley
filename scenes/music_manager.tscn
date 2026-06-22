@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cgx310okk2bdp"]
+
+[ext_resource type="Script" uid="uid://dcpad0sbvel1" path="res://scripts/globals/music_manager.gd" id="1_yodp2"]
+[ext_resource type="AudioStream" uid="uid://cc2j88ndgk3s7" path="res://assets/audio/music/cozy_farm.ogg" id="2_xcw26"]
+[ext_resource type="AudioStream" uid="uid://bo81y53bp5wsy" path="res://assets/audio/music/starlight_farm.mp3" id="3_jbem4"]
+[ext_resource type="AudioStream" uid="uid://bbybkoraavqwk" path="res://assets/audio/music/on_the_farm.ogg" id="4_hu6vc"]
+
+[node name="MusicManager" type="Node" unique_id=1308736164]
+script = ExtResource("1_yodp2")
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="." unique_id=2055988391]
+stream = ExtResource("2_xcw26")
+bus = &"Music"
+
+[node name="CutsceneMusic" type="AudioStreamPlayer" parent="." unique_id=2103269818]
+stream = ExtResource("3_jbem4")
+bus = &"Music"
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="." unique_id=1458652564]
+stream = ExtResource("4_hu6vc")
+bus = &"Music"

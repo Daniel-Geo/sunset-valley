@@ -30,8 +30,9 @@ SaveGameManager="*uid://c2fhlxj00u4r5"
 DialogueManager="*uid://c3rodes2l3gxb"
 GameDialogueManager="*uid://c1civ8bs608ob"
 CoinsManager="*uid://67qj18ygipf8"
-TransitionScreen="*uid://b8mvm561lha1p"
 WaterManager="*uid://b48sjrwefwxnt"
+TransitionScreen="*uid://b8mvm561lha1p"
+MusicManager="*uid://cgx310okk2bdp"
 
 [dialogue_manager]
 

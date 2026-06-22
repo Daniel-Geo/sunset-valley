@@ -148,7 +148,7 @@ texture_under = ExtResource("4_a6726")
 texture_progress = ExtResource("5_3neg6")
 script = ExtResource("6_3neg6")
 
-[node name="ToolCorn" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1898142684]
+[node name="ToolWheat" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1898142684]
 custom_minimum_size = Vector2(26, 26)
 layout_mode = 2
 focus_mode = 1
@@ -173,5 +173,5 @@ icon_alignment = 1
 [connection signal="toggled" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_toggled"]
 [connection signal="toggled" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_toggled"]
 [connection signal="toggled" from="MarginContainer/HBoxContainer/ToolWatering" to="." method="_on_tool_watering_toggled"]
-[connection signal="toggled" from="MarginContainer/HBoxContainer/ToolCorn" to="." method="_on_tool_corn_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/ToolWheat" to="." method="_on_tool_wheat_toggled"]
 [connection signal="toggled" from="MarginContainer/HBoxContainer/ToolTomato" to="." method="_on_tool_tomato_toggled"]

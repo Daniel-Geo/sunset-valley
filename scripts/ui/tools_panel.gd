@@ -3,7 +3,7 @@ extends Node
 @onready var tool_axe: Button = $MarginContainer/HBoxContainer/ToolAxe
 @onready var tool_tilling: Button = $MarginContainer/HBoxContainer/ToolTilling
 @onready var tool_watering: Button = $MarginContainer/HBoxContainer/ToolWatering
-@onready var tool_corn: Button = $MarginContainer/HBoxContainer/ToolCorn
+@onready var tool_wheat: Button = $MarginContainer/HBoxContainer/ToolWheat
 @onready var tool_tomato: Button = $MarginContainer/HBoxContainer/ToolTomato
 @onready var h_box_container: HBoxContainer = $MarginContainer/HBoxContainer
 
@@ -27,9 +27,9 @@ func on_enable_tool_button(tool: DataTypes.Tools) -> void:
 	elif tool == DataTypes.Tools.WaterCrops:
 		tool_watering.disabled = false
 		tool_watering.focus_mode = Control.FOCUS_CLICK
-	elif tool == DataTypes.Tools.PlantCorn:
-		tool_corn.disabled = false
-		tool_corn.focus_mode = Control.FOCUS_CLICK
+	elif tool == DataTypes.Tools.PlantWheat:
+		tool_wheat.disabled = false
+		tool_wheat.focus_mode = Control.FOCUS_CLICK
 	elif tool == DataTypes.Tools.PlantTomato:
 		tool_tomato.disabled = false
 		tool_tomato.focus_mode = Control.FOCUS_CLICK
@@ -55,9 +55,9 @@ func _on_tool_watering_toggled(toggled_on: bool) -> void:
 		ToolManager.select_tool(DataTypes.Tools.None)
 
 
-func _on_tool_corn_toggled(toggled_on: bool) -> void:
+func _on_tool_wheat_toggled(toggled_on: bool) -> void:
 	if toggled_on:
-		ToolManager.select_tool(DataTypes.Tools.PlantCorn)
+		ToolManager.select_tool(DataTypes.Tools.PlantWheat)
 	else:
 		ToolManager.select_tool(DataTypes.Tools.None)
 

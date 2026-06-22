@@ -2,7 +2,7 @@ extends Node2D
 
 var balloon_scene = preload("res://dialogue/game_dialogue_balloon.tscn")
 
-var corn_harvest_scene = preload("res://scenes/objects/plants/corn/corn_harvest.tscn")
+var wheat_harvest_scene = preload("res://scenes/objects/plants/wheat/wheat_harvest.tscn")
 var tomato_harvest_scene = preload("res://scenes/objects/plants/tomato/tomato_harvest.tscn")
 
 @export var animal_type: String
@@ -69,8 +69,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func on_feed_the_animals() -> void:
 	if in_range:
-		if animal_food == "corn":
-			trigger_feed_harvest("corn", corn_harvest_scene)
+		if animal_food == "wheat":
+			trigger_feed_harvest("wheat", wheat_harvest_scene)
 		elif animal_food == "tomato":
 			trigger_feed_harvest("tomato", tomato_harvest_scene)
 

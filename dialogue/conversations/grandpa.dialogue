@@ -17,8 +17,8 @@ Grandpa: I want you to have this sealed envelope.
 do get_parent().get_node("GameRoot/PresetRoot/GrandpaHouse/AnimationPlayer").play("give_envelope")
 do wait(5)
 Grandpa: No, no, don't open it yet... have patience.
-%3 Grandpa: Head over to my old farmhouse in [b]Sprout Valley[/b], and once you are there, open the envelope I gave you.
-%2 Grandpa: Go to my old farmhouse in [b]Sprout Valley[/b], then open the envelope I gave you there.
+%3 Grandpa: Head over to my old farmhouse in [b]Sunset Valley[/b], and once you are there, open the envelope I gave you.
+%2 Grandpa: Go to my old farmhouse in [b]Sunset Valley[/b], then open the envelope I gave you there.
 Grandpa: Oh, and one more thing... beware of Mayor Wiles.
 Grandpa: Now, let Grandpa rest...
 do GameManager.dialogue_finished.emit()

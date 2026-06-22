@@ -90,18 +90,18 @@ size_flags_vertical = 8
 theme_type_variation = &"InventoryLabel"
 text = "0"
 
-[node name="Corn" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1296389577]
+[node name="Wheat" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=1296389577]
 custom_minimum_size = Vector2(26, 32)
 layout_mode = 2
 theme_type_variation = &"InventoryItemPanel"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Corn" unique_id=1083988625]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Wheat" unique_id=1083988625]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 texture = SubResource("AtlasTexture_b11k6")
 
-[node name="CornLabel" type="Label" parent="MarginContainer/VBoxContainer/Corn" unique_id=236724040]
+[node name="WheatLabel" type="Label" parent="MarginContainer/VBoxContainer/Wheat" unique_id=236724040]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
@@ -162,18 +162,18 @@ size_flags_vertical = 8
 theme_type_variation = &"InventoryLabel"
 text = "0"
 
-[node name="CornSeed" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=896364512]
+[node name="WheatSeed" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=896364512]
 custom_minimum_size = Vector2(26, 32)
 layout_mode = 2
 theme_type_variation = &"InventoryItemPanel"
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/CornSeed" unique_id=600173786]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/WheatSeed" unique_id=600173786]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 texture = SubResource("AtlasTexture_tdvod")
 
-[node name="CornSeedLabel" type="Label" parent="MarginContainer/VBoxContainer/CornSeed" unique_id=1872856771]
+[node name="WheatSeedLabel" type="Label" parent="MarginContainer/VBoxContainer/WheatSeed" unique_id=1872856771]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8

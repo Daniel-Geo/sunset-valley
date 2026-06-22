@@ -18,7 +18,10 @@ func _ready() -> void:
 	DayAndNightCycleManager.time_tick_day.connect(on_time_tick_day)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("game_menu") and !is_playing_cutscenes:
+	if event.is_action_pressed("game_menu") and !is_playing_cutscenes and get_tree().root.get_node_or_null("/root/GameMenuScreen") == null:
+		MusicManager.play_music(MusicManager.Music.Menu)
+		TransitionScreen.transition()
+		await TransitionScreen.transition_finished
 		show_game_menu_screen()
 
 func start_game() -> void:
@@ -29,6 +32,7 @@ func start_game() -> void:
 	await SceneManager.finished_cutscene
 	SceneManager.load_preset("Valley", "cutscene")
 	await SceneManager.finished_cutscene
+	MusicManager.play_music(MusicManager.Music.Game)
 	SceneManager.load_preset("Preset1", "preset")
 	is_playing_cutscenes = false
 	SaveGameManager.allow_save_game = true
@@ -51,8 +55,7 @@ func exit_game() -> void:
 
 func show_game_menu_screen() -> void:
 	if get_tree().root.get_node_or_null("/root/GameMenuScreen") == null:
-		print(get_tree().current_scene)
-		if get_tree().root.get_node_or_null("/root/GameCreditsScreen") != null or get_tree().root.get_node_or_null("/root/GameOverScreen") != null:
+		if get_tree().root.get_node_or_null("/root/GameWinScreen") != null or get_tree().root.get_node_or_null("/root/GameOverScreen") != null:
 			get_tree().change_scene_to_file("res://scenes/ui/game_menu_screen.tscn")
 		else:
 			var game_menu_screen_instance = game_menu_screen.instantiate()

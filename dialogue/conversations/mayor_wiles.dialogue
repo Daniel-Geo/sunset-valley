@@ -1,7 +1,7 @@
 ~ start
 do GameDialogueManager.change_emote_color.emit(Vector4(0, 0.69, 0, 1.0), Vector4(1, 0.8, 0, 1))
 do GameDialogueManager.change_emote_visibility.emit(true)
-do get_parent().get_node("GameRoot/PresetRoot/SproutValley/AnimationPlayer").play("walk_in")
+do get_parent().get_node("GameRoot/PresetRoot/SunsetValley/AnimationPlayer").play("walk_in")
 do wait(3)
 Mayor Wiles: Ah, You must be the new farmer!
 Mayor Wiles: Get ready to clear your farm for me!
@@ -16,7 +16,7 @@ Mayor Wiles: Get ready to clear your farm for me!
 Mayor Wiles: Hey, what is that envelope you are holding?
 	It looks like it is from your grandpa!
 	Well, go ahead and open it up.
-do get_parent().get_node("GameRoot/PresetRoot/SproutValley/AnimationPlayer").play("open_envelope")
+do get_parent().get_node("GameRoot/PresetRoot/SunsetValley/AnimationPlayer").play("open_envelope")
 do wait(1.5)
 do GameDialogueManager.change_emote_visibility.emit(false)
 Envelope: Dear grandchild,
