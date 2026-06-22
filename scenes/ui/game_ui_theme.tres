@@ -171,6 +171,96 @@ texture_margin_right = 4.0
 texture_margin_bottom = 6.0
 region_rect = Rect2(0, 0, 26, 28)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w57q2"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fwkl"]
+atlas = SubResource("CompressedTexture2D_w57q2")
+region = Rect2(59, 11, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mtujg"]
+texture = SubResource("AtlasTexture_1fwkl")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 26, 26)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2isuy"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owel7"]
+atlas = SubResource("CompressedTexture2D_2isuy")
+region = Rect2(11, 59, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ivv52"]
+texture = SubResource("AtlasTexture_owel7")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(0, 0, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x862q"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqxaa"]
+atlas = SubResource("CompressedTexture2D_x862q")
+region = Rect2(11, 59, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ba0tq"]
+texture = SubResource("AtlasTexture_pqxaa")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(0, 0, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gdma5"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17at1"]
+atlas = SubResource("CompressedTexture2D_gdma5")
+region = Rect2(59, 59, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_enpq1"]
+texture = SubResource("AtlasTexture_17at1")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 26, 26)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3405b"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6prrc"]
+atlas = SubResource("CompressedTexture2D_3405b")
+region = Rect2(11, 107, 26, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q5bnr"]
+texture = SubResource("AtlasTexture_6prrc")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 6.0
+region_rect = Rect2(0, 0, 26, 28)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kwis4"]
+load_path = "res://.godot/imported/basic_ui_sprites.png-f1365ff47f1f008f610f3c558cf47256.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5bnr"]
+atlas = SubResource("CompressedTexture2D_kwis4")
+region = Rect2(59, 107, 26, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gwv3e"]
+texture = SubResource("AtlasTexture_q5bnr")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 0, 26, 26)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhbk8"]
 atlas = ExtResource("1_nhbk8")
 region = Rect2(107, 59, 26, 26)
@@ -277,6 +367,13 @@ GameMenuButton/styles/focus = SubResource("StyleBoxTexture_2isuy")
 GameMenuButton/styles/hover = SubResource("StyleBoxTexture_x862q")
 GameMenuButton/styles/normal = SubResource("StyleBoxTexture_mfc43")
 GameMenuButton/styles/pressed = SubResource("StyleBoxTexture_gdma5")
+GameToggleButton/base_type = &"Button"
+GameToggleButton/styles/disabled = SubResource("StyleBoxTexture_mtujg")
+GameToggleButton/styles/focus = SubResource("StyleBoxTexture_ivv52")
+GameToggleButton/styles/hover = SubResource("StyleBoxTexture_ba0tq")
+GameToggleButton/styles/hover_pressed = SubResource("StyleBoxTexture_enpq1")
+GameToggleButton/styles/normal = SubResource("StyleBoxTexture_q5bnr")
+GameToggleButton/styles/pressed = SubResource("StyleBoxTexture_gwv3e")
 InventoryItemPanel/base_type = &"PanelContainer"
 InventoryItemPanel/styles/panel = SubResource("StyleBoxTexture_w57q2")
 InventoryLabel/base_type = &"Label"

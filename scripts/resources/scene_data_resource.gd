@@ -8,7 +8,7 @@ var parent_node: Node2D
 var scene_node: Node2D
 
 func _save_data(node: Node2D) -> void:
-	super._save_data(node)
+	super(node)
 	
 	node_name = node.name
 	scene_file_path = node.scene_file_path

@@ -6,7 +6,7 @@ extends NodeDataResource
 @export var terrain: int = 3
 
 func _save_data(node: Node2D) -> void:
-	super._save_data(node)
+	super(node)
 	
 	var tilemap_layer: TileMapLayer = node as TileMapLayer
 	var cells: Array[Vector2i] = tilemap_layer.get_used_cells()

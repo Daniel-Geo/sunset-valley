@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://bp35s14jtaya2" path="res://scripts/ui/game_menu_screen.gd" id="1_jk4o3"]
 [ext_resource type="PackedScene" uid="uid://s6ghtvay8m5a" path="res://scenes/ui/game_menu_screen_background.tscn" id="2_arotu"]
 [ext_resource type="PackedScene" uid="uid://ksjj8dw4g3m8" path="res://scenes/components/mouse_cursor_component.tscn" id="4_vrg0q"]
+[ext_resource type="Texture2D" uid="uid://bxypywyiyl8dh" path="res://assets/ui/music_symbol.png" id="5_ecc0l"]
+[ext_resource type="Texture2D" uid="uid://b1vxqrg3neoh5" path="res://assets/ui/sfx_symbol.png" id="6_16g87"]
 
 [node name="GameMenuScreen" type="CanvasLayer" unique_id=1999529442]
 script = ExtResource("1_jk4o3")
@@ -77,9 +79,30 @@ layout_mode = 2
 theme_type_variation = &"GameMenuButton"
 text = "EXIT"
 
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1260161350]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="MusicButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=368576120]
+layout_mode = 2
+theme = ExtResource("1_5slcd")
+theme_type_variation = &"GameToggleButton"
+toggle_mode = true
+icon = ExtResource("5_ecc0l")
+
+[node name="SFXButton" type="Button" parent="MarginContainer/HBoxContainer" unique_id=221677210]
+layout_mode = 2
+theme = ExtResource("1_5slcd")
+theme_type_variation = &"GameToggleButton"
+toggle_mode = true
+icon = ExtResource("6_16g87")
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ContinueGameButton" to="." method="_on_continue_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/SaveGameButton" to="." method="_on_save_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/LoadGameButton" to="." method="_on_load_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/CreditsGameButton" to="." method="_on_credits_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/MusicButton" to="." method="_on_music_toggled"]
+[connection signal="toggled" from="MarginContainer/HBoxContainer/SFXButton" to="." method="_on_sfx_toggled"]

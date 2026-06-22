@@ -4,6 +4,12 @@ extends CanvasLayer
 @onready var save_game_button: Button = $MarginContainer/VBoxContainer/SaveGameButton
 @onready var load_game_button: Button = $MarginContainer/VBoxContainer/LoadGameButton
 @onready var exit_game_button: Button = $MarginContainer/VBoxContainer/ExitGameButton
+@onready var music_button: Button = $MarginContainer/HBoxContainer/MusicButton
+@onready var sfx_button: Button = $MarginContainer/HBoxContainer/SFXButton
+
+
+var music_bus_index: int = AudioServer.get_bus_index("Music")
+var sfx_bus_index: int = AudioServer.get_bus_index("SFX")
 
 func _ready() -> void:
 	if OS.has_feature("web"):
@@ -15,6 +21,8 @@ func _ready() -> void:
 	save_game_button.focus_mode = Control.FOCUS_ALL if SaveGameManager.allow_save_game and GameManager.allow_continue_and_save_game else Control.FOCUS_NONE
 	load_game_button.disabled = !SaveGameManager.allow_load_game
 	load_game_button.focus_mode = Control.FOCUS_ALL if SaveGameManager.allow_load_game else Control.FOCUS_NONE
+	music_button.button_pressed = AudioServer.is_bus_mute(music_bus_index)
+	sfx_button.button_pressed = AudioServer.is_bus_mute(sfx_bus_index)
 	SaveGameManager.load_state_changed.connect(on_load_state_changed)
 
 func on_load_state_changed() -> void:
@@ -51,3 +59,11 @@ func _on_credits_game_button_pressed() -> void:
 
 func _on_exit_game_button_pressed() -> void:
 	GameManager.exit_game()
+
+
+func _on_music_toggled(toggled_on: bool) -> void:
+	AudioServer.set_bus_mute(music_bus_index, true) if toggled_on else AudioServer.set_bus_mute(music_bus_index, false)
+
+
+func _on_sfx_toggled(toggled_on: bool) -> void:
+	AudioServer.set_bus_mute(sfx_bus_index, true) if toggled_on else AudioServer.set_bus_mute(sfx_bus_index, false)

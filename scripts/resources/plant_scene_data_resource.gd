@@ -5,7 +5,7 @@ extends SceneDataResource
 @export var current_day: int
 
 func _save_data(node: Node2D) -> void:
-	super._save_data(node)
+	super(node)
 	
 	var growth_cycle_component = node.get_node_or_null("GrowthCycleComponent")
 	
@@ -14,7 +14,7 @@ func _save_data(node: Node2D) -> void:
 	current_day = growth_cycle_component.current_day
 
 func _load_data(window: Window) -> void:
-	super._load_data(window)
+	super(window)
 	
 	var growth_cycle_component = scene_node.get_node_or_null("GrowthCycleComponent")
 	
