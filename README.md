@@ -1,7 +1,7 @@
 # sunset-valley
 A **Stardew Valley** farming replica.  
-Your grandpa have given you his **beloved farm** to take care for, but your excitement fades out as you discover that he is drowning in debt, and the farm is now on the line!  
-Now you need to **grow crops**, and **collect your animals' produce** to **make profit** for **paying the debt** and **saving the farm** from the hands of **Mayor Wiles**!
+Your grandpa has given you his **beloved farm** to take care of, but your excitement fades out as you discover that he is drowning in debt, and the farm is now on the line!  
+Now you need to **grow crops**, and **collect your animals' produce** to **make a profit** for **paying the debt** and **saving the farm** from the hands of **Mayor Wiles**!
 
 ### Controls:
 Move: WASD  
@@ -13,6 +13,9 @@ Tools: 1, 2, 3, 4, 5
 Time: J, K, L  
 Save: P  
 Go to Menu: Escape  
+
+### Early game guide:
+The first thing you need to do when the game begins, after the cutscenes, is that you need to talk to the guide, then he will give you some tools and empty seed packets. After that, go cut some trees or rocks using the axe, sell the collected materials to buy some seeds, then you can sell the collected crops to buy other seeds, or you can feed the crops to the animals to produce some products after some days, which you can sell.
 
 ## Built with
 [Godot Game Engine v4.6.stable](https://godotengine.org)  
